@@ -107,7 +107,8 @@ public:
 	void Add(long lData);
 	void Add(float fData);
 	void Add(double dData);
-	void Add(const CString& strData);
+	//void Add(const CString& strData);
+	void Add(LPCTSTR strData);
 	void Add(LPVOID pData, UINT unLength);
 
 	// The following methods are used to set an element at the specified index
@@ -144,7 +145,8 @@ public:
 	void GetAt(long lIndex, long& lData) const;
 	void GetAt(long lIndex, float& fData) const;
 	void GetAt(long lIndex, double& dData) const;
-	void GetAt(long lIndex, CString& strData) const;
+	//void GetAt(long lIndex, CString& strData) const;
+	void GetAt(long lIndex, LPCTSTR strData) const;
 	void GetAt(long lIndex, LPVOID pData, UINT& unLength) const;
 
 	// Resets the current index. The current index is used by GetNext method.
