@@ -35,7 +35,6 @@
 #include "NDKClientSocket.h"
 #include "NDKMessage.h"
 
-
 ////////////////////////////////////////////////////////////////////////////////
 // Constructor / Destructor                                                   //
 ////////////////////////////////////////////////////////////////////////////////
@@ -94,7 +93,7 @@ BOOL CNDKClient::GetIpAndPort(CString& strIp, long& lPort) const
 // Opens a connection to the server, given its IP address and the port 
 // number. The IP can be a machine name as "ftp.ndk.com", or a dotted number 
 // as "123.456.78.9".
-BOOL CNDKClient::OpenConnection(const CString& strServerIp, long lPort)
+BOOL CNDKClient::OpenConnection(LPCTSTR strServerIp, long lPort)
 {
 	BOOL bResult = FALSE;
 
