@@ -166,7 +166,7 @@ void CNDKMessage::Add(double dData)
 }
 
 
-void CNDKMessage::Add(const CString& strData)
+void CNDKMessage::Add(LPCTSTR strData)
 {
 	m_elements.Add(CNDKMessageData(strData));
 }
@@ -354,10 +354,10 @@ void CNDKMessage::GetAt(long lIndex, double& dData) const
 }
 
 
-void CNDKMessage::GetAt(long lIndex, CString& strData) const
+void CNDKMessage::GetAt(long lIndex, LPCTSTR strData) const
 {
 	if (IsValidGetIndex(lIndex))
-		VERIFY(m_elements.GetAt(lIndex).Get(strData));
+		VERIFY(m_elements.GetAt(lIndex).Get((UCHAR &)strData));
 }
 
 

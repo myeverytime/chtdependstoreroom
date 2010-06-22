@@ -95,8 +95,9 @@ public:
 
 	// Opens a connection to the server, given its IP address and the port 
 	// number. The IP can be a machine name as "ftp.ndk.com", or a dotted number 
-	// as "123.456.78.9".
-	BOOL OpenConnection(const CString& strServerIp, long lPort);
+	// as "123.456.78.9". 
+//	BOOL OpenConnection(const CString& strServerIp, long lPort);
+	BOOL OpenConnection(LPCTSTR strServerIp, long lPort);
 
 	// Closes an established connection with the server and a message is sent to
 	// the server. OnDisconnection callback will be call with the value
