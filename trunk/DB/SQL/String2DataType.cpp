@@ -26,11 +26,13 @@ CString2DataType::~CString2DataType()
 }
 
 // Tokenize a CString
-void CString2DataType::TokenizeString(const CString& strInput, const CString& strDelim, list<CString>& tokenList)
+void CString2DataType::TokenizeString(const LPCTSTR& strInput0, const LPCTSTR& strDelim0, list<CString>& tokenList)
 {
     // Clear the target list.
     tokenList.clear();
 
+	CString strInput = strInput0;
+	CString strDelim = strDelim0;
     // Check for empty input string.
     if ( strInput.IsEmpty() )
         return;
@@ -68,14 +70,15 @@ void CString2DataType::TokenizeString(const CString& strInput, const CString& st
 }
 
 
-int CString2DataType::String2Int(CString str)
+int CString2DataType::String2Int(LPCTSTR str)
 {
 	char *temp=(char*)((LPCTSTR)str);
 	return(atoi(temp));
 }
 
-bool CString2DataType::StringToInteger(const CString& s, int& val)
+bool CString2DataType::StringToInteger(const LPCTSTR& s0, int& val)
 {
+	CString s = s0;
     if ( s.IsEmpty() )
         return false;
 
@@ -84,20 +87,20 @@ bool CString2DataType::StringToInteger(const CString& s, int& val)
     return true;
 }
 
-double CString2DataType::String2Double(CString str)
+double CString2DataType::String2Double(LPCTSTR str)
 {
 	char *temp=(char*)((LPCTSTR)str);
 	return (atof(temp));
 }
 
-CString CString2DataType::Int2CString(int nInt)
+LPCTSTR CString2DataType::Int2CString(int nInt)
 {
 	CString strtemp;
 	strtemp.Format("%d",nInt);
 	return(strtemp);
 }
 
-BOOL CString2DataType::Str2Bool(CString str)
+BOOL CString2DataType::Str2Bool(LPCTSTR str)
 {
 	char *temp=(char*)((LPCTSTR)str);
 	if(atoi(temp))
@@ -106,8 +109,9 @@ BOOL CString2DataType::Str2Bool(CString str)
 		return FALSE;
 }
 
-bool CString2DataType::StringToBool(const CString& s, bool& flag)
+bool CString2DataType::StringToBool(const LPCTSTR& s0, bool& flag)
 {
+	CString s = s0;
     if ( s.IsEmpty() )
         return false;
 
@@ -118,7 +122,7 @@ bool CString2DataType::StringToBool(const CString& s, bool& flag)
 
     return true;
 }
-CString CString2DataType::Char2Binary(unsigned char ucCh)
+LPCTSTR CString2DataType::Char2Binary(unsigned char ucCh)
 {
 	CString str=_T("");
 	unsigned char ucnn=0x80;
@@ -148,8 +152,9 @@ unsigned char CString2DataType::GetBitValue(unsigned char ucCh,unsigned char ucB
 
 
 //限制在0…256，strData最多为2个字符
-unsigned char CString2DataType::Str2HEX(CString strData)
+unsigned char CString2DataType::Str2HEX(LPCTSTR strData0)
 {
+	CString strData = strData0;
 	int t,t1;
 	strData.Replace(" ",""); //不能含空格
 	int rlen=0,len=strData.GetLength();
@@ -201,8 +206,9 @@ int CString2DataType::reduceBCD2Int(unsigned char nchar)
 
 }
 
-bool CString2DataType::StringToItems(const CString& s, std::list<CString>& itemList)
+bool CString2DataType::StringToItems(const LPCTSTR& s0, std::list<CString>& itemList)
 {
+	CString s = s0;
     if ( s.IsEmpty() )
         return false;
 
@@ -211,8 +217,10 @@ bool CString2DataType::StringToItems(const CString& s, std::list<CString>& itemL
    return true;
 }
 
-bool CString2DataType::StringToLocation(const CString& s, const CString& t, CPoint& location)
+bool CString2DataType::StringToLocation(const LPCTSTR& s0, const LPCTSTR& t0, CPoint& location)
 {
+	CString s = s0;
+	CString t = t0;
     if ( s.IsEmpty() || t.IsEmpty() )
         return false;
 
@@ -222,8 +230,10 @@ bool CString2DataType::StringToLocation(const CString& s, const CString& t, CPoi
     return true;
 }
 
-bool CString2DataType::StringToSize(const CString& s, const CString& t, CSize& size)
+bool CString2DataType::StringToSize(const LPCTSTR& s0, const LPCTSTR& t0, CSize& size)
 {
+	CString s = s0;
+	CString t = t0;
     if ( s.IsEmpty() || t.IsEmpty() )
         return false;
 
@@ -233,8 +243,9 @@ bool CString2DataType::StringToSize(const CString& s, const CString& t, CSize& s
     return true;
 }
 
-bool CString2DataType::Splittoint(const CString& s, int& val1,int& val2,int& val3)
+bool CString2DataType::Splittoint(const LPCTSTR& s0, int& val1,int& val2,int& val3)
 {
+	CString s = s0;
    if ( s.IsEmpty() )
         return false;
 
@@ -251,20 +262,27 @@ bool CString2DataType::Splittoint(const CString& s, int& val1,int& val2,int& val
    return true;
 }
 
-bool CString2DataType::SplittoCString(const CString& s, LPCTSTR& val1,LPCTSTR& val2,LPCTSTR& val3)
+bool CString2DataType::SplittoCString(const LPCTSTR& s0, LPCTSTR& val1,LPCTSTR& val2,LPCTSTR& val3)
 {
+	CString s = s0;
    if ( s.IsEmpty() )
         return false;
 
    list<CString> tokenList;
    TokenizeString(s, _T("|"), tokenList);
    list<CString>::iterator theIterator;
-   theIterator = tokenList.begin();
+        theIterator = tokenList.begin();
         val1 = *theIterator;
-   theIterator++;
+   if(tokenList.size()-1 >0)
+   {
+       theIterator++;
         val2 = *theIterator;
-   theIterator++;
+   }
+   if(tokenList.size()-2 >0)
+   {
+        theIterator++;
         val3 = *theIterator;
+   }
 /*
     if ( tokenList.size() > 0 )
     {
