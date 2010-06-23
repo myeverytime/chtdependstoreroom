@@ -18,27 +18,27 @@ using namespace std;
 class AFX_EXT_CLASS CString2DataType  
 {
 public:
-	unsigned char Str2HEX(CString strData);
+	unsigned char Str2HEX(LPCTSTR strData0);
 	unsigned char GetBitValue(unsigned char ucCh,unsigned char ucBitNo);
-	CString Char2Binary(unsigned char ucCh);
-	BOOL Str2Bool(CString str);
-	CString Int2CString(int nInt);
-	int String2Int(CString str);
+	LPCTSTR Char2Binary(unsigned char ucCh);
+	BOOL Str2Bool(LPCTSTR str);
+	LPCTSTR Int2CString(int nInt);
+	int String2Int(LPCTSTR str);
 	int reduceBCD2Int(unsigned char nchar);
-	double String2Double(CString str);
+	double String2Double(LPCTSTR str);
 	CString2DataType();
 	virtual ~CString2DataType();
 
 	CString str1,str2,str3;
 
-    void TokenizeString(const CString& strInput, const CString& strDelim, std::list<CString>& tokenList);
-	bool StringToBool(const CString& s, bool& flag);
-	bool StringToInteger(const CString& s, int& val);
-	bool StringToItems(const CString& s, std::list<CString>& itemList);
-	bool StringToSize(const CString& s, const CString& t, CSize& size);
-	bool StringToLocation(const CString& s, const CString& t, CPoint& location);
-	bool Splittoint(const CString& s, int& val1,int& val2,int& val3);
-    bool SplittoCString(const CString& s, LPCTSTR& val1,LPCTSTR& val2,LPCTSTR& val3);
+    void TokenizeString(const LPCTSTR& strInput0, const LPCTSTR& strDelim0, std::list<CString>& tokenList);
+	bool StringToBool(const LPCTSTR& s0, bool& flag);
+	bool StringToInteger(const LPCTSTR& s0, int& val);
+	bool StringToItems(const LPCTSTR& s0, std::list<CString>& itemList);
+	bool StringToSize(const LPCTSTR& s0, const LPCTSTR& t0, CSize& size);
+	bool StringToLocation(const LPCTSTR& s0, const LPCTSTR& t0, CPoint& location);
+	bool Splittoint(const LPCTSTR& s, int& val1,int& val2,int& val3);
+    bool SplittoCString(const LPCTSTR& s0, LPCTSTR& val1,LPCTSTR& val2,LPCTSTR& val3);
 private:
 	char HexChar(char c);
 
