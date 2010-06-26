@@ -1,0 +1,943 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Draw.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#include ""l.chs\\afxprint.rc""        // printing/print preview resources\r\n"
+    "#include ""l.chs\\afxolecl.rc""        // OLE container resources\r\n"
+    "#include ""l.chs\\afxolesv.rc""        // OLE server resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Draw.ico"
+IDR_DRAWTYPE            ICON    DISCARDABLE     "res\\DrawDoc.ico"
+IDI_ICON1               ICON    DISCARDABLE     "res\\历史.ico"
+IDI_ICON2               ICON    DISCARDABLE     "res\\申请.ico"
+IDI_ICON3               ICON    DISCARDABLE     "res\\审核.ico"
+IDI_ICON4               ICON    DISCARDABLE     "res\\信息.ico"
+IDI_ICON5               ICON    DISCARDABLE     "res\\制作.ico"
+IDI_ICON6               ICON    DISCARDABLE     "res\\注销.ico"
+IDI_ICON7               ICON    DISCARDABLE     "res\\Raclient.ico"
+IDI_ICON8               ICON    DISCARDABLE     "res\\登录.ico"
+IDI_ICON9               ICON    DISCARDABLE     "res\\关于.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDR_DRAWTYPE_SRVR_IP    BITMAP  MOVEABLE PURE   "res\\IToolbar.bmp"
+IDR_TOOLBAR_BOX         BITMAP  DISCARDABLE     "res\\toolbar1.bmp"
+IDR_FORMATTING          BITMAP  DISCARDABLE     "res\\bmp00001.bmp"
+IDR_BORDERS             BITMAP  DISCARDABLE     "res\\bmp00002.bmp"
+IDR_LINE_WIDTH          BITMAP  DISCARDABLE     "res\\line_wid.bmp"
+IDB_TABS                BITMAP  DISCARDABLE     "res\\img_tabs.bmp"
+IDB_HEADER              BITMAP  DISCARDABLE     "res\\img_header.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+    BUTTON      ID_CONTEXT_HELP
+END
+
+IDR_DRAWTYPE_SRVR_IP TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+    BUTTON      ID_CONTEXT_HELP
+END
+
+IDR_TOOLBAR_BOX TOOLBAR DISCARDABLE  16, 16
+BEGIN
+    BUTTON      ID_TOOLBOXARROW
+    BUTTON      ID_TOOLBOXTEXT
+    BUTTON      ID_TOOLBOXLINE
+    BUTTON      ID_TOOLBOX_ARROW
+    BUTTON      ID_TOOLBOX_BEELINE
+    BUTTON      ID_DRAW_CURVE
+    BUTTON      ID_TOOLBOXSOLIDRECT
+    BUTTON      ID_TOOLBOXSOLIDROUNDRECT
+    BUTTON      ID_TOOLBOXSOLIDOVAL
+    BUTTON      ID_TOOLBOXSOLIDPOLYGON
+    BUTTON      ID_TOOLBOX_QIE
+    BUTTON      ID_TOOLBOXCHORD
+    BUTTON      ID_TOOLBOXPIE
+    BUTTON      ID_TOOLBOXRECTANGLE
+    BUTTON      ID_TOOLBOX_ROUNDRECT_NOFILL
+    BUTTON      ID_TOOLBOXOVAL
+    BUTTON      ID_TOOLBOXPOLYGON
+    BUTTON      ID_TOOLBOX_CONDUIT
+    BUTTON      ID_TOOLBOXBUTTON
+    BUTTON      ID_TOOLBOXBITMAP
+    BUTTON      ID_TOOLBOXSUBBITMAP
+    BUTTON      ID_TOOLBOX_GROUP
+    BUTTON      ID_TOOLBOX_DEGROUP
+    BUTTON      ID_TOOLBOXCELL
+    BUTTON      ID_TOOLBOXDECELL
+    BUTTON      ID_TOOLBOXRTCURVE
+    BUTTON      ID_TOOLBOXSTROKE
+    BUTTON      ID_TOOLBOXWARN
+    BUTTON      ID_TOOLBOXREPORT
+    BUTTON      ID_TOOLBOXOVERSEE
+    BUTTON      ID_TOOLBOXXY
+    BUTTON      ID_TOOLBOXTEMPLE
+    BUTTON      ID_VIEW_PAPERCOLOR
+    BUTTON      ID_OBJECT_LINECOLOR
+    BUTTON      ID_OBJECT_FILLCOLOR
+END
+
+IDR_FORMATTING TOOLBAR DISCARDABLE  16, 16
+BEGIN
+    BUTTON      ID_FORMATTING_FONT
+    SEPARATOR
+    BUTTON      ID_FORMATTING_SIZE
+    SEPARATOR
+    BUTTON      ID_FORMATTING_BOLD
+    BUTTON      ID_FORMATTING_ITALIC
+    BUTTON      ID_FORMATTING_UNDERLINE
+    SEPARATOR
+    BUTTON      ID_FORMATTING_COLOR
+    BUTTON      ID_FORMATTING_BACK_COLOR
+    SEPARATOR
+    BUTTON      ID_OBJECT_MOVETOFRONT
+    BUTTON      ID_OBJECT_MOVETOBACK
+    BUTTON      ID_OBJECT_MOVEFORWARD
+    BUTTON      ID_OBJECT_MOVEBACK
+    SEPARATOR
+    BUTTON      ID_ALIGN_LEFT
+    BUTTON      ID_ALIGN_RIGHT
+    BUTTON      ID_ALIGN_TOP
+    BUTTON      ID_ALIGN_BOTTOM
+    BUTTON      ID_ALIGN_LEFTRIGHT
+    BUTTON      ID_ALIGN_TOPBOTTOM
+    BUTTON      ID_ALIGN_CENTER
+    SEPARATOR
+    BUTTON      ID_ROTATE
+    SEPARATOR
+    BUTTON      ID_ALIGN_SAME
+    BUTTON      ID_ALIGN_SAME_LEFTRIGHT
+    BUTTON      ID_ALIGN_SAME_TOPBOTTOM
+END
+
+IDR_BORDERS TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_LINE_WIDTH
+END
+
+IDR_LINE_WIDTH TOOLBAR DISCARDABLE  32, 15
+BEGIN
+    BUTTON      ID_LINE_WIDTH
+    BUTTON      ID_LINE_WIDTH_2
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "打开(&O)...\tCtrl+O",         ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "最近文件",                    ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    ID_APP_EXIT
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "帮助主题(&H)",                ID_HELP_FINDER
+        MENUITEM SEPARATOR
+        MENUITEM "关于 Draw(&A)...",            ID_APP_ABOUT
+    END
+END
+
+IDR_DRAWTYPE MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "打开(&O)...\tCtrl+O",         ID_FILE_OPEN
+        MENUITEM "关闭(&C)",                    ID_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "最近文件",                    ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    ID_APP_EXIT
+    END
+    POPUP "页面编辑"
+    BEGIN
+        MENUITEM "列表增删",                    ID_MANIPULATE
+        MENUITEM "FLAT_TAB_PROP",               ID_FLAT_TAB_PROP
+    END
+    POPUP "模拟图显示"
+    BEGIN
+        MENUITEM "打开",                        ID_OnSimulation
+    END
+    POPUP "实时显示"
+    BEGIN
+        MENUITEM "分类显示",                    ID_OnGenus
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "帮助主题(&H)",                ID_HELP_FINDER
+        MENUITEM SEPARATOR
+        MENUITEM "关于 Draw(&A)...",            ID_APP_ABOUT
+        MENUITEM "ontime",                      ID_demo
+    END
+END
+
+IDR_DRAWTYPE_CNTR_IP MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "新建(&N)\tCtrl+N",            ID_FILE_NEW
+        MENUITEM "打开(&O)...\tCtrl+O",         ID_FILE_OPEN
+        MENUITEM "关闭(&C)",                    ID_FILE_CLOSE
+        MENUITEM "保存(&S)\tCtrl+S",            ID_FILE_SAVE
+        MENUITEM "另存为(&A)...",               ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "打印(&P)...\tCtrl+P",         ID_FILE_PRINT
+        MENUITEM "打印预览(&V)",                ID_FILE_PRINT_PREVIEW
+        MENUITEM "打印设置(&R)...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "传送(&D)...",                 ID_FILE_SEND_MAIL
+        MENUITEM SEPARATOR
+        MENUITEM "最近文件",                    ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    ID_APP_EXIT
+    END
+    MENUITEM SEPARATOR
+    MENUITEM SEPARATOR
+    POPUP "窗口(&W)"
+    BEGIN
+        MENUITEM "新建窗口(&N)",                ID_WINDOW_NEW
+        MENUITEM "层叠(&C)",                    ID_WINDOW_CASCADE
+        MENUITEM "平铺(&T)",                    ID_WINDOW_TILE_HORZ
+        MENUITEM "排列图标(&A)",                ID_WINDOW_ARRANGE
+        MENUITEM "分隔(&P)",                    ID_WINDOW_SPLIT
+    END
+END
+
+IDR_DRAWTYPE_SRVR_EMB MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "新建(&N)\tCtrl+N",            ID_FILE_NEW
+        MENUITEM "打开(&O)...\tCtrl+O",         ID_FILE_OPEN
+        MENUITEM "关闭(&C)",                    ID_FILE_CLOSE
+        MENUITEM "更新(&U)\tCtrl+S",            ID_FILE_UPDATE
+        MENUITEM "保存复本为(&A)...",           ID_FILE_SAVE_COPY_AS
+        MENUITEM SEPARATOR
+        MENUITEM "打印(&P)...\tCtrl+P",         ID_FILE_PRINT
+        MENUITEM "打印预览(&V)",                ID_FILE_PRINT_PREVIEW
+        MENUITEM "打印设置(&R)...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "传送(&D)...",                 ID_FILE_SEND_MAIL
+        MENUITEM SEPARATOR
+        MENUITEM "最近文件",                    ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    ID_APP_EXIT
+    END
+    POPUP "编辑(&E)"
+    BEGIN
+        MENUITEM "撤消(&U)\tCtrl+Z",            ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "剪切(&T)\tCtrl+X",            ID_EDIT_CUT
+        MENUITEM "复制(&C)\tCtrl+C",            ID_EDIT_COPY
+        MENUITEM "粘贴(&P)\tCtrl+V",            ID_EDIT_PASTE
+        MENUITEM "选择性粘贴(&S)...",           ID_EDIT_PASTE_SPECIAL
+        MENUITEM SEPARATOR
+        MENUITEM "插入新对象(&N)...",           ID_OLE_INSERT_NEW
+        MENUITEM "链接(&K)...",                 ID_OLE_EDIT_LINKS
+        MENUITEM "<<用 OLE 谓词替换此处>>",     ID_OLE_VERB_FIRST
+    END
+    POPUP "查看(&V)"
+    BEGIN
+        MENUITEM "工具栏(&T)",                  ID_VIEW_TOOLBAR
+        MENUITEM "状态栏(&S)",                  ID_VIEW_STATUS_BAR
+    END
+    POPUP "窗口(&W)"
+    BEGIN
+        MENUITEM "新建窗口(&N)",                ID_WINDOW_NEW
+        MENUITEM "层叠(&C)",                    ID_WINDOW_CASCADE
+        MENUITEM "平铺(&T)",                    ID_WINDOW_TILE_HORZ
+        MENUITEM "排列图标(&A)",                ID_WINDOW_ARRANGE
+        MENUITEM "分隔(&P)",                    ID_WINDOW_SPLIT
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "帮助主题(&H)",                ID_HELP_FINDER
+        MENUITEM SEPARATOR
+        MENUITEM "关于 Draw(&A)...",            ID_APP_ABOUT
+    END
+END
+
+IDR_DRAWTYPE_SRVR_IP MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "编辑(&E)"
+    BEGIN
+        MENUITEM "撤消(&U)\tCtrl+Z",            ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "剪切(&T)\tCtrl+X",            ID_EDIT_CUT
+        MENUITEM "复制(&C)\tCtrl+C",            ID_EDIT_COPY
+        MENUITEM "粘贴(&P)\tCtrl+V",            ID_EDIT_PASTE
+        MENUITEM "选择性粘贴(&S)...",           ID_EDIT_PASTE_SPECIAL
+        MENUITEM SEPARATOR
+        MENUITEM "插入新对象(&N)...",           ID_OLE_INSERT_NEW
+        MENUITEM "链接(&K)...",                 ID_OLE_EDIT_LINKS
+        MENUITEM "<<用 OLE 谓词替换此处>>",     ID_OLE_VERB_FIRST
+    END
+    POPUP "查看(&V)"
+    BEGIN
+        MENUITEM "工具栏(&T)",                  ID_VIEW_TOOLBAR
+    END
+    MENUITEM SEPARATOR
+    MENUITEM SEPARATOR
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "帮助主题(&H)",                ID_HELP_FINDER
+        MENUITEM SEPARATOR
+        MENUITEM "关于 Draw(&A)...",            ID_APP_ABOUT
+    END
+END
+
+ID_POPUP_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "_pop_up"
+    BEGIN
+        MENUITEM "剪切(&C)\tCtrl+X",            ID_EDIT_CUT
+        MENUITEM "复制(&C)\tCtrl+C",            ID_EDIT_COPY
+        MENUITEM "粘贴(&P)\tCtrl+V",            ID_EDIT_PASTE
+        MENUITEM "全选(&A)\tCtrl+A",            ID_EDIT_SELECT_ALL
+        MENUITEM "删除(&D)\tDel",               ID_EDIT_CLEAR
+        MENUITEM SEPARATOR
+        MENUITEM "另存为子图",                  ID_UNIT_SAVE
+        MENUITEM SEPARATOR
+        MENUITEM "对象",                        ID_OLE_VERB_FIRST
+    END
+END
+
+IDR_TREE_POPUP MENU DISCARDABLE 
+BEGIN
+    POPUP "_POP_UP"
+    BEGIN
+        MENUITEM "激活(&A)",                    ID_PUPOP_ACTIVE
+        MENUITEM "最小化窗口(&M)",              ID_POPUP_MIN
+        MENUITEM SEPARATOR
+        MENUITEM "文档属性(&P)",                ID_POPUP_PROPERTY
+        MENUITEM SEPARATOR
+        MENUITEM "关闭(&C)",                    ID_POPUP_CLOSE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "+",            ID_OBJECT_MOVETOFRONT,  ASCII,  NOINVERT
+    "-",            ID_OBJECT_MOVEBACK,     ASCII,  NOINVERT
+    "=",            ID_OBJECT_MOVEFORWARD,  ASCII,  NOINVERT
+    "_",            ID_OBJECT_MOVETOBACK,   ASCII,  NOINVERT
+    "A",            ID_EDIT_SELECT_ALL,     VIRTKEY, CONTROL, NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "E",            ID_TOOLBOXSOLIDOVAL,    ASCII,  NOINVERT
+    "e",            ID_TOOLBOXSOLIDOVAL,    ASCII,  NOINVERT
+    "G",            ID_VIEW_GRID,           ASCII,  NOINVERT
+    "g",            ID_VIEW_GRID,           ASCII,  NOINVERT
+    "L",            ID_TOOLBOXLINE,         ASCII,  NOINVERT
+    "l",            ID_TOOLBOXLINE,         ASCII,  NOINVERT
+    "N",            ID_TOOLBOXSOLIDROUNDRECT, ASCII, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "n",            ID_TOOLBOXSOLIDROUNDRECT, ASCII, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "R",            ID_TOOLBOXSOLIDRECT,    ASCII,  NOINVERT
+    "r",            ID_TOOLBOXSOLIDRECT,    ASCII,  NOINVERT
+    "S",            ID_TOOLBOXARROW,        ASCII,  NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "s",            ID_TOOLBOXARROW,        ASCII,  NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_ADD,         ID_OBJECT_MOVEFORWARD,  VIRTKEY, NOINVERT
+    VK_ADD,         ID_OBJECT_MOVETOFRONT,  VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CLEAR,          VIRTKEY, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    VK_SUBTRACT,    ID_OBJECT_MOVEBACK,     VIRTKEY, NOINVERT
+    VK_SUBTRACT,    ID_OBJECT_MOVETOBACK,   VIRTKEY, CONTROL, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+IDR_DRAWTYPE_CNTR_IP ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+    VK_F1,          ID_CONTEXT_HELP,        VIRTKEY, SHIFT
+    VK_F1,          ID_HELP,                VIRTKEY 
+    VK_ESCAPE,      ID_CANCEL_EDIT_CNTR,    VIRTKEY, NOINVERT
+END
+
+IDR_DRAWTYPE_SRVR_IP ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F1,          ID_CONTEXT_HELP,        VIRTKEY, SHIFT
+    VK_F1,          ID_HELP,                VIRTKEY 
+    VK_ESCAPE,      ID_CANCEL_EDIT_SRVR,    VIRTKEY, NOINVERT
+END
+
+IDR_DRAWTYPE_SRVR_EMB ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_UPDATE,         VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+    VK_F1,          ID_CONTEXT_HELP,        VIRTKEY, SHIFT
+    VK_F1,          ID_HELP,                VIRTKEY 
+    VK_ESCAPE,      ID_CANCEL_EDIT_CNTR,    VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 YRun"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,21,21
+    LTEXT           "YRun 1.0 版（AQ6201）",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2010",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_DIALOG_HOST_SETTING DIALOG DISCARDABLE  0, 0, 187, 93
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置主机信息"
+FONT 9, "新宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定(&O)",IDOK,60,72,50,14
+    PUSHBUTTON      "取消(&C)",IDCANCEL,123,72,50,14
+    LTEXT           "主机IP地址：",IDC_STATIC,7,14,53,8
+    EDITTEXT        IDC_EDIT_HOST_IP,60,7,113,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PORT,60,27,113,15,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "主机端口号：",IDC_STATIC,7,34,53,8
+    EDITTEXT        IDC_EDIT_TIMEOUT,60,47,113,15,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "超时时间：",IDC_STATIC,7,54,47,8
+END
+
+IDD_DIALOG_SET_TIMER DIALOG DISCARDABLE  0, 0, 204, 82
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定(&O)",IDOK,59,60,50,14
+    PUSHBUTTON      "取消(&C)",IDCANCEL,118,60,50,14
+    GROUPBOX        "窗口交替显示的时间(单位：秒)",IDC_STATIC,7,7,190,67
+    LTEXT           "时间：",IDC_STATIC,16,38,25,8
+    EDITTEXT        IDC_EDIT_SECOND,59,32,109,14,ES_AUTOHSCROLL | ES_NUMBER
+END
+
+IDD_DIALOGBAR DIALOG DISCARDABLE  0, 0, 509, 85
+STYLE WS_CHILD | WS_BORDER
+FONT 9, "宋体"
+BEGIN
+    LISTBOX         IDC_LIST_INFO,4,12,48,21,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    LISTBOX         IDC_LIST_HISTORY,4,12,19,56,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    CONTROL         "Tab3",IDC_TAB_INFO,"SysTabControl32",TCS_RAGGEDRIGHT,5,
+                    0,484,72
+    CONTROL         "List2",IDC_LIST2,"SysListView32",NOT WS_VISIBLE | 
+                    WS_BORDER | WS_TABSTOP,36,28,60,50
+    CONTROL         "List3",IDC_LIST3,"SysListView32",NOT WS_VISIBLE | 
+                    WS_BORDER | WS_TABSTOP,124,28,60,50
+END
+
+IDD_FORMVIEW DIALOG DISCARDABLE  0, 0, 188, 94
+STYLE WS_CHILD | WS_BORDER
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "List1",IDC_LIST_POINT1,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,0,0,60,50
+    CONTROL         "List1",IDC_LIST_POINT2,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,50,17,60,50
+    CONTROL         "List1",IDC_LIST_POINT3,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,112,27,60,50
+END
+
+IDD_FLATTAB_PROP DIALOG DISCARDABLE  0, 0, 274, 196
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "FlatTabCtrl"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,175,135,38,10
+    CONTROL         "FTS_XT_HASARROWS",IDC_FTS_XT_HASARROWS,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_GROUP | WS_TABSTOP,
+                    19,14,71,8
+    CONTROL         "FTS_XT_HASHOMEEND",IDC_FTS_XT_HASHOMEEND,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,19,23,74,8
+    CONTROL         "FTS_XT_HSCROLL",IDC_FTS_XT_HSCROLL,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,110,15,60,
+                    8
+    CONTROL         "FTS_XT_BOTTOM",IDC_FTS_XT_BOTTOM,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,110,24,58,
+                    8
+    PUSHBUTTON      "&Manipulate Tabs",IDC_MANIPULATE,19,35,61,10,NOT 
+                    WS_VISIBLE
+    LTEXT           "Tab Number:",IDC_STATIC,13,67,42,8
+    EDITTEXT        IDC_TAB_NUM,59,64,40,13,ES_AUTOHSCROLL
+    LTEXT           "New Text:",IDC_STATIC,107,67,34,8
+    EDITTEXT        IDC_TEXT,155,64,104,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Delete Tab At Specified Position",IDC_DELETE_TAB,13,81,
+                    131,13
+    PUSHBUTTON      "&Modify Tab At Specified Position",IDC_MODIFY_TAB,13,99,
+                    131,13
+    PUSHBUTTON      "&Add New Tab At Specified Position",IDC_ADD_TAB,13,116,
+                    131,13
+    PUSHBUTTON      "Delete &All Tabs",IDC_DELETE_ALL,13,133,131,13
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x9L
+#else
+ FILEFLAGS 0x8L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "1.0\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "Bodhi RockSoft RSDRAW-YRun  Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "Bodhi RockSoft RSDRAW-YRun\0"
+            VALUE "LegalCopyright", "Bodhi  版权所有 (C) 2010\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Bodhi RockSoft RSDRAW-YRun.EXE\0"
+            VALUE "PrivateBuild", "13501325918\0"
+            VALUE "ProductName", "Bodhi RockSoft RSDRAW-YRun  应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_DIALOG_HOST_SETTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        VERTGUIDE, 60
+        VERTGUIDE, 173
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 86
+        HORZGUIDE, 22
+        HORZGUIDE, 27
+        HORZGUIDE, 42
+        HORZGUIDE, 47
+        HORZGUIDE, 62
+    END
+
+    IDD_DIALOG_SET_TIMER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 197
+        VERTGUIDE, 16
+        VERTGUIDE, 59
+        VERTGUIDE, 168
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 74
+        HORZGUIDE, 32
+        HORZGUIDE, 46
+    END
+
+    IDD_DIALOGBAR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 502
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 78
+    END
+
+    IDD_FORMVIEW, DIALOG
+    BEGIN
+        RIGHTMARGIN, 181
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_FLATTAB_PROP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 267
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 189
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_PENCIL              CURSOR  DISCARDABLE     "res\\cursor1.cur"
+IDC_ZOOMCURSOR1         CURSOR  DISCARDABLE     "res\\cur00001.cur"
+IDC_ZOOMCURSOR          CURSOR  DISCARDABLE     "res\\cur00002.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE 程序初始化失败。请确认 OLE 库程序是正确的版本。"
+    IDP_FAILED_TO_CREATE    "建立对象失败。请确认该对象已被注册入系统。"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "运行系统"
+    IDR_DRAWTYPE            "\nRSDraw\nRSDraw\nRSDraw 文件 (*.rsy)\n.rsy\nRsy.Object\nRsy Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "YRunDemo"
+    AFX_IDS_IDLEMESSAGE     "如需帮助，请按F1键"
+    AFX_IDS_HELPMODEMESSAGE "选定一个要得到帮助的对象"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "扩展名"
+    ID_INDICATOR_CAPS       "大写"
+    ID_INDICATOR_NUM        "数字"
+    ID_INDICATOR_SCRL       "滚动"
+    ID_INDICATOR_OVR        "改写"
+    ID_INDICATOR_REC        "记录"
+    ID_MOUSPOINT            "屏幕坐标"
+    ID_MOUSCAPTION          "逻辑坐标"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "建立新文档\n新建"
+    ID_FILE_OPEN            "打开一个现有文档\n打开"
+    ID_FILE_CLOSE           "关闭活动文档\n关闭"
+    ID_FILE_SAVE            "保存活动文档\n保存"
+    ID_FILE_SAVE_AS         "将活动文档以一个新文件名保存\n另存为"
+    ID_FILE_PAGE_SETUP      "改变打印选项\n页面设置"
+    ID_FILE_PRINT_SETUP     "改变打印机及打印选项\n打印设置"
+    ID_FILE_PRINT           "打印活动文档\n打印"
+    ID_FILE_PRINT_PREVIEW   "显示整页\n打印预览"
+    ID_FILE_UPDATE          "更新集装程序以显示任何改变\n更新"
+    ID_FILE_SAVE_COPY_AS    "将活动文档的复本以一个新文件名保存\n保存复本"
+    ID_FILE_SEND_MAIL       "通过电子邮件传送活动文档\n传送邮件"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "显示程序信息，版本号和版权\n关于"
+    ID_APP_EXIT             "退出应用程序；提示保存文档\n退出"
+    ID_HELP_INDEX           "打开帮助\n帮助主题"
+    ID_HELP_FINDER          "列出帮助主题\n帮助主题"
+    ID_HELP_USING           "显示关于如何使用帮助的指令\n帮助"
+    ID_CONTEXT_HELP         "显示对按钮、菜单和窗口执行单击操作的帮助\n帮助"
+    ID_HELP                 "显示对当前任务或命令的帮助\n帮助"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "打开该文档"
+    ID_FILE_MRU_FILE2       "打开该文档"
+    ID_FILE_MRU_FILE3       "打开该文档"
+    ID_FILE_MRU_FILE4       "打开该文档"
+    ID_FILE_MRU_FILE5       "打开该文档"
+    ID_FILE_MRU_FILE6       "打开该文档"
+    ID_FILE_MRU_FILE7       "打开该文档"
+    ID_FILE_MRU_FILE8       "打开该文档"
+    ID_FILE_MRU_FILE9       "打开该文档"
+    ID_FILE_MRU_FILE10      "打开该文档"
+    ID_FILE_MRU_FILE11      "打开该文档"
+    ID_FILE_MRU_FILE12      "打开该文档"
+    ID_FILE_MRU_FILE13      "打开该文档"
+    ID_FILE_MRU_FILE14      "打开该文档"
+    ID_FILE_MRU_FILE15      "打开该文档"
+    IDC_BAR_TASKLIST        "Show or hide the task list bar\nToggle Task List Bar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "切换到下一个窗格\n下一窗格"
+    ID_PREV_PANE            "切换回前一个窗格\n前一窗格"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_NEW           "为活动文档打开另一个窗口\n新建窗口"
+    ID_WINDOW_ARRANGE       "将图标排列在窗口底部\n排列图标"
+    ID_WINDOW_CASCADE       "排列窗口成相互重叠\n层叠窗口"
+    ID_WINDOW_TILE_HORZ     "排列窗口成互不重叠\n平铺窗口"
+    ID_WINDOW_TILE_VERT     "排列窗口成互不重叠\n平铺窗口"
+    ID_WINDOW_SPLIT         "将活动的窗口分隔成窗格\n分隔"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "删除被选对象\n删除"
+    ID_EDIT_CLEAR_ALL       "全部删除\n全部删除"
+    ID_EDIT_COPY            "复制被选对象并将其置于剪贴板上\n复制"
+    ID_EDIT_CUT             "剪切被选对象并将其置于剪贴板上\n剪切"
+    ID_EDIT_FIND            "查找指定的正文\n查找"
+    ID_EDIT_PASTE           "插入剪贴板内容\n粘贴"
+    ID_EDIT_PASTE_LINK      "插入剪贴板内容和一条通向其来源的链接\n粘贴链接"
+    ID_EDIT_PASTE_SPECIAL   "用选项插入剪贴板内容\n选择性粘贴"
+    ID_EDIT_REPEAT          "重复上一步操作\n重复"
+    ID_EDIT_REPLACE         "用不同的正文替换指定的正文\n替换"
+    ID_EDIT_SELECT_ALL      "选择整个文档\n选择全部"
+    ID_EDIT_UNDO            "撤消最后一步操作\n撤消"
+    ID_EDIT_REDO            "重新执行先前已撤消的操作\n重新执行"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "显示或隐藏工具栏\n显隐工具栏"
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n显隐状态栏"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_OLE_INSERT_NEW       "插入新嵌入的对象\n新对象"
+    ID_OLE_EDIT_LINKS       "编辑链接对象\n编辑链接"
+    ID_OLE_EDIT_CONVERT     "将对象转换成不同的类型\n转换对象"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_OLE_VERB_FIRST       "激活嵌入或链接的对象"
+    57873                   "激活嵌入或链接的对象"
+    57874                   "激活嵌入或链接的对象"
+    57875                   "激活嵌入或链接的对象"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "改变窗口大小"
+    AFX_IDS_SCMOVE          "改变窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小成图标"
+    AFX_IDS_SCMAXIMIZE      "把窗口放大到最大尺寸"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到先前的文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动的窗口并提示保存所有文档"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "把窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务表"
+    AFX_IDS_MDICHILD        "激活该窗口"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "关闭打印预览模式\n取消预阅"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_ALIGN_LEFT           "左对齐\n左对齐"
+    ID_ALIGN_RIGHT          "右对齐\n右对齐"
+    ID_ALIGN_TOP            "向上对齐\n向上对齐"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_ALIGN_BOTTOM         "向下对齐\n向下对齐"
+    ID_ALIGN_LEFTRIGHT      "左右中心对齐\n左右中心对齐"
+    ID_ALIGN_TOPBOTTOM      "上下中心对齐\n上下中心对齐"
+    ID_ALIGN_CENTER         "中心对齐\n中心对齐"
+    ID_ALIGN_HORZ           "水平均匀分布\n水平均匀分布"
+    ID_ALIGN_VERT           "垂直均匀分布\n垂直均匀分布"
+    ID_ROTATE               "旋转\n旋转"
+    ID_ALIGN_SAME           "尺寸对齐\n尺寸对齐"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_TIME_VIEW            "为0时，停止交替显示"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\Draw.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#include "l.chs\afxprint.rc"        // printing/print preview resources
+#include "l.chs\afxolecl.rc"        // OLE container resources
+#include "l.chs\afxolesv.rc"        // OLE server resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

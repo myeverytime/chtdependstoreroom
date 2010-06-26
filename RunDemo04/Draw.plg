@@ -1,0 +1,183 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Draw - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Release/Draw.res" /d "NDEBUG" "E:\ygjl\sxyg\RunDemo04\Draw.rc"" 
+Creating temporary file "D:\DOCUME~1\cht\LOCALS~1\Temp\RSP67.tmp" with contents
+[
+/nologo /MT /W3 /GX /Zi /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Release/" /Fp"Release/Draw.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\ygjl\sxyg\RunDemo04\DrawButton.cpp"
+"E:\ygjl\sxyg\RunDemo04\DrawCar.cpp"
+"E:\ygjl\sxyg\RunDemo04\DrawChart.cpp"
+"E:\ygjl\sxyg\RunDemo04\DrawConduit.cpp"
+"E:\ygjl\sxyg\RunDemo04\DrawObj.cpp"
+"E:\ygjl\sxyg\RunDemo04\DrawPoly.cpp"
+"E:\ygjl\sxyg\RunDemo04\DrawRect.cpp"
+"E:\ygjl\sxyg\RunDemo04\DrawRotary.cpp"
+"E:\ygjl\sxyg\RunDemo04\DrawWarn.cpp"
+"E:\ygjl\sxyg\RunDemo04\ChildFrm.cpp"
+"E:\ygjl\sxyg\RunDemo04\Draw.cpp"
+"E:\ygjl\sxyg\RunDemo04\DrawDoc.cpp"
+"E:\ygjl\sxyg\RunDemo04\DrawView.cpp"
+"E:\ygjl\sxyg\RunDemo04\FlatTabPropDlg.cpp"
+"E:\ygjl\sxyg\RunDemo04\FlatTabViewDoc.cpp"
+"E:\ygjl\sxyg\RunDemo04\FlatTabViewView.cpp"
+"E:\ygjl\sxyg\RunDemo04\IniFile.cpp"
+"E:\ygjl\sxyg\RunDemo04\MainFrm.cpp"
+"E:\ygjl\sxyg\RunDemo04\MQClient.cpp"
+"E:\ygjl\sxyg\RunDemo04\ResourceViewPane.cpp"
+"E:\ygjl\sxyg\RunDemo04\SampleFormView.cpp"
+"E:\ygjl\sxyg\RunDemo04\SetTimeDlg.cpp"
+"E:\ygjl\sxyg\RunDemo04\SettingHostDlg.cpp"
+"E:\ygjl\sxyg\RunDemo04\SrvrItem.cpp"
+"E:\ygjl\sxyg\RunDemo04\TabbedViewView.cpp"
+"E:\ygjl\sxyg\RunDemo04\RealTime\Graphics.cpp"
+"E:\ygjl\sxyg\RunDemo04\RealTime\random.cpp"
+"E:\ygjl\sxyg\RunDemo04\RealTime\RealTime.cpp"
+"E:\ygjl\sxyg\RunDemo04\RealTime\RTSlider.cpp"
+"E:\ygjl\sxyg\RunDemo04\RealTime\Str.cpp"
+]
+Creating command line "cl.exe @D:\DOCUME~1\cht\LOCALS~1\Temp\RSP67.tmp" 
+Creating temporary file "D:\DOCUME~1\cht\LOCALS~1\Temp\RSP68.tmp" with contents
+[
+/nologo /MT /W3 /GX /Zi /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Release/" /Fp"Release/Draw.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\ygjl\sxyg\RunDemo04\StdAfx.cpp"
+]
+Creating command line "cl.exe @D:\DOCUME~1\cht\LOCALS~1\Temp\RSP68.tmp" 
+Creating temporary file "D:\DOCUME~1\cht\LOCALS~1\Temp\RSP69.tmp" with contents
+[
+/nologo /MT /W3 /GX /Zi /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Release/" /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\ygjl\sxyg\RunDemo04\dbAx\CppSQLite3.cpp"
+]
+Creating command line "cl.exe @D:\DOCUME~1\cht\LOCALS~1\Temp\RSP69.tmp" 
+Creating temporary file "D:\DOCUME~1\cht\LOCALS~1\Temp\RSP6A.tmp" with contents
+[
+winmm.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/YRun.pdb" /debug /machine:I386 /out:"Dll\YRun.exe" 
+.\Release\DrawButton.obj
+.\Release\DrawCar.obj
+.\Release\DrawChart.obj
+.\Release\DrawConduit.obj
+.\Release\DrawObj.obj
+.\Release\DrawPoly.obj
+.\Release\DrawRect.obj
+.\Release\DrawRotary.obj
+.\Release\DrawWarn.obj
+.\Release\ChildFrm.obj
+.\Release\Draw.obj
+.\Release\DrawDoc.obj
+.\Release\DrawView.obj
+.\Release\FlatTabPropDlg.obj
+.\Release\FlatTabViewDoc.obj
+.\Release\FlatTabViewView.obj
+.\Release\IniFile.obj
+.\Release\MainFrm.obj
+.\Release\MQClient.obj
+.\Release\ResourceViewPane.obj
+.\Release\SampleFormView.obj
+.\Release\SetTimeDlg.obj
+.\Release\SettingHostDlg.obj
+.\Release\SrvrItem.obj
+.\Release\StdAfx.obj
+.\Release\TabbedViewView.obj
+.\Release\Graphics.obj
+.\Release\random.obj
+.\Release\RealTime.obj
+.\Release\RTSlider.obj
+.\Release\Str.obj
+.\Release\CppSQLite3.obj
+.\Release\Draw.res
+]
+Creating command line "link.exe @D:\DOCUME~1\cht\LOCALS~1\Temp\RSP6A.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Automatically linking with ToolkitPro1321vc60S.lib
+Automatically linking with winmm.lib
+Compiling...
+DrawButton.cpp
+DrawCar.cpp
+DrawChart.cpp
+DrawConduit.cpp
+DrawObj.cpp
+DrawPoly.cpp
+DrawRect.cpp
+DrawRotary.cpp
+DrawWarn.cpp
+ChildFrm.cpp
+Draw.cpp
+DrawDoc.cpp
+DrawView.cpp
+FlatTabPropDlg.cpp
+FlatTabViewDoc.cpp
+FlatTabViewView.cpp
+IniFile.cpp
+MainFrm.cpp
+MQClient.cpp
+ResourceViewPane.cpp
+Generating Code...
+Compiling...
+SampleFormView.cpp
+SetTimeDlg.cpp
+SettingHostDlg.cpp
+SrvrItem.cpp
+TabbedViewView.cpp
+Graphics.cpp
+random.cpp
+RealTime.cpp
+RTSlider.cpp
+Str.cpp
+Generating Code...
+Compiling...
+CppSQLite3.cpp
+Linking...
+Creating temporary file "D:\DOCUME~1\cht\LOCALS~1\Temp\RSP6C.tmp" with contents
+[
+/nologo /o"Release/Draw.bsc" 
+.\Release\StdAfx.sbr
+.\Release\DrawButton.sbr
+.\Release\DrawCar.sbr
+.\Release\DrawChart.sbr
+.\Release\DrawConduit.sbr
+.\Release\DrawObj.sbr
+.\Release\DrawPoly.sbr
+.\Release\DrawRect.sbr
+.\Release\DrawRotary.sbr
+.\Release\DrawWarn.sbr
+.\Release\ChildFrm.sbr
+.\Release\Draw.sbr
+.\Release\DrawDoc.sbr
+.\Release\DrawView.sbr
+.\Release\FlatTabPropDlg.sbr
+.\Release\FlatTabViewDoc.sbr
+.\Release\FlatTabViewView.sbr
+.\Release\IniFile.sbr
+.\Release\MainFrm.sbr
+.\Release\MQClient.sbr
+.\Release\ResourceViewPane.sbr
+.\Release\SampleFormView.sbr
+.\Release\SetTimeDlg.sbr
+.\Release\SettingHostDlg.sbr
+.\Release\SrvrItem.sbr
+.\Release\TabbedViewView.sbr
+.\Release\Graphics.sbr
+.\Release\random.sbr
+.\Release\RealTime.sbr
+.\Release\RTSlider.sbr
+.\Release\Str.sbr
+.\Release\CppSQLite3.sbr]
+Creating command line "bscmake.exe @D:\DOCUME~1\cht\LOCALS~1\Temp\RSP6C.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+YRun.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
