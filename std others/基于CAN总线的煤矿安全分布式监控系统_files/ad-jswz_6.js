@@ -1,0 +1,1 @@
+document.write('<P><A href="http://www.51kaifa.com/shop/read.php?ID=4846"><IMG src="/upload/eWebUpload/200901/20090122004650570.gif" border=0></A></P>');

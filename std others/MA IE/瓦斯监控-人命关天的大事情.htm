@@ -1,0 +1,975 @@
+<html><head><!--STATUS OK-->
+<meta http-equiv="content-type" content="text/html; charset=GB2312"><title>瓦斯监控-人命关天的大事情_人生如戏、戏如人生      </title>
+<style type="text/css">
+.error{color:#FF0000;font-size:12px}
+
+
+	
+
+
+</style>
+<script type="text/javascript" src="%E7%93%A6%E6%96%AF%E7%9B%91%E6%8E%A7-%E4%BA%BA%E5%91%BD%E5%85%B3%E5%A4%A9%E7%9A%84%E5%A4%A7%E4%BA%8B%E6%83%85_files/global.js"></script>
+<script language="javascript" src="%E7%93%A6%E6%96%AF%E7%9B%91%E6%8E%A7-%E4%BA%BA%E5%91%BD%E5%85%B3%E5%A4%A9%E7%9A%84%E5%A4%A7%E4%BA%8B%E6%83%85_files/popup.js"></script>
+<script type="text/javascript" src="%E7%93%A6%E6%96%AF%E7%9B%91%E6%8E%A7-%E4%BA%BA%E5%91%BD%E5%85%B3%E5%A4%A9%E7%9A%84%E5%A4%A7%E4%BA%8B%E6%83%85_files/BdEditor-mined.js"></script>
+<script language="JavaScript" src="%E7%93%A6%E6%96%AF%E7%9B%91%E6%8E%A7-%E4%BA%BA%E5%91%BD%E5%85%B3%E5%A4%A9%E7%9A%84%E5%A4%A7%E4%BA%8B%E6%83%85_files/g_spjs.js"></script>
+<script language="javascript">
+<!--
+
+var allkey="";
+var i=0;
+var flag=0;
+function setpv(allnum)
+{
+	var num = allnum.split('_');
+	document.getElementById("result").innerHTML=num[0];
+}
+
+function checkMail(s)
+{
+  	var pattern=/\w+@\w+\.[a-z]+/;
+  	if(pattern.test(s))
+    {
+       return true;
+    }
+  	else
+   {
+      return false;
+   }
+}
+
+
+function checkeandu(eanduid)
+{
+	var eanduvalue=G(eanduid).value;
+	var len=bytes(eanduvalue);
+	if(len>128)
+	{
+		showErr(2,"您输入的网址或邮箱太长，请保持在128字节以内。");
+		return false;
+	}
+	else
+	{
+		 return true;
+	}
+
+}
+
+function cmtdel(str)
+{
+	var pop=new Popup({ contentType:3,isReloadOnClose:false,width:340,height:80});
+	pop.setContent("title","删除评论");
+	pop.setContent("confirmCon","您确定要彻底删除这条评论吗？");
+	pop.setContent("callBack",delCallback2);
+	pop.setContent("parameter",{fid:str,popup:pop});
+	pop.build();
+	pop.show();
+	return false;
+}
+function delCallback2(para)
+{
+	var o_pop=para["popup"];
+	o_pop.config.contentType=1;
+	o_pop.setContent("contentUrl","");
+	o_pop.reBuild();
+	G(para["fid"]).target=o_pop.iframeIdName;
+	eval("document."+para["fid"]).submit();
+}
+
+String.prototype.byteLength = function() {
+    return this.replace(/[^\u0000-\u007f]/g,"\u0061\u0061").length;
+}
+
+function checkname(strid)
+{
+	var ele=document.getElementById(strid);
+	var len=bytes(ele.value);
+	if(len>49)
+	{
+		showErr(1,"您输入的姓名太长，请保持在49字节以内。");
+		return false;
+	}
+	else
+	{
+		if(len==0)
+		{
+			document.getElementById(strid).value="匿名网友";
+		}
+		 return true;
+	}
+
+}
+
+function checktext(textid)
+{
+        var tempStr='';
+        var isLightFont=false;
+		if(editor&&textid=="spBlogCmtText"){
+			//document.getElementById("spBlogCmtText").value=editor.getHtml();
+			tempStr=editor.getHtml();
+			tempStr=tempStr.replace(/<span style="filter:glow\(color=#([0-9a-z]{3,6}),strength=2\);height:0px;color:#([0-9a-z]{3,6})">/ig,'');
+			tempStr=tempStr.replace(/<\/span>/ig,'');
+			document.getElementById("spBlogCmtText").value=tempStr;
+            isLightFont=!(tempStr==editor.getHtml());
+        }
+		document.getElementById(textid).value=trimlr(textid);
+		var str=trimrn(textid);
+		len=str.length;
+		if(len==0 || ((/^[\s,　]+$/gi).test(str)) )
+		{
+			showErr(3,"您必须输入评论内容，请检查。");
+			return false;
+		}
+		else
+        {
+                len=str.byteLength();
+                var maxLength=isLightFont?916:1000;
+				if(len > maxLength)
+				{
+					showErr(3,"您输入的评论内容太长，请保持在500字以内。");
+					return false;
+				}
+				if(editor&&textid=="spBlogCmtText"){
+					document.getElementById("spBlogCmtText").value=editor.getHtml();
+					document.getElementById(textid).value=trimlr(textid);
+				}
+
+			return true;
+		}
+}
+
+function showErr(index,str)
+{
+	G(index+"_err").style.display="";
+	G(index+"_err_con").innerHTML=str;
+}
+function hidErr(index)
+{
+	G(index+"_err").style.display="none";
+	G(index+"_err_con").innerHTML="";
+}
+
+function alertPop(tit,con)
+{
+	var pop=new Popup({ contentType:4,isReloadOnClose:false,width:340,height:80});
+	pop.setContent("title",tit);
+	pop.setContent("alertCon",con);
+	pop.build();
+	pop.show();
+}
+
+function cmtfull()
+{
+	var cnum=0;
+	if(cnum>=50000)
+	{
+		alertPop("发表评论","单篇日志评论数最多为50000条.");
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+function checkcmtform()
+{
+	if(checkname("spBlogCmtor")&&checkeandu("spBlogCmtURL")&&checktext("spBlogCmtText")&&cmtfull())
+	{
+		submitForm();
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+var g_pop=null;
+function submitForm()
+{
+	g_pop=new Popup({ contentType:1,isReloadOnClose:false,width:340,height:80});
+	g_pop.setContent("title","添加评论");
+	g_pop.setContent("contentUrl","");
+	g_pop.setContent("someDisabledBtn","btn_ok");
+	g_pop.build();
+	G("popFormSubmit").target=g_pop.iframeIdName;
+	g_pop.show();
+}
+
+function g_close_pop()
+{
+	g_pop.close();
+}
+
+function formatonlinpic()
+{
+var picobj=document.getElementsByName("onlinepic");
+var picnum=picobj.length;
+
+	for(var i=0;i<picnum;i++)
+	{
+		if(picobj[i].width>200)
+		{
+			picobj[i].width=200;
+		}
+		if(picobj[i].height>200)
+		{
+			picobj[i].height=200;
+		}
+	}
+    try{document.getElementById("btn_ok").disabled = "";}catch(e){}
+}
+
+function addToFavor(){
+var blogTitle='瓦斯监控-人命关天的大事情'.replace(/&#39;/g,'\'');
+window.open('http://cang.baidu.com/do/add?it='+encodeURIComponent(blogTitle+'_百度空间')+'&iu='+encodeURIComponent(location.href)+'&fr=sp#nw=1','_s','scrollbars=no,width=600,height=450,right=75,top=20,status=no,resizable=yes');
+return false;
+}
+
+var isIE = /*@cc_on!@*/false;
+function tracker(did,a){
+	return function(){
+		var t=new Date().getTime();
+		var href=a.href;
+        if(isIE){
+            var r = /href\s*=\s*("|')?([^\s]*)\1/gi;
+            if(r.test(a.outerHTML))
+                href = RegExp.$2;
+        }
+        new Image().src = "http://hi.baidu.com/sys/statlog/1.gif?m=" + did + "&v=" + encodeURIComponent(href) + "&c=" + encodeURIComponent(location.href) + "&t="+t;
+	}
+}
+
+function tracker_init(did){
+	var _s=document.getElementById(did);
+	var as = _s.getElementsByTagName('A');
+	for(var i = 0, j = as.length; i < j; i ++){
+		var a = as[i];
+		if(isIE){
+			a.attachEvent("onclick", tracker(did,a));
+		}else{
+			a.addEventListener("click", tracker(did,a), false);
+		}
+	}
+}
+
+
+/* some functions for cmt-reply */
+		function cmtreply(cmtName,cmtPorID)
+		{
+			window.location.hash="#send";
+			var cmtForm=document.form1;
+			cmtForm.cm.value="3";
+			if(!cmtForm.spReferTarget)
+			{
+				var ipt=document.createElement("input");
+				ipt.type="hidden";
+				ipt.name="spReferTarget";
+				ipt.value=cmtPorID;
+				cmtForm.appendChild(ipt);
+			}else cmtForm.spReferTarget.value=cmtPorID;
+
+
+			 //G("reTitle").innerHTML="回复"+cmtName+"：";
+			 G("cancleReLink").style.display="";
+			 cmtForm.btn_ok.value="回复评论";
+
+
+			 try{
+				editor.window.focus();
+                editor.window.document.body.innerHTML="回复"+cmtName+"：";
+
+                var w = editor.window;
+				if(w.getSelection){
+					var d = w.document;
+					var s = w.getSelection();
+					var r = d.createRange();
+					r.setStartAfter(d.body.firstChild);
+					r.setEndAfter(d.body.lastChild);
+					s.removeAllRanges();
+					s.addRange(r);
+				}
+			}catch(e){
+			 		try{
+				 		cmtForm.getElementsByTagName("textarea")[0].focus();
+				 		cmtForm.getElementsByTagName("textarea")[0].value="回复"+cmtName+"：";
+				 	}catch(e){}
+			}
+		}
+
+		function canclereply()
+		{
+			var cmtForm=document.form1;
+			cmtForm.cm.value="1";
+			try{cmtForm.removeChild(cmtForm.spReferTarget);}catch(e){}
+			/*
+			try{
+					var cmt=cmtForm.getElementsByTagName("textarea")[0]
+					cmt.value="";
+					cmt.focus();
+			}catch(e){}
+			*/
+
+			try{
+					var ed=editor.window.document.body;
+					ed.innerHTML="";
+					editor.window.focus();
+				}catch(e){
+					var cmt=cmtForm.getElementsByTagName("textarea")[0];
+					cmt.value="";
+					cmt.focus();
+			}
+
+			G("cancleReLink").style.display="none";
+			cmtForm.btn_ok.value="发表评论";
+		}
+
+		function gotoreply()
+		{//to checking whether reply cmt
+			if( window.location.hash.indexOf("&re=1")<0) return;
+			var cmtID=window.location.hash.split("&")[0].replace("#","");
+			var cmtlinks=document.getElementsByTagName("a");
+			for(var i=0,n=cmtlinks.length;i<n;i++)
+			{
+				if(cmtlinks[i].name==cmtID){ var rename=cmtlinks[i].getAttribute("rename");  repid=cmtlinks[i].getAttribute("repid"); break;}
+			}
+			if(typeof(rename)!="undefined"){
+				cmtreply(rename, repid);
+			}
+		}
+
+//-->
+</script>
+
+<script type="text/javascript">
+    /*<![CDATA[*/
+
+window.onerror=function(){return true;}
+
+var RelatedDocData = null, GetAndEval = false;
+(function(){
+	var xhr = BdAjax.getXHR();
+	if(xhr == null){
+		RelatedDocData = -1;
+		return;
+	}
+
+	xhr.open("GET", "/sys/search?type=8&word=%CD%DF%CB%B9%BC%E0%BF%D8%2D%C8%CB%C3%FC%B9%D8%CC%EC%B5%C4%B4%F3%CA%C2%C7%E9&item=c2965bb34fef43afd8335afe&t=" + new Date().getTime(), true);
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState == 4){
+			if(xhr.status == 0 || xhr.status == 200){
+				if(GetAndEval){
+					eval(xhr.responseText);
+				}else{
+					RelatedDocData = xhr.responseText;
+				}
+			}
+		}
+	}
+	xhr.send(null);
+})();
+/*]]>*/
+</script>
+
+</head><body onload="formatonlinpic();"><iframe name="_BdPopupLayer_lhdu13nmu69skg88w6bmvx6n" style="position: absolute; z-index: 65001; display: none;" id="_BdPopupLayer_lhdu13nmu69skg88w6bmvx6n" frameborder="0" scrolling="no"></iframe><iframe name="_BdPopupLayer_ltxo8tw6jpricptulvnzol00" style="position: absolute; z-index: 65001; display: none;" id="_BdPopupLayer_ltxo8tw6jpricptulvnzol00" frameborder="0" scrolling="no"></iframe><link rel="Stylesheet" type="text/css" href="%E7%93%A6%E6%96%AF%E7%9B%91%E6%8E%A7-%E4%BA%BA%E5%91%BD%E5%85%B3%E5%A4%A9%E7%9A%84%E5%A4%A7%E4%BA%8B%E6%83%85_files/bdeditor.css">
+<center>
+<script type="text/javascript">
+/*<![CDATA[*/
+if(top.location != self.location){
+	top.location = self.location;
+}
+var myref = encodeURIComponent("http://hi.baidu.com/cz%5Fwolf/blog/item/c2965bb34fef43afd8335afe%2Ehtml");
+/*]]>*/
+</script>
+<link rel="stylesheet" type="text/css" href="%E7%93%A6%E6%96%AF%E7%9B%91%E6%8E%A7-%E4%BA%BA%E5%91%BD%E5%85%B3%E5%A4%A9%E7%9A%84%E5%A4%A7%E4%BA%8B%E6%83%85_files/mods.css">
+
+<link rel="stylesheet" type="text/css" href="%E7%93%A6%E6%96%AF%E7%9B%91%E6%8E%A7-%E4%BA%BA%E5%91%BD%E5%85%B3%E5%A4%A9%E7%9A%84%E5%A4%A7%E4%BA%8B%E6%83%85_files/f3042d31bc1f2d19eac4af77.css">
+
+<link rel="stylesheet" type="text/css" href="%E7%93%A6%E6%96%AF%E7%9B%91%E6%8E%A7-%E4%BA%BA%E5%91%BD%E5%85%B3%E5%A4%A9%E7%9A%84%E5%A4%A7%E4%BA%8B%E6%83%85_files/space.css">
+<style type="text/css">
+/*<![CDATA[*/
+
+#usrbar{padding:4px 10px 3px 0;font-size:12px;height:19px;line-height:19px;color:#000000;font-family:Arial;text-align:right;background:#ffffff;filter:alpha(opacity=65);-moz-opacity:0.5;width:auto !important;width:100%;letter-spacing:normal}
+#usrbar a,#usrbar a:link,#usrbar a:visited{color:#0000CC;text-decoration:underline}
+#ft{clear:both;height:20px;line-height:20px;color:#666666;font-size:12px;font-family:Arial;text-align:center}
+#ft a,#ft a:link,#ft a:visited{color:#7777CC;text-decoration:underline}
+#usrbar,#usrbar a,#usrbar a:link,#usrbar a:visited,#ft,#ft a,#ft a:link,#ft a:visited{letter-spacing:normal}
+/*]]>*/
+</style>
+
+
+
+<div id="usrbar"><nobr>
+
+			<a id="hi_index" href="http://hi.baidu.com/" target="_blank">百度空间</a>&nbsp;|&nbsp;<a href="http://www.baidu.com/" target="_blank">百度首页</a>&nbsp;<script type="text/javascript">
+		document.write('| <a href="https://passport.baidu.com/?login&tpl=sp&tpl_reg=sp&u=http://hi.baidu.com' + encodeURIComponent('/cz%5Fwolf/blog/item/c2965bb34fef43afd8335afe%2Ehtml') + '">登录</a>');
+		</script>| <a href="https://passport.baidu.com/?login&amp;tpl=sp&amp;tpl_reg=sp&amp;u=http://hi.baidu.com%2Fcz%255Fwolf%2Fblog%2Fitem%2Fc2965bb34fef43afd8335afe%252Ehtml">登录</a>
+		
+</nobr></div>
+
+
+
+		<div id="newUserTip" style="text-align: right; width: 225px; height: 130px; position: absolute; top: 26px; right: 0pt; float: right; z-index: 30000;">
+	<a id="newUserTipShadow" onclick="newUserRegLog()" href="http://passport.baidu.com/?reg&amp;tpl=sp&amp;return_method=get&amp;skip_ok=1&amp;u=http://hi.baidu.com/sys/reg/" target="_blank" style="background: transparent none repeat scroll 0% 0% ! important; overflow: hidden; color: rgb(66, 66, 249) ! important; -moz-background-clip: -moz-initial ! important; -moz-background-origin: -moz-initial ! important; -moz-background-inline-policy: -moz-initial ! important; text-decoration: none ! important; font-size: 14px; width: 55px; height: 14px; position: absolute; top: 108px; right: 14px; z-index: 30001; display: block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+	<embed tplayername="SWF" splayername="SWF" type="application/x-shockwave-flash" src="%E7%93%A6%E6%96%AF%E7%9B%91%E6%8E%A7-%E4%BA%BA%E5%91%BD%E5%85%B3%E5%A4%A9%E7%9A%84%E5%A4%A7%E4%BA%8B%E6%83%85_files/guide.swf" mediawrapchecked="true" pluginspage="http://www.macromedia.com/go/getflashplayer" id="newUserTipSwf" allowscriptacess="always" style="width: 225px; height: 130px;" wmode="transparent" height="130" width="225">
+	</div>
+	<script language="javascript">
+	<!--
+		function newUserTipShow(f)
+		{
+			if(f=="0"){//close
+				G("newUserTipSwf").style.width="40px";
+				G("newUserTip").style.width="40px";
+				G("newUserTipShadow").style.display="none";
+			}else{//show
+				G("newUserTip").style.width="225px";
+				G("newUserTipSwf").style.width="225px";
+				G("newUserTipShadow").style.display="block";
+
+			}
+		}
+
+		function newUserRegLog(){
+			var now=new Date();
+			now.setTime(now.getTime()+5*60*1000);
+			document.cookie="BDSP_REGFLAG=1;expires="+now.toGMTString()+";path=/";
+			new Image().src="http://hi.baidu.com/sys/statlog/1.gif?m=blog_newer_pro2_click&v=/cz%5Fwolf&t="+Math.random();
+		}
+	//-->
+	</script>
+	
+
+
+
+<script type="text/javascript">
+
+function set_cookie_4_bdtip(index/* start from one */, value){
+	var bdtip = document.cookie.match(/(^| )BDTIP=([^;]*)(;|$)/);
+	if(!bdtip){
+		bdtip=new Array(index);
+		for(var i=0,n=bdtip.length;i<n;i++)
+		{
+			if(bdtip[i]=="" || bdtip[i]==null)  bdtip[i]=0;
+			if(i == index - 1){
+				bdtip[i] = value;
+			}
+		}
+	}else{
+	bdtip = bdtip[2].split('-');
+	if(index > bdtip.length)  bdtip.length= index;
+	for(var i = 0, j = bdtip.length; i < j; i ++){
+		if(bdtip[i]=="" || bdtip[i]==null) bdtip[i]=0;
+		if(i == index - 1){
+			bdtip[i] = value;
+		}
+	}
+	}
+	bdtip = bdtip.join('-');
+	document.cookie = "BDTIP=" + bdtip+ ";expires=Wed, 28-Nov-37 01:45:46 GMT;path=/;domain=.baidu.com";
+}
+</script>
+<div id="main" align="left">
+<!--[if IE]>
+<script>
+var objmain = document.getElementById("main");
+function updatesize(){ var bodyw = window.document.body.offsetWidth; if(bodyw <= 790) objmain.style.width="772px"; else if(bodyw >= 1016) objmain.style.width="996px"; else objmain.style.width="100%"; }
+updatesize(); window.onresize = updatesize;
+</script>
+<![endif]-->
+	<div id="header">
+	<div class="lc"><div class="rc"></div></div>
+<div class="tit"><a href="http://hi.baidu.com/cz%5Fwolf" class="titlink" title="cz_wolf的空间 http://hi.baidu.com/cz_wolf">人生如戏、戏如人生</a></div>
+<div class="desc">人生唱戏曲、戏曲唱人生</div>
+<div id="tabline">&nbsp;</div>
+	<div id="tab"><a href="http://hi.baidu.com/cz%5Fwolf">主页</a><a href="http://hi.baidu.com/cz%5Fwolf/blog" class="on">博客</a><a href="http://hi.baidu.com/cz%5Fwolf/album">相册</a><span>|</span><a href="http://hi.baidu.com/cz%5Fwolf/profile">个人档案</a>
+	<span>|</span><a href="http://hi.baidu.com/cz%5Fwolf/friends">好友</a>
+
+
+
+	</div>
+</div>
+
+<div class="stage">
+<div class="stagepad">
+<div style="width: 100%;">
+
+
+	
+
+	<table class="modth" border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr><td class="modtl" width="7">&nbsp;</td>
+	<td class="modtc" nowrap="nowrap"><div class="modhead"><span class="modtit">查看文章</span></div></td>
+	<td class="modtc" align="right" nowrap="nowrap"></td>
+	<td class="modtr" width="7">&nbsp;</td>
+	</tr></tbody></table>
+
+<div id="m_blog" class="modbox">
+<div class="tit">瓦斯监控-人命关天的大事情</div>
+<div class="date">2009-02-28  13:58</div>
+<table style="table-layout: fixed;"><tbody><tr><td><div id="blog_text" class="cnt"><div class="Section0" style="">
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">有些人只顾挣钱，只抓生产，把“安全”两字抛在脑后，导致煤矿爆炸事故频发。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">05年</span><span style="font-size: 12pt;">6月底召开的全国煤矿推广数字化瓦斯远程监控系统电视电话会议给煤炭企业下了硬规定：到今年年底之前，高瓦斯、煤与瓦斯突出矿井要全部建立并完善安全监测监控系统；原国有重点煤矿企业要实现矿务局(集团公司)内部连网；国有地方煤矿、乡镇煤矿要实现县(区)范围内连网。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">这就像在煤炭企业头上套了个紧箍咒。如果煤炭企业想继续生产，继续生存，继续创造利润，就必须把瓦斯监控放在首位。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">但是，瓦斯监控系统这么好上吗？人命关天的瓦斯监控，仍然有不少需要跨越的坎！ </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">信息传递，短一米也是灾难 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">煤
+矿安全监测监控系统监测的是什么？是在地下几百里甚至几千里的瓦斯深度是否超标，是否有明火、自燃等安全隐患。但要让矿井监控室的人了解这些指标，甚至让
+上一级的集团公司对此了如指掌，就有难度了，传输问题首当其冲，信息传输半径即使只短了一米，也会造成无法挽回的灾难。比如将瓦斯浓度监测头监测到的数据
+从井下传到井上，再从井上传递到监控站进行监控和分析，最后将处理意见传回井下，该用什么方法？很多地方甚至连电话线都没有，怎么解决？ </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">方法一： 铺设电缆。通过光缆将井下信息和井上信息互通，同时用数字信号代替以前的模拟信号，增强信息的准确性，免受干扰。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">适用企业：矿井相对集中。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">难点：铺电缆相对价格较贵，投资大，对一些小型矿山或相对流动性的煤矿企业来说不太现实。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">方
+法二：
+短信息。这里的短信息并不是平时我们常用的短信息，因为井下几百里是没有信号的。瓦斯监测系统所用的短信息是数字蜂窝无线网络的短信通讯方式，即将瓦斯浓
+度检测探头和风速传感器安放在主回风井（巷）的适当位置，当瓦斯浓度、风速超过限定值或主扇开、停或运行负荷变化较大时，短消息发送模块向监控中心和值守
+人员同时发送相应的短消息并报警。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">适用企业：无线短信通讯方式实现方便，投资小，对中小型矿山非常适用。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">难点：目前市场上可选择产品不多。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">方法三： 租用公众无线网络或数字光纤。这其实主要解决的是从煤矿到监控中心的信息传输问题。很多煤矿集团公司下属企业比较分散，下属企业大部分已安装使用了瓦斯监测监控系统，需要传给总公司。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">适用企业：需要将信息从矿井集中传递到总部。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">难点：并不是所有地方都有GPRS网络，而且速率也是必须考虑的问题。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">方法四： 利用卫星通讯技术将信息传到监控站和总控室。这对于一些有条件的煤矿企业也是值得推荐的方法。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">适用企业：相隔远、较分散的煤矿企业。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">难点：价格不菲。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">紧急报警，晚一秒就是生命 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">　
+从系统到人，需要一个通知的方式。假如监测到的危险结果没有及时发布出去，那么再精确、再灵敏的监测系统也是白搭。紧急报警，哪怕延迟一秒，也要付出生命
+的代价。因此瓦斯监测系统的报警方式不仅要快，而且要准，决不允许出错和延迟。误报会引起巨大的经济损失，但是一旦不报或者迟报，更是会造成灾难……因此
+瓦斯监测系统的报警方式也受到很多关注。哪些是目前行之有效、比较稳定的报警方式呢？</span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">方
+法一：利用声光报警。一旦危险发生，利用铃音和灯光变化来报警，最大的好处是明显，传播范围大。一旦出现重大隐患，声光报警系统就会立即启动，锁定图像监
+控，及时掌握灾情的发展，在第一时间下达整改指令，全程监控处理情况。由于声光报警的传播范围很大，各矿的绞车房、井口、调度室、监控室等主要生产部位都
+可纳入监控范围，需要停产时，只要一声令下就会井停人撤，确保安全。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">适用企业：规模有限，不能完全达到互连互通的企业。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">难点：简单报警，并不能迅速判断危害的原因及处理办法。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">方法二：采用GIS系统。在警报传出的同时，准确地知道危险发生的地点靠的就是GIS系统。报警点在监控屏幕上直接闪动，危险地点可以准确地在屏幕上显示出来，这对于排险抢险有着重大意义。</span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">适用企业：矿井范围比较大。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">难点：做GIS要有资金，有恒心，而且数据要准确。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">方法三：短信息。</span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">适用企业：准备新上系统的企业。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">难点：与无线系统的融合固然不是新课题，也很容易实现，但是到达率是个大问题。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">系统维护，迟一天导致隐患 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">瓦
+斯监测系统当然不是建设好了就高枕无忧，还需要维护。而且由于矿井相对分散，情况复杂，人员整体素质有待提高等问题一直存在，与其说系统建设会遇到难关，
+不如说系统维护的问题更大。一天没有人及时维护，隐患就可能发生。一些煤矿尽管建立了瓦斯监测监控系统，但管理跟不上，维护不及时，照样发生事故。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">方法一：外包维护。做系统维护，一没人，二没精力，怎么办？其实不妨用外包的方法，将非主营业务外包给更专业的IT企业。</span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">适用企业：系统复杂，但又没有能力维护的煤矿企业。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">难点：找到合适的合作伙伴很难，既要有实力——技术上的和人力上的，又要有合适的价格。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">方法二：培养内部人才。很多煤炭企业规模很大，矿点非常分散，根本不适合流动性的维护。所以，自力更生，培养每个矿井的系统维护人员，成本低，响应及时，也更可靠。另外，信息网络建立后，对探头的校验、信号的保障、设备的维护也很重要，否则，系统会失效，造成严重后果。</span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">适用企业：有一定技术基础和经济实力的大煤炭企业。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">难点：从零开始的培训和教育难度很大，要有正确的方法和循序渐进的决心。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">方法三：机制是保障。与其说它是方法，不如说这是关键。没有机制，不调动起人的积极性，所有的系统都是摆设，最终只能成为浪费。</span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">适用企业：这一万能方法适用于所有的企业，而且是实现瓦斯监控的必要条件。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">难点：规范制定固然难，但更难的是坚决执行下去并不断改善。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">应急，你准备了吗？ </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">瓦斯监控，那是防范于未然，但这并不代表不会有事故发生。当井下的瓦斯监控系统报警时，煤炭企业需要做的第一件事情就是拿出应急预案，比如让井下员工迅速撤离，比如打开备用通风口，甚至是关闭某个巷道等。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">所谓的瓦斯监控只是一种手段和方法，最终目的是为了减少事故的发生。而在这个生态链中，一旦发现瓦斯超标，采取应急措施才是真正避免重大损失的最后一步。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">当然，我们的很多煤炭企业因为经历了多次险情，已经对应急有了不少解决方法，那些解决方法或者藏在有经验的人脑中，或者写在某些安全生产手册上。一旦危险发生，这些有经验的人可以迅速作出判断，就算是那些经验不足的人也可以“按书索骥”，来点现成的。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">而
+作为瓦斯监控系统的重要组成部门，应急系统的建立也是重中之重。只是，与预警系统不同的是，应急系统本身的建成并不难，难在里面的资料准确性和真实性。比
+如那些纸面的地下巷道图能够成为电子地图，指导决策者全面了解地下状况，迅速作出判断；如果那些土办法、经验之谈能够总结出来，并放在系统里可以随时学
+习、随时调用的话，就算是出了瓦斯超标问题，我们也给自己留下了找到最快解决问题的方法，将损失降到最小的可能性。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">另外，信息的不断更新和补充也是大问题。新巷道要补充进来；每次问题的解决方法，以及新的经验和教训，都需要录入到系统中。这时候，就不仅是系统的IT建设问题，而是需要合理的制度和人员作保障了。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">从这个意义上说，应急系统更像我们平常说的BI，需要的是数据积累和数据挖掘。</span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">互联互通，多道沟实在麻烦 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">互联互通是煤矿所面临的新难题。很多瓦斯监控系统上线是以企业或以县、市为单位的，但是，将所有数据汇集到省一级安全生产系统则是大势所趋，甚至也是很多地方的要求。系统不一样，数据格式不统一，一条又一条的沟沟坎坎给实现全省互连互通，避免信息孤岛带来了无数麻烦。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">方法一：数据转换。这也是比较常见的方法。也就是煤矿瓦斯监控系统产生的数据与省局或者分局的系统不符，先由上级部门定义数据格式，然后企业各自按照要求进行数据转换，最终实现数据的统一。</span><span style="font-size: 12pt;">&nbsp;&nbsp;&nbsp;</span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">适用企业：已经有完善的系统，应用良好的企业。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">难点：转换数据的工作量不可控，甚至有可能给系统运行带来风险。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">方法二：重新建设。凡是与上级主管不兼容的人，只有两个后果：转变或者是辞职。IT系统也是这样。如果企业本身就做得不好，或者是刚刚开始，不妨将系统推倒重来。</span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">适用企业：统一管理适合集约化明显的企业，只有管理正规的企业，才有可能排除万难，统一完成一个任务。另外，资金也是必须考虑的问题。 </span><span style="font-size: 12pt;"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;">难点：重新建设的前提是有钱、有能力。最忌讳的是旧的推倒了，新的又建不起来。 </span><span style="font-size: 12pt;"></span></p>
+<font color="#00ff00"><span style="font-size: 12pt;">
+<div class="Section0" style="">
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt; color: rgb(0, 128, 0);">用IT保护生命 </span><span style="font-size: 12pt; color: rgb(0, 128, 0);"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt; color: rgb(0, 128, 0);">煤炭对于很多人来说，是个不怎么谈论的行业——直到最近频发煤矿事故和一个个鲜活生命的突然消失。 </span><span style="font-size: 12pt; color: rgb(0, 128, 0);"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt; color: rgb(0, 128, 0);">行业的整顿和治理，从来都是政府的事情。政府通过行政手段，解决了规范和规则的问题，剩下的就是企业的执行了。 </span><span style="font-size: 12pt; color: rgb(0, 128, 0);"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt; color: rgb(0, 128, 0);">但是，有令不行，有禁不止，也是以前常见的情况。所以政府的监管成为整个生态链中最后一环。小煤窑出事，经常是因为安全问题已经被查封洞口后，擅自取出封条私开偷采。这其实也是由于某些政府和行业监管部门的执法力度不够。 </span><span style="font-size: 12pt; color: rgb(0, 128, 0);"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt; color: rgb(0, 128, 0);">现在出台的新规定，要求企业年底前完成瓦斯监控系统的建设，这对于企业来说是个大工作量，对于监管部门来说，查落实，纠错误，也是很大的工作量。而且，国家和老百姓都在盯着煤炭安全监管的实效，糊弄根本不可能。 </span><span style="font-size: 12pt; color: rgb(0, 128, 0);"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt; color: rgb(0, 128, 0);">当然，如果只采取老办法，靠人看，靠自觉，监管不可能到位。所以，就像是审计署用IT辅助审计一样，用高科技方法作煤炭企业安全生产的监管，或许才是正道。 </span><span style="font-size: 12pt; color: rgb(0, 128, 0);"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt; color: rgb(0, 128, 0);">从这个意义上说，监管企业也得想到自己工作的办法，用IT帮助自己进行企业监督，让IT成为手里的利器。 </span><span style="font-size: 12pt; color: rgb(0, 128, 0);"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt; color: rgb(0, 128, 0);">对煤炭行业来说，IT就是为百姓服务的工具，就是在保护生命的工具。</span><span style="font-size: 12pt; color: rgb(0, 128, 0);"></span></p>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt; color: rgb(0, 128, 0);"></span></p>
+</div>
+</span></font>
+<p class="p0" style="margin-top: 0pt; margin-bottom: 0pt; text-indent: 24pt; margin-right: 5.25pt;"><span style="font-size: 12pt;"></span></p>
+</div>
+</div></td></tr></tbody></table>
+<br>
+<div class="opt">
+<a href="http://hi.baidu.com/cz%5Fwolf/blog/category/%D0%D0%D2%B5%D0%C5%CF%A2" title="查看该分类中所有文章">类别：行业信息</a>
+
+	
+	| <a title="将此文章添加到百度搜藏" href="http://cang.baidu.com/do/add" onclick="return addToFavor();" target="_blank">添加到搜藏</a>
+	
+	| 浏览(<span id="result">23</span>)
+	| <a href="#send">评论</a>&nbsp;(0)
+
+<script language="javascript">
+/*<![CDATA[*/
+var pre = [true,'关于推进完善我市煤矿瓦斯监控系统建设工作', '关于推进完善我市煤矿瓦斯监控系...','/cz%5Fwolf/blog/item/7132b4fe6b99bd395d6008e8.html'];
+var post = [true,'上百句“俗话”，让你智商归零！','上百句“俗话”，让你智商归零！', '/cz%5Fwolf/blog/item/490962d37846b1083bf3cf2b.html'];
+if(pre[0] || post[0]){
+	document.write('<div style="height:5px;line-height:5px;">&nbsp;</div><div id="in_nav">');
+	if(pre[0]){
+		document.write('上一篇：<a href="' + pre[3] + '" title="' + pre[1] + '">' +  pre[2] + '</a>&nbsp;&nbsp;&nbsp;&nbsp;');
+	}
+	if(post[0]){
+		document.write('下一篇：<a href="' + post[3] + '" title="' + post[1] + '">' +  post[2] + '</a>');
+	}
+	document.write('</div>');
+}
+/*]]>*/
+</script><div style="height: 5px; line-height: 5px;">&nbsp;</div><div id="in_nav">上一篇：<a href="http://hi.baidu.com/cz%5Fwolf/blog/item/7132b4fe6b99bd395d6008e8.html" title="关于推进完善我市煤矿瓦斯监控系统建设工作">关于推进完善我市煤矿瓦斯监控系...</a>&nbsp;&nbsp;&nbsp;&nbsp;下一篇：<a href="http://hi.baidu.com/cz%5Fwolf/blog/item/490962d37846b1083bf3cf2b.html" title="上百句“俗话”，让你智商归零！">上百句“俗话”，让你智商归零！</a></div>
+
+</div>
+<div class="line">&nbsp;</div>
+
+
+
+    <style type="text/css">
+/*<![CDATA[*/
+#in_related_doc a { text-decoration:none; }
+/*]]>*/
+</style>
+<div id="in_related_tmp"></div>
+<script language="javascript" type="text/javascript">
+/*<![CDATA[*/
+function HI_MOD_IN_RELATED_DOC_CALLBACK(arg){
+    if(arg.length <= 1) return false;
+    var hasMore = arg[0];
+    var D=function(A,B){A[A.length]=B;}
+    if(arg.length % 2 == 0) D(arg, ["","","",""]);
+
+    var html = ['<div id="in_related_doc"><div class="tit">相关文章：</div>'];
+    D(html, '<table cellpadding="0" cellspacing="3" border="0">');
+    for(var i = 1, j = arg.length; i < j; i += 2){
+        D(html, '<tr>');
+        D(html, '<td width="15px"><a style="font-size:25px" >&#8226;</a></td><td><a href="http://hi.baidu.com/' + arg[i][3] + '/blog/item/' + arg[i][2] + '.html" target="_blank" title="' + arg[i][0] + '">' + arg[i][1] + '</a>');
+        D(html, new Array(10).join('\u3000'));
+        D(html, '</td>');
+        if(arg[i + 1][0] != "")
+            D(html, '<td width="15px"><a style="font-size:25px" >&#8226;</a></td><td><a href="http://hi.baidu.com/' + arg[i + 1][3] + '/blog/item/' + arg[i + 1][2] + '.html" target="_blank" title="' + arg[i + 1][0] + '">' + arg[i + 1][1] + '</a></td>');
+        else
+            D(html, '<td>&nbsp;</td><td>&nbsp;</td>');
+        D(html, '</tr>');
+    }
+    if(hasMore) D(html, '<tr><td colspan="4"><a target="_blank" href="/sys/search?pageno=1&type=7&sort=1&word=%CD%DF%CB%B9%BC%E0%BF%D8%2D%C8%CB%C3%FC%B9%D8%CC%EC%B5%C4%B4%F3%CA%C2%C7%E9&item=c2965bb34fef43afd8335afe">更多&gt;&gt;</a></td></tr>');
+    D(html, '</table></div><div class="line">&nbsp;</div>');
+
+    var div = document.getElementById('in_related_tmp');
+    if(div){
+        div.innerHTML = html.join('');
+        while(div.firstChild){
+            div.parentNode.insertBefore(div.firstChild, div);
+        }
+        div.parentNode.removeChild(div);
+    }
+	window.setTimeout("tracker_init('in_related_doc')",100);
+}
+
+if(RelatedDocData == -1){	// not supported xhr
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = '/sys/search?type=8&word=%CD%DF%CB%B9%BC%E0%BF%D8%2D%C8%CB%C3%FC%B9%D8%CC%EC%B5%C4%B4%F3%CA%C2%C7%E9&item=c2965bb34fef43afd8335afe&t=' + new Date().getTime();
+    document.getElementsByTagName('HEAD')[0].appendChild(script);
+}else if(RelatedDocData == null){
+	GetAndEval = true;
+}else{
+	eval(RelatedDocData);
+}
+
+/*]]>*/
+</script>
+    
+
+
+
+
+
+
+<div id="in_reader">
+<div class="tit">最近读者：</div>
+
+<script>
+
+	var g_spAnnony=true;
+
+
+var g_read=[
+
+{}
+];
+g_read.length=g_read.length-1;
+
+var _rh1="";
+var _rh2="";
+
+function wrreader(){
+	_rh1 += '<table width="100%" ><tr>';
+	_rh2+='<tr>';
+	if(g_spAnnony){
+		_rh1+='<td align="center" width="10%" ><img border="0" width="55" height="55" src="http://img.baidu.com/hi/img/portraitn.jpg"></td>';
+		_rh2+='<td>&nbsp;</td>';
+		if(g_read.length>0){
+			_rh1+='<td align="left" width="12%">';
+		}else{
+			_rh1+='<td align="left" width="100%">';
+		}
+		_rh1+='<a href="https://passport.baidu.com/?login&tpl=sp&tpl_reg=sp&u='+myref+'" target="_self">登录</a>后，您就出现在这里。</td>';
+		_rh2+='<td>&nbsp;</td>'
+	}
+	if(g_read.length==0){
+		if(!g_spAnnony){
+			_rh1+='<td align=left width="100%">最近还没有登录用户看过这篇文章……</td>';
+			_rh2+='<td>&nbsp;</td>';
+		}
+	}else{
+		for(i=0,len=g_read.length;i<len;i++){
+			_rh1+='<td align="center" valign="bottom" width="10%" class="user"><a href="/'+g_read[i][0]+'" target="_blank"><img border="0" src="http://himg.baidu.com/sys/portraitn/item/'+g_read[i][1]+'.jpg"></a></td>';
+			_rh2+='<td align="center" valign="top" class="user"><a href="/'+g_read[i][0]+'" target="_blank">'+g_read[i][2]+'</a></td>';
+		}
+	}
+	_rh1+='<td width="100%"></td></tr>';
+	_rh2+='<td></td></tr></table>';
+	document.write(_rh1+_rh2);
+}
+
+wrreader();
+</script><table width="100%"><tbody><tr><td align="center" width="10%"><img src="%E7%93%A6%E6%96%AF%E7%9B%91%E6%8E%A7-%E4%BA%BA%E5%91%BD%E5%85%B3%E5%A4%A9%E7%9A%84%E5%A4%A7%E4%BA%8B%E6%83%85_files/portraitn.jpg" border="0" height="55" width="55"></td><td align="left" width="100%"><a href="https://passport.baidu.com/?login&amp;tpl=sp&amp;tpl_reg=sp&amp;u=http%3A%2F%2Fhi.baidu.com%2Fcz%255Fwolf%2Fblog%2Fitem%2Fc2965bb34fef43afd8335afe%252Ehtml" target="_self">登录</a>后，您就出现在这里。</td><td width="100%"></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td></td></tr></tbody></table>
+
+
+
+
+
+	</div>
+
+<div class="line">&nbsp;</div>
+
+
+
+<script language="JavaScript">
+allkey=allkey+"685c573b07729dea14cecbeb_c2965bb34fef43afd8335afe_";
+</script>
+
+<div id="in_comment">
+<a name="comment"></a>
+<div class="tit">网友评论：</div>
+<script>
+function writecmt(type,id,cmtname,cmturl,portraitId){
+	var html1="";
+
+	if(type==1){
+			html1="<a href='"+cmturl+"' target='_blank' title='"+cmturl+"'><img  border='0' src='http://himg.baidu.com/sys/portraitn/item/"+portraitId+".jpg'><br>"+cmtname+"</a>";
+	}else{
+		if(cmtname=="" || cmtname=="匿名网友"){
+			if(cmturl==""){
+				html1="<a>匿名网友</a>";
+			}else{
+				html1="<a href='"+cmturl+"' target='_blank' title='"+cmturl+"'>"+cmtname+"</a>";
+			}
+		}else{
+			if(cmturl==""){
+				html1="<div class='f14' style='display:inline'>网友:<a>"+cmtname+"</a></div>";
+			}else{
+				html1="<div class='f14' style='display:inline'>网友:<a href='"+cmturl+"' target='_blank' title='"+cmturl+"'>"+cmtname+"</a></div>";
+			}
+		}
+	}
+	document.write(html1);
+}
+function filterCmtContent(n){
+	if(!BdBrowser.isIE){
+		var defaultfilter1='<span style="filter:glow(color=#000000,strength=2);height:0px;color:#000000">';
+		var defaultfilter2='<span style="height: 0px; color: rgb(0, 0, 0);">';
+		var commentDiv=document.getElementById(n);
+		var divs=commentDiv.getElementsByTagName('div');
+		var d,tmp;
+		for( var i=0,len=divs.length;i<len;i++){
+			d=divs[i];
+			if(d.getAttribute('name')=='cmtcontent'){
+				tmp=d.innerHTML;
+				tmp=tmp.replace(/<span style="filter:glow\(color=#([0-9a-z]{3,6}),strength=2\);height:0px;color:#([0-9a-z]{3,6})">/ig,defaultfilter1);
+				tmp=tmp.replace('<span style="height: 0px; color: rgb(255, 255, 255);">',defaultfilter2);
+				d.innerHTML=tmp;
+			}
+		}
+	}
+}
+
+</script>
+
+
+
+
+
+<div id="page"></div>
+
+</div>
+<script>filterCmtContent('in_comment');</script>
+
+
+<div id="in_send">
+<a name="send"></a>
+<form name="form1" id="popFormSubmit" action="/cz%5Fwolf/commit" method="post" onsubmit="return checkcmtform()">
+<input name="ct" value="8" type="hidden">
+<input name="cm" value="1" type="hidden">
+<input name="spBlogID" value="c2965bb34fef43afd8335afe" type="hidden">
+<input value="http://hi.baidu.com/cz%5Fwolf/blog/item/c2965bb34fef43afd8335afe.html" name="spRefURL" id="spRefURL" type="hidden">
+<script>
+    document.getElementById("spRefURL").value = window.location.href;
+</script>
+<div class="tit">发表评论：</div>
+<table border="0" cellpadding="0" cellspacing="5" width="620">
+<tbody><tr>
+
+<td class="f14">姓　名：</td>
+<td><input name="spBlogCmtor" id="spBlogCmtor" style="width: 220px;" onchange="checkname('spBlogCmtor')" maxlength="49" onfocus="hidErr(1);" type="text">
+<script>
+document.write(" &nbsp;&nbsp; <a href='https://passport.baidu.com/?reg&tpl=sp&return_method=get&skip_ok=1&u=http://hi.baidu.com/sys/reg/' target='_blank'>注册</a>");
+document.write(' | <a href="https://passport.baidu.com/?login&tpl=sp&tpl_reg=sp&u='+myref+'">登录</a>');
+
+</script> &nbsp;&nbsp; <a href="https://passport.baidu.com/?reg&amp;tpl=sp&amp;return_method=get&amp;skip_ok=1&amp;u=http://hi.baidu.com/sys/reg/" target="_blank">注册</a> | <a href="https://passport.baidu.com/?login&amp;tpl=sp&amp;tpl_reg=sp&amp;u=http%3A%2F%2Fhi.baidu.com%2Fcz%255Fwolf%2Fblog%2Fitem%2Fc2965bb34fef43afd8335afe%252Ehtml">登录</a>
+
+<div style="display: none;" id="nmerror">*姓名最长为50字节</div></td>
+</tr>
+
+<tr id="1_err" style="display: none;">
+<td>&nbsp;</td>
+<td><div class="error" id="1_err_con"></div></td>
+</tr>
+
+<tr>
+<td class="f14">网址或邮箱：</td>
+<td><input name="spBlogCmtURL" id="spBlogCmtURL" style="width: 360px;" maxlength="128" onchange="checkeandu('spBlogCmtURL')" onfocus="hidErr(2);" type="text"> (选填)</td>
+<script>
+G("spBlogCmtor").value="";
+G("spBlogCmtURL").value="";
+</script>
+
+</tr>
+
+<tr id="2_err" style="display: none;">
+<td>&nbsp;</td>
+<td><div class="error" id="2_err_con"></div></td>
+</tr>
+
+<tr>
+<td class="f14" id="reTitle" valign="top">内　容：</td>
+<td>        <div id="bdeditor_container_72g5mfw4ozf475wvpt176qu8">            <table border="0" cellpadding="0" cellspacing="0" height="155" width="100%">                <tbody><tr>                    <td id="editor_toolbar_72g5mfw4ozf475wvpt176qu8" class="ToolbarContainer"><div class="ToolbarStrip"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td nowrap="nowrap"><div class="ToolbarItem" title="插入表情" id="ToolbarItem_atzm2p44rr4fyimnv7qo2223" onclick="_Instance['atzm2p44rr4fyimnv7qo2223'].clickHandler(this)" onmouseup="_Instance['atzm2p44rr4fyimnv7qo2223'].mouseUpHandler(this)" onmousedown="_Instance['atzm2p44rr4fyimnv7qo2223'].mouseDownHandler(this)" onmouseout="_Instance['atzm2p44rr4fyimnv7qo2223'].mouseOutHandler(this)" onmouseover="_Instance['atzm2p44rr4fyimnv7qo2223'].mouseOverHandler(this)"><div class="img Smiley" alt="插入表情"><font style="font-size: 12px;">插入表情</font></div></div></td></tr></tbody></table></div></td>                </tr>                <tr>                    <td id="editor_area_72g5mfw4ozf475wvpt176qu8" class="EditorContainer"><iframe src="javascript:void(0)" frameborder="0" height="155" width="100%"></iframe></td>                </tr>            </tbody></table>        </div>    <textarea name="spBlogCmtText" id="spBlogCmtText" style="width: 520px; height: 155px; display: none;" onfocus="hidErr(3);"></textarea>
+<script>
+	var editor=null;
+	try{
+		editor=new BdEditor("spBlogCmtText",{width:"100%",height:"155px"});
+		editor.onfocus = function(){hidErr(3);}
+		editor.render();
+	}catch(e){
+		var spBlogCmtText = document.getElementById("spBlogCmtText");
+		var p = spBlogCmtText.previousSibling;
+		while(p && p.nodeType != 1) p = p.previousSibling;
+		if(p && /bdeditor_container/.test(p.id)){
+			p.parentNode.removeChild(p);
+		}
+		spBlogCmtText.style.display = '';
+		editor=null;
+	}
+</script>
+
+<script>
+G("spBlogCmtor").value=G("spBlogCmtor").defaultValue;
+G("spBlogCmtText").value="";
+</script>
+</td>
+</tr>
+<tr id="3_err" style="display: none;">
+<td>&nbsp;</td>
+<td><div class="error" id="3_err_con"></div></td>
+</tr>
+
+<tr id="vercode">
+<td class="f14" valign="top">验证码：</td>
+<td valign="top"><input name="spVcode" value="30357370616365313237383031393534333030303030303030303030303030313233383436323635301B20CA946138C45843545A4A151AA16F" type="hidden">
+<input onfocus="f_focus()" id="spVerifyKey" name="spVerifyKey" size="6" maxlength="4" autocomplete="off" tabindex="4" type="text"><br>
+<script type="text/javascript">
+/*<![CDATA[*/
+var imgsrc="http://hiup.baidu.com/cgi-bin/genimg?30357370616365313237383031393534333030303030303030303030303030313233383436323635301B20CA946138C45843545A4A151AA16F";
+function f_focus(){
+	if(G('yanzheng').style.display=="none" ){
+		G('verifypic').src=imgsrc;
+		G('yanzheng').style.display="block";
+	}
+}
+function newverifypic(){
+	G("verifypic").src = imgsrc +"&t="+ Math.random();
+	return false;
+}
+/*]]>*/
+</script>
+<div id="yanzheng" style="display: none;">
+<img id="verifypic" height="40" width="120"><wbr><a onfocus="this.blur();" href="#" onclick="return newverifypic();" title="看不清左边的字符">看不清?</a>
+</div>
+</td>
+</tr>
+
+
+<tr>
+<td class="f14" valign="top">&nbsp;</td>
+<td class="f14" valign="top"><input id="btn_ok" name="btn_ok" value="发表评论" tabindex="5" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="cancleReLink" onclick="canclereply(); return false;" style="display: none; font-size: 12px; color: rgb(102, 102, 102);">取消回复</a></td>
+</tr>
+</tbody></table>
+</form>
+</div>
+
+
+
+
+<br>
+</div>
+
+<table border="0" cellpadding="0" cellspacing="0" height="8" width="100%">
+<tbody><tr><td class="modbl" width="7">&nbsp;</td>
+<td class="modbc">&nbsp;</td>
+<td class="modbr" width="7">&nbsp;</td>
+</tr></tbody></table>
+
+
+
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+<script language="javascript">
+<!--
+var hstr="/cz%5Fwolf/brwstat?key1=1";
+document.write("<script src='"+hstr+"&key2="+allkey+"'><\/script>");
+//-->
+</script><script src="%E7%93%A6%E6%96%AF%E7%9B%91%E6%8E%A7-%E4%BA%BA%E5%91%BD%E5%85%B3%E5%A4%A9%E7%9A%84%E5%A4%A7%E4%BA%8B%E6%83%85_files/brwstat.htm"></script>
+<br><center><div id="ft">&#169;2009 Baidu</div></center>
+
+<script>
+if(document.getElementById("m_blog"))
+{
+	var imgarray = document.getElementById("m_blog").getElementsByTagName('img');
+	var imgw = document.getElementById("m_blog").offsetWidth;
+	imgw =imgw-40;
+	for(var i=0; i<imgarray.length; i++){
+	if(imgarray[i].className=="blogimg" && imgarray[i].width>=imgw) imgarray[i].width=imgw;
+	}
+}
+
+// Fix ff bugs
+var blog_text = document.getElementById('blog_text');
+blog_text.innerHTML = blog_text.innerHTML.replace(/href\s*=\s*("|')?(\.\.\/\.\.\/)/gi,"href=$1../$2");
+
+gotoreply();
+</script>
+</center>
+
+
+<img src="%E7%93%A6%E6%96%AF%E7%9B%91%E6%8E%A7-%E4%BA%BA%E5%91%BD%E5%85%B3%E5%A4%A9%E7%9A%84%E5%A4%A7%E4%BA%8B%E6%83%85_files/c.htm" style="display: none;">
+</body></html>

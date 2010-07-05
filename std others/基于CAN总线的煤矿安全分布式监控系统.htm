@@ -1,0 +1,557 @@
+<html><head>
+
+
+
+<title>基于CAN总线的煤矿安全分布式监控系统  无忧电子开发网-技术文章  </title>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312">
+<meta name="Author" content="无忧电子开发网">
+<meta name="Keywords" content="TMS320LF2407A">
+<meta name="description" content="">
+
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT"> 
+
+<link href="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/css.css" rel="stylesheet" type="text/css">
+
+</head><body leftmargin="10" topmargin="10" background="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/bg.htm" marginheight="10" marginwidth="10">
+
+<table align="center" border="1" cellpadding="0" cellspacing="0" width="760">
+  <tbody><tr>
+    <td width="100%">
+
+
+     <table bgcolor="#808080" border="0" cellpadding="0" cellspacing="0" height="2" width="100%">
+        <tbody><tr>
+          <td width="100%"></td>
+        </tr>
+      </tbody></table>
+
+      <table border="0" cellpadding="0" cellspacing="0" height="80" width="100%">
+        <tbody><tr>
+          <td align="center" width="186"><a href="http://www.51kaifa.com/"><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/logo.jpg" border="0" height="65" width="186"></a></td>
+          <td align="center" width="574">
+
+			<table border="0" cellpadding="0" cellspacing="0" width="574">
+			  <tbody><tr>
+				<td valign="bottom" width="120"><a href="http://www.51kaifa.com/jswz"><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/logo_jswz2.gif" border="0" height="65" width="120"></a></td>
+				<td valign="top" width="454">
+				  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tbody><tr>
+					  <td height="19" width="100%">
+						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+						 <tbody><tr>
+						 <td class="xyzx_top" align="center" height="19" width="100%"><a href="http://www.51kaifa.com/hyxw">综合资讯</a> <a href="http://www.51kaifa.com/zxyd">在线阅读</a> <a href="http://www.51kaifa.com/yyfa">原文阅读</a> <a href="http://www.51kaifa.com/shop">在线商城</a> <a href="http://www.51kaifa.com/zxxz">下载专区</a> <a href="http://www.51kaifa.com/datasheet">DATASHEET</a> <a href="http://www.51kaifa.com/bbs">技术论坛</a> <a href="http://www.51kaifa.com/MenberInfo">商务频道</a></td>        
+						 </tr>
+						 </tbody></table>
+					  </td>
+					</tr>
+					<tr>
+					  <td background="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/R_top_bj.gif" height="54" width="100%">
+						<!--  -->
+						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tbody><tr>
+						   <td width="*"><p style="line-height: 150%;">
+						<a href="http://www.51kaifa.com/html/jswz/list2/list-2.htm" class="xyzx_top2">嵌入式系统</a>&nbsp;&nbsp;<a href="http://www.51kaifa.com/html/jswz/list3/list-3.htm" class="xyzx_top2">单片机</a>&nbsp;&nbsp;<a href="http://www.51kaifa.com/html/jswz/list4/list-4.htm" class="xyzx_top2">D S P</a>&nbsp;&nbsp;<a href="http://www.51kaifa.com/html/jswz/list14/list-14.htm" class="xyzx_top2">EDA/PLD</a>&nbsp;&nbsp;<a href="http://www.51kaifa.com/html/jswz/list9/list-9.htm" class="xyzx_top2">接口电路</a>&nbsp;&nbsp;<a href="http://www.51kaifa.com/html/jswz/list12/list-12.htm" class="xyzx_top2">存储技术</a>&nbsp;&nbsp;<a href="http://www.51kaifa.com/html/jswz/list15/list-15.htm" class="xyzx_top2">显示光电</a>&nbsp;&nbsp;<a href="http://www.51kaifa.com/html/jswz/list6/list-6.htm" class="xyzx_top2">电源技术</a><br><a href="http://www.51kaifa.com/html/jswz/list11/list-11.htm" class="xyzx_top2">传感/控制</a>&nbsp;&nbsp;<a href="http://www.51kaifa.com/html/jswz/list10/list-10.htm" class="xyzx_top2">模拟技术</a>&nbsp;&nbsp;<a href="http://www.51kaifa.com/html/jswz/list7/list-7.htm" class="xyzx_top2">通信网络</a>&nbsp;&nbsp;<a href="http://www.51kaifa.com/html/jswz/list8/list-8.htm" class="xyzx_top2">无线通信</a>&nbsp;&nbsp;<a href="http://www.51kaifa.com/html/jswz/list16/list-16.htm" class="xyzx_top2">电测仪表</a>&nbsp;&nbsp;<a href="http://www.51kaifa.com/html/jswz/list13/list-13.htm" class="xyzx_top2">消费电子</a>&nbsp;&nbsp;<a href="http://www.51kaifa.com/html/jswz/list25/list-25.htm" class="xyzx_top2">汽车电子</a><br>
+							</p></td>
+						</tr>
+						</tbody></table>
+					  </td>
+					</tr>
+				  </tbody></table>
+				</td>
+			  </tr>
+			</tbody></table>
+
+
+		</td>
+	  </tr>
+	</tbody></table>
+
+
+      <table border="0" cellpadding="0" cellspacing="0" height="4" width="100%">
+        <tbody><tr>
+          <td width="100%"></td>
+        </tr>
+      </tbody></table>
+<script language="JavaScript">
+function fontzoom(size)
+{
+ document.getElementById('fontzoom').style.fontSize=size+'px'
+}
+
+function Form_check()
+{
+		var Tcomment="jswz_comment";
+		var Tcon="jswz";
+		var Url="jswz";
+
+	if (document.myform.anonymous.checked!=1)
+	{
+		if (document.ifname.user.value==""){
+			alert("您没有选择匿名项，所以帐号必须填写！");
+			document.ifname.user.focus();
+			return false;
+		}
+		var nUser = document.ifname.user.value;
+		if (document.ifname.password.value==""){
+			alert("您没有选择匿名项，所以帐号跟密码必须填写！");
+			document.ifname.password.focus();
+			return false;
+		}	
+		var nPassword = document.ifname.password.value;
+	
+			
+		if (document.myform.content.value==""){
+		alert("评论内容不能为空！");
+		document.myform.content.focus();
+		return false;
+		}
+
+		document.myform.action="/read_deal.php?user="+nUser+"&password="+nPassword+"&Tcomment="+Tcomment+"&Tcon="+Tcon+"&Url="+Url;
+		document.myform.submit();
+
+
+	}else{
+		
+		var anonymous = document.myform.anonymous.value;
+
+		if (document.myform.content.value==""){
+		alert("评论内容不能为空！");
+		document.myform.content.focus();
+		return false;
+		}
+	
+		document.myform.action="/read_deal.php?anonymous="+anonymous+"&Tcomment="+Tcomment+"&Tcon="+Tcon+"&Url="+Url;
+		document.myform.submit();
+
+	}
+
+
+
+}
+</script>
+
+
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="760">
+  <tbody><tr>
+    <td width="100%">
+
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="98%">
+          <tbody><tr> 
+            <td align="center" height="25" width="5%"><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/R_url.jpg"></td>
+            <td width="95%"> 
+			所在的位置：<a href="http://www.51kaifa.com/">首页</a> → <a href="http://www.51kaifa.com/jswz">技术文章</a> → <a href="http://www.51kaifa.com/html/jswz/list11/list-11.htm">传感/控制</a> → <font color="#ff9900">正文</font> </td>
+		  </tr>
+        </tbody></table>
+
+		<table align="center" border="0" cellpadding="0" cellspacing="0" width="760">
+		  <tbody><tr>
+			<td colspan="3" bgcolor="#808080" height="1" width="100%"></td>
+		  </tr>
+		  <tr>
+			<td valign="top" width="100%">
+		<table border="0" cellpadding="0" cellspacing="" width="100%">
+		  <tbody><tr>
+			<td align="left" width="100%">
+<iframe src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/ad-jswz_8.htm" border="0" marginwidth="0" marginheight="0" frameborder="no" height="60" scrolling="no" width="580"></iframe>
+			<!-- <script type="text/javascript" src="/ad/ad.php?ListName=jswz&Place=8&Way=h&Num=5"></script> -->
+
+			</td>
+		  </tr>
+		</tbody></table>
+
+   　
+      <table align="center" border="0" cellpadding="0" cellspacing="0" width="94%">
+        <tbody><tr>
+          <td align="center" width="100%"><font color="#05006c"><b>基于CAN总线的煤矿安全分布式监控系统</b></font></td>
+        </tr>
+        <tr>
+          <td height="6" width="100%"></td>
+        </tr>
+        <tr>
+          <td align="center" height="18" width="100%">
+			<table style="" border="0" cellpadding="0" cellspacing="1" height="22" width="100%">
+			  <tbody><tr>
+				<td align="center" bgcolor="#dce9fc" width="100%">
+			     发布日期:2008-08-06　<!-- 浏览数:<font color=#A20010><SCRIPT language=Javascript src="/read_view.php?ID=10343&nTable=jswz"></SCRIPT></font>  -->作者:孔勇奇 来源:微计算机信息
+				</td>
+			  </tr>
+			</tbody></table>
+         </td> 
+        </tr>
+        <tr>
+          <td height="6" width="100%"></td>
+        </tr>        
+		<tr>
+          <td class="p16" id="fontzoom" style="line-height: 1.5;" height="400" valign="top" width="100%">
+		   <br>
+			<!--内容中广告开始-->
+			<table align="left" border="0" cellpadding="0" cellspacing="0">
+			<tbody><tr><td>
+			<script src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/ad-jswz_6.js"></script><p><a href="http://www.51kaifa.com/shop/read.php?ID=4846"><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/20090122004650570.gif" border="0"></a></p>
+			<!-- <script type="text/javascript" src="/ad/ad.php?ListName=jswz&Place=6&Way=X&Num=10"></script> -->
+			</td></tr></tbody></table>
+			<!--内容中广告结束-->
+			
+            <p>摘
+要：本文针对煤矿监测系统存在网络瓶颈、采集终端不兼容的不足，研究了基于CAN总线的煤矿安全分布式监控系统，根据矿井的特点设计了通用智能环境监控终
+端和机电设备运行状态监控终端，并通过CAN总线实现多节点高速、高可靠性的网络互联，对煤矿环境安全参数和设备运行状态进行实时监控，各监控终端可根据
+优先级别自主通讯，主机对全局参数进行信息融合、综合分析与诊断及预警连锁及辅助决策。 <br>关键词：煤矿；安全；监控系统；CAN <br></p>
+<p><b>0 </b>前言<a title="" href="http://www.51kaifa.com/HostAdmin/eWebEditor/ewebeditor.htm?id=content1&amp;style=full#_ftn1" name="_ftnref1"> </a></p>
+<p align="left">随着社会的发展，能源需求快速增长，我国煤炭资源丰富，油气资源相对贫乏，煤炭需求进入高增长期。而我国地质条件恶
+劣，47％的矿井属于高瓦斯或瓦斯突出矿井，煤矿事故频发，近几年，随着国家对煤矿企业安全生产要求的不断提高和企业自身发展的需要，我国煤矿企业开始重
+视基础设施建设，加大安全投入，煤矿安全监控系统得到了普遍应用，大大提高了矿井安全生产水平和安全生产管理效率<sup>[1</sup><sup>，</sup><sup>2]</sup>。</p>
+<p>我国煤矿安全监控技术是伴随着煤炭工业发展而逐步发展起来的，80年代初，从波兰、法国、德国、英国和美国等引进了一批安全监控系统(如CMC-
+1、CTT63/40、TF200、MINOS和DAN6400)，推动了我国矿井安全监控技术的发展进程，通过消化、吸收并结合我国煤矿的实际情况，先
+后研制出了KJ4、KJ10、KJ66、KJ70、KJ95、KJF2000、MSNM、WEBGIS等监控系统<sup>[3~5]</sup>。实践表明，煤矿安全监控系统是煤炭高产、高效、安全生产的重要保证。</p>
+<p>目前，我国煤矿监控系统信息传输中广泛应用的是串行通信总线，主要有RS-232、RS-485或其FSK调制解调传输方式等<sup>[6]</sup>。现有监控系统尚存在许多缺点和不足，主要表现在：</p>
+<p align="left">&nbsp;&nbsp;&nbsp; 1）现有系统的通信协议均自我定义、互不兼容，从而造成不同厂家的设备无法接入，无法共享传输通道。</p>
+<p>&nbsp;&nbsp;&nbsp; 2）现有系统均为主从式传输，无法构成多主冗余系统，其可靠性受地面主站设备及主干电缆影响很大，主节点任务繁忙或出现故障可能引起系统瘫痪。</p>
+<p align="left">3）无法构成多主结构，不能满足监控分站之间相互通信的要求。</p>
+<p align="left">4）可靠性和实时性均无法满足实时测控功能的要求。</p>
+<p align="left">在现场总线领域，CAN总线以其卓越的性能而在工业控制领域得到了广泛的应用，CAN总线是最早被ISO制定为国际标准
+的现场总线，克服了串行总线的缺点，以其诸多的优点较好地满足煤矿监控系统的要求。相比于串行通信系统，具有较好的差错控制能力，可靠性高，高速率长距离
+的传输特性，完善的规范和协议等优点。</p>
+<p align="left">本文研究了基于CAN总线的煤矿安全监控系统，对矿井安全环境参数、通风机运行状态参数、变电所电量参数、矿井机电设备
+运行参数等进行实时监控，为各级生产指挥与调度部门提供环境安全参数动态信息，通过对被测参数的比较和分析，为预防灾害事故提供技术数据，便于提前采取防
+范措施，通过对被测参数实施实时有效的控制，及时实现自动报警、断电和闭锁，便于制止事故的发生或扩大，在发生事故的情况下，能根据巷道安全参数及时优化
+最佳避灾和救灾路线，为抢救和疏散人员、器材，提供决策信息。具有重大的经济效益和现实意义。</p>
+<p><b>1</b><b> </b>CAN总线概述</p>
+<p>控制器局域网(CAN—CONTROLLER AREA&nbsp;
+NETWORK)是BOSCH公司为现代汽车应用领先推出的一种多主机局部网，由于其卓越性能CAN总线的应用从汽车的电子行业扩展到机械工业、纺织机
+械、农用机械、机器人、数控机床、医疗器械、家用电器及传感器等领域，CAN已经形成了国际标准，并已被公认为几种最有前途的现场总线之一，具有以下特
+点：</p>
+<p>1）CAN总线是国际标准的工业级现场总线，具有可靠性高，支持多处理器，链路简单，并支持优先级处理。</p>
+<p>&nbsp;&nbsp;&nbsp; 2）采用多主工作方式，网络上任意节点均可主动向其他节点发送信息，且可按系统实时性要求分成不同的优先级，一旦发生总线冲突可减少总线仲裁时间。</p>
+<p>&nbsp;&nbsp;&nbsp; 3）采用短帧结构并有硬件CRC 校验，受干扰概率低，总线占用时间短，可保证通信的实时性。</p>
+<p>&nbsp;&nbsp;&nbsp; 4）发送的信息遭到破坏后，可自动重发，节点在错误严重时具有自动退出总线的功能，不影响总线的通讯。</p>
+<p>5）其传输介质可用双绞线、同轴电缆或光纤，通信速率最高达1Mbps/40m和5Kbps/10km。</p>
+<p align="left">6）单条总线可接110 个节点，并可通过网桥方便地扩充节点数。</p>
+<p><a name="_Toc29288519"><b>2</b></a>监控系统构成<b></b></p>
+<p>2.1监测参数的选择</p>
+<p align="left">煤矿的生产过程很复杂，而且大多集中在井下，矿井开拓、回采、巷道掘进与维护、井下运输与提升、通风控制、动力供应、排
+水控制等各系统之间错综复杂，存在空间和时间的相互联系，相互制约的复杂关系，为了保证生产的安生和协调性，常选择以下安全监控参数与重要机电设备运行参
+数：</p>
+<p align="left">矿井安全环境监测参数：甲烷（瓦斯）CH4浓度、一氧化碳CO浓度，二氧化碳CO2浓度、风速、风量、温度、风门、粉尘浓度等。</p>
+<p align="left">工作面监测参数：开停控制、瓦斯浓度、一氧化碳浓度、温度、粉尘浓度、风速和风门等。</p>
+<p align="left">通风机、压缩机运行状态参数：开停状态、振动量、轴承温度、电机电流、负压等。</p>
+<p align="left">变电所电力参数：功率、电压、电流、开关状态与控制等。</p>
+<p align="left">皮带机运行状态参数：开停控制、煤位、烟雾浓度等。</p>
+<p align="left">泵房控制器：水泵开停控制、水位监测等。</p>
+<p>2.2分布式智能监控原理</p>
+<p>分布式智能终端分两种形式，一种为环境参数监控终端、另一种为机械设备运行状态监控终端。环境参数监控终端主要监测包括模拟量形式的环境参数，如瓦
+斯CH4浓度、一氧化碳CO浓度，二氧化碳CO2浓度、巷道风速、风量、负压、风门、温度、变电所功率、电压、电流等，传感器输出信号类型为FSK或标准
+4~20mA/0~5mA形式；开关量形式的设备开停参数，如通风机、水泵、皮带、掘进机等机械设备的开停、供电电源开关的状态等，开关量输出控制设备的
+开停、报警及闭锁。</p>
+<p>机械设备运行状态监控终端主要监测设备振动量、轴承温度、电机电流、设备的开停，并可远程控制设备的开停。该监控终端与环境参数监控终端的区别在于
+模拟信号处理电路、信号分析程序和通讯的内容不同。环境参数的信号处理只需要对信号采用３σ剔除法和均值统计法进行处理，判断并进行阈值报警，将分析结果
+上传至网络。而设备运行参数需要对振动信号和电流信号降噪，时域分析，FFT变换，频域故障诊断，将分析结果上传，并相隔一定周期将振动与电流原始数据上
+传至主机进行精密诊断。</p>
+<p>2.3分布式智能监控终端硬件结构</p>
+<p>DSP芯片以其性价比高、运算速度快、丰富的信号处理指令而广泛应用到信号处理和控制领域，成为新一代智能仪器仪表的系统核心。监控终端采用
+TMS320LF2407A芯片为核心，指令周期为25ns，其内部集成有16通道的10位A/D转换器，A/D转换时间为375ns，实现模拟量信号的
+采集；开关量采集由IOPA口输入；开关量输出由IOPB口控制。</p>
+<p>由于环境参数与机电设备运行参数的信号类型和信号处理方法上存在不同，因此，开发相应的监测终端。环境参数监控终端：环境参数的传感器大多为智能传
+感器，输出信号形式为4~20mA/0~5mA或FSK，模拟信号预处理电路针对信号类型在每个通道设置有三种输入方式，通过程控开关选择相应的输入路
+径，将信号转换为0~5V电压信号，然后进入信号跟随电路、光耦隔离和低通滤波电路；开关量信号输入电路由光耦隔离和整形电路组成；开关量输出控制电路由
+光耦隔离、驱动放大和固态继电器组成。</p>
+<p>A/D转换由TMS320LF2407A片内2个8通道10位A/D转换器完成，采集数据保存在缓冲区，采样结束后启动信号分析与处理程序，进行时域统计，分析完成后启动通讯子程序，将分析结果上传至网络。</p>
+<p>CAN总线通讯由DSP内嵌CAN总线控制器，外部扩展具有高速光电隔离和总线驱动的收发器CTM1040组成，具有结构简单，功能可靠的特点。</p>
+<p>机电设备运行状态监控终端：由于各区域的机电设备相对较为集中，监测参数较多，采集的信号幅值变化范围大，特别是对振动信号，需要根据信号特点进行
+适当的滤波和放大，因此，与环境参数监控终端相比，其模拟信号处理电路相对复杂一些，其中振动信号处理通道包含信号跟随电路、程控滤波和程控放大电路，滤
+波电路采用双路可编程滤波器集成芯片Max262，通过DSP控制滤波器类型和滤波频率，实现滤波的可程控性；放大电路采用4路64抽头数字电位器
+DS1844与集成运放芯片AD526组成的程控放大电路，放大增益通过DSP程序控制，监控终端8路A/D输入通道设计有该信号处理电路对振动信号进行
+处理，另外8路A/D输入通道与环境参数监控终端模拟通道一样，为轴承温度、负压输入通道。系统框图如图１所示。</p>
+<p><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/20080806085501893.jpg" border="0"></p>
+<p><br clear="all">&nbsp;</p>
+<p>2.4网络化监控系统构成</p>
+<p>由于煤矿井下环境复杂恶劣，挖掘距离较远，巷道错综复杂，生产布局分散，监控点多而且分散，因此，采用适用于高速远距离的CAN总线构成监控网络，
+当总线负载数量超过110个监控终端时，采用中继器实现不同网段的互联。现场分布式监控系统通过CAN总线与井上控制室服务器相连，由服务器实现数据的保
+存、故障诊断以及连锁控制。监控终端根据监控对象的重要程度建立优先级别，在预警事故或网络拥塞时优选重要参数传输至服务器进行综合分析与协调控制，同时
+将连锁控制信息发至监控终端。</p>
+<p>上位机选用IBM-PC机，通过CAN总线计算机接口卡实现总线的连接，同时，监测数据通过以太网实现共享，其管理机构和远程诊断专家可在网络上浏览、查看和分析矿井状态，系统的构成如图2所示。</p>
+<p><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/20080806085545953.jpg" border="0"></p>
+<p>
+<table cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td>
+<div v:shape="_x0000_s1026">
+<p align="center">图2&nbsp; 基于CAN总线的网络化监控系统</p>
+<p align="center">Fig.2 The network of monitoring and control system</p>
+<p>&nbsp;</p></div></td></tr></tbody></table>&nbsp;</p>
+<p>&nbsp;</p>
+<p><br clear="all">&nbsp;</p>
+<p>3上位机软件设计</p>
+<p align="left">上位机分析和管理程序采用VC++软件编程实现，实时完成测点自定义，信息采集和处理，具有显示测量参数、数据报表、历史数据分类显示、曲线显示、图形生成、数据存储、故障统计和报表打印功能。</p>
+<p>系统主要功能如下：</p>
+<p>1）测点自定义：智能终端开机运行时，首先将配置的传感器定义及描述发送至主机，主机对各终端传感器配置与数据库中原来监控点记录相比较，若发现新增监测点，则根据描述添加到相应数据库。并在相应的动态图形上添加相应的数据显示标志。</p>
+<p>2）实时显示参数：在巷道空间布局示意图上实时显示相对重要的监控参数，现场技术人员可以根据屏幕显示的各项数据直接了解矿井状态，瓦斯、温度、风
+速等不同的参数以不同颜色显示，当超过阈值报警时，相应参数以红色显示，并声光报警。点击二级菜单，可以进行细致的参数查看和分析，以指定巷道、工作点、
+区域机械设备、瓦斯参数、温度、风速等不同形式进行显示。</p>
+<p align="left">3）历史数据查询：可以指定某个区域、某个参数或多个参数对历史数据进行查询和分析，分析其变化趋势，从而有效的了解和掌握矿井安全与生产。</p>
+<p>4）数据分析与故障诊断：上位机充分利用其计算和分析的特点，对环境监控信息从全局进行综合分析，特别是对瓦斯、温度、通风信息进行多点信息融合，
+综合分析与预报，控制风门与通风机的运行，以及预报事故时风电、瓦斯电连锁控制，提高矿井安全。对机电设备运行信息采用先进算法进行处理<sup>[7</sup><sup>，</sup><sup>8]</sup>：
+小波信号降噪和频谱变换、机械与电气分析的信息融合、设备多个故障混合情况下的盲源信号分离，以及故障特征的数据挖掘等，通过先进算法的精密诊断，提高系
+统故障预报，避免重要设备的突发事故的发生。出现事故预警时对井下巷道网络的瓦斯、CO浓度等做出趋势分析，辅助决策逃生与救援方案。</p>
+<p>5）通讯模块：当系统正常时，主机接收各监控点数据；当出现事故预报时主机主动向现场监控终端发送上传信息请求，并实时监控连锁操作。</p>
+<p>4结语<b></b></p>
+<p>本文主要研究了基于CAN总线的煤矿安全通用分布式监控系统，针对矿井特点设计了智能环境监控终端和机电设备运行状态监控终端，并通过CAN总线实
+现多节点、高速、高可靠性的网络互联，对煤矿环境安全参数和设备运行状态进行实时监控，使管理部门对矿井生产特别是瓦斯、通风以及重要设备的运行情况等有
+一个全局直观的了解，各监控终端可根据优先级别进行自主通讯，并可实现现场终端之间的预警连锁，主机对全局参数进行信息融合、综合分析、诊断及辅助决策。
+该系统为煤矿安全通用分布式监控系统，其监控终端与通讯具有通用性和标准性，通过现场应用表明，该系统运行可靠，具有很好的推广和应用价值。</p>
+<p>本文创新点：针对矿井特点开发了通用智能仪器：智能环境安全监测与闭锁、报警终端以及针对矿井关键设备的机电设备状态监控与故障诊断终端；并针对矿井传输距离远的特点开发了基于CAN总线的网络化监控系统。</p>
+<p align="center">&nbsp;</p>
+<p align="center">参&nbsp; 考&nbsp; 文&nbsp; 献</p>
+<p align="left">1 卞长弘,宁培松,王晓滨. 矿井监测监控系统综述[J], 煤炭企业管理, 2005,(7):62-63</p>
+<p align="left">2 石平五. 发展科学监测体系，制止矿山重大事故 [J], 煤炭学报, 2002, 27 (3):225-228</p>
+<p align="left">3 靳方义,王桂花. KJ95安全生产监控系统 [J], 煤炭技术, 2005, 24 (8):48-49</p>
+<p>4 蔡崇,王占飞. KJ70型煤矿安全生产监控系统的应用[J], 煤炭科学技术,2004,32 (9):26-27</p>
+<p align="left">5 卢嘉宁. KJ66煤矿安全生产计算机监测系统 [J]. 微计算机信息,2002, 18(4):19-20</p>
+<p align="left">6 张富荣. 网络技术在煤矿安全监测系统中的应用[J] , 煤矿安全, 2004,35 (5):25-26</p>
+<p align="left">7 阎馨, 屠乃威. 基于多传感器数据融合技术的瓦斯监测系统 [J], 计算机测量与控制,2004,12(12):1140-1142</p>
+<p align="left">8 岳一领,李东生. 基于数据挖掘技术的煤矿远程监控系统研究[J], 太原理工大学学报,2005,36(2):211-215</p>
+<div><br clear="all">
+<hr align="left" size="1" width="33%">
+
+<div id="ftn1">
+<p><a title="" href="http://www.51kaifa.com/HostAdmin/eWebEditor/ewebeditor.htm?id=content1&amp;style=full#_ftnref1" name="_ftn1">&nbsp;</a>&nbsp;*基金项目: 湖南省自然科学基金(05JJ20012)、国家安全生产监督管理总局科技发展计划(06-399)资助</p></div></div>
+
+            <table border="0" cellpadding="0" cellspacing="0" width="98%">
+              <tbody><tr>
+                <td>
+					<!--ad9 <?=show_ggyw('jswz','9','h','5');?> -->
+					<iframe src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/ad-jswz_9.htm" border="0" marginwidth="0" marginheight="0" frameborder="no" height="60" scrolling="no" width="468"></iframe>
+					<!-- <script type="text/javascript" src="/ad/ad.php?ListName=jswz&Place=9&Way=h&Num=5"></script> -->
+               </td>
+              </tr>
+            </tbody></table><br>
+            <table border="0" cellpadding="0" cellspacing="0" width="98%">
+              <tbody><tr>
+                <td align="right" width="23%">&nbsp;(全文结束)</td>
+              </tr>
+            </tbody></table><br>
+		  </td>
+        </tr>
+
+        <tr>
+          <td align="right" height="17" width="100%"> 信息发布:&nbsp;&nbsp; 转引自: 
+【<a href="javascript:fontzoom(16)">大</a> <a href="javascript:fontzoom(14)">中</a> <a href="javascript:fontzoom(12)">小</a>】
+【<a href="#" onclick="window.print();">打印</a>】
+【<a href="javascript:window.close()">关闭</a>】
+
+		  </td>
+        </tr>
+
+
+		
+		<tr>
+          <td valign="top" width="100%">
+            <table style="" align="center" border="0" cellpadding="0" cellspacing="1" width="98%">
+              <tbody><tr>
+                <td bgcolor="#e1e2c9" width="23%">&nbsp;<img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/icon2.gif" align="absmiddle">相 关 文 章</td>
+                <td width="77%"></td>
+              </tr>
+            </tbody></table>
+
+
+		  </td>
+        </tr>
+        <tr>
+          <td valign="top" width="100%">
+			<!-- star xiangguan -->
+			<table align="center" border="0" cellpadding="3" cellspacing="0" width="100%"><tbody>
+<tr>
+<td align="center" width="2"></td>
+<td align="center" width="12"><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/0.gif"></td>
+<td class="afa3" valign="bottom"><a target="_blank" href="http://www.51kaifa.com/html/jswz/200504/read-1329.htm"><font color="">基于DSP和X5165芯片的非易失性数据存储设计</font></a> <font color="#330000">(04-07)</font>
+</td></tr>
+<tr>
+<td align="center" width="2"></td>
+<td align="center" width="12"><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/0.gif"></td>
+<td class="afa3" valign="bottom"><a target="_blank" href="http://www.51kaifa.com/html/jswz/200503/read-926.htm"><font color="">基于DSP的移动机器人的设计与实现</font></a> <font color="#330000">(03-15)</font>
+</td></tr>
+<tr>
+<td align="center" width="2"></td>
+<td align="center" width="12"><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/0.gif"></td>
+<td class="afa3" valign="bottom"><a target="_blank" href="http://www.51kaifa.com/html/jswz/200503/read-918.htm"><font color="">TMS320LF2407A在混合电压系统中的设计</font></a> <font color="#330000">(03-14)</font>
+</td></tr>
+<tr>
+<td align="center" width="2"></td>
+<td align="center" width="12"><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/0.gif"></td>
+<td class="afa3" valign="bottom"><a target="_blank" href="http://www.51kaifa.com/html/jswz/200509/read-2314.htm"><font color="">基于DSP与AD9852的任意信号发生器</font></a> <font color="#330000">(09-11)</font>
+</td></tr>
+<tr>
+<td align="center" width="2"></td>
+<td align="center" width="12"><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/0.gif"></td>
+<td class="afa3" valign="bottom"><a target="_blank" href="http://www.51kaifa.com/html/jswz/200510/read-2602.htm"><font color="">基于TMS320F2407A DSP 的 MODBUS 通信协议的实现</font></a> <font color="#330000">(10-02)</font>
+</td></tr>
+<tr>
+<td align="center" width="2"></td>
+<td align="center" width="12"><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/0.gif"></td>
+<td class="afa3" valign="bottom"><a target="_blank" href="http://www.51kaifa.com/html/jswz/200603/read-5473.htm"><font color="">基于TMS320LF2407A支持FAT32文件系统嵌入式软件的实现</font></a> <font color="#330000">(03-07)</font>
+</td></tr>
+<tr>
+<td align="center" width="2"></td>
+<td align="center" width="12"><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/0.gif"></td>
+<td class="afa3" valign="bottom"><a target="_blank" href="http://www.51kaifa.com/html/jswz/200512/read-3588.htm"><font color="">基于TMS320LF2407A的电机控制实验平台的设计</font></a> <font color="#330000">(12-08)</font>
+</td></tr>
+<tr>
+<td align="center" width="2"></td>
+<td align="center" width="12"><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/0.gif"></td>
+<td class="afa3" valign="bottom"><a target="_blank" href="http://www.51kaifa.com/html/jswz/200806/read-10052.htm"><font color="">基于DSP和功率模块的电机伺服控制系统</font></a> <font color="#330000">(06-12)</font>
+</td></tr>
+</tbody>
+</table>
+
+
+			<!-- end xiangguan -->
+
+		  </td>
+        </tr>
+        
+<!-- 		<tr>
+          <td width="100%" valign="top">
+            <table border="0" align=center width="98%" cellspacing="1" cellpadding="0" style="border: 1 solid #968043">
+              <tr>
+                <td width="23%" bgcolor="#E1E2C9">&nbsp;<img src="/images/icon2.gif" align="absmiddle">相 关 评 论</td>
+                <td width="77%"></td>
+              </tr>
+            </table>
+
+
+		  </td>
+        </tr>
+        <tr>
+          <td width="100%" valign="top">
+			
+			<table width=94% align=center><tr><td>很抱歉！现在还没有相关评论...</td></tr></table>
+			
+
+		  </td>
+        </tr>
+        <tr>
+          <td width="100%" valign="top">
+            <table align=center border="0" width="98%"  cellspacing="1" cellpadding="0" style="border: 1 solid #968043">
+              <tr>
+                <td width="23%" bgcolor="#E1E2C9">&nbsp;<img src="/images/icon2.gif" align="absmiddle">发 表 评 论</td>
+                <td width="77%"></td>
+              </tr>
+            </table>
+
+
+		  </td>
+        </tr>
+        <tr>
+          <td width="100%" valign="top">
+
+        <table align=center border="0" width="98%"  cellpadding=0 cellspacing=0 >
+          <form id=myform name=myform method=post>
+            <tr>
+              <td height="5"  bgcolor=#F0F0F0> 
+                <input type=hidden name="ID" value=10343> 
+                <input type=hidden name="nAction" value="addreply">
+				<table align=center border="0" width="98%"  cellpadding=0 cellspacing=0 >
+				<TR>
+					<TD width="20%">&nbsp;&nbsp;<input type=checkbox name=anonymous value=1>&nbsp;匿名发表</TD>
+					<TD width="50%"><iframe width=100% name="ifname" frameborder=0 scrolling=no height=30 src="/login_read.php
+				"></iframe></TD>
+					<TD width="30%">邮箱：<input name="email" type="text" class="INPUT2" id="email" size="15"></TD>
+				</TR>
+				</TABLE>
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor=#F0F0F0 align=center> <textarea rows=10 cols=70 wrap=soft name=content></textarea> 
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor=#F0F0F0 align=center> <input type="button" name="t" onClick="Form_check()" value="  发送  "> 
+              </td>
+            </tr>
+          </form>
+        </table>
+
+		  </td>
+        </tr> -->
+
+      </tbody></table>
+
+
+
+
+    </td>
+
+    <td bgcolor="#808080" valign="top" width="1"><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/xu2.gif" alt="" border="0" height="1" width="1"></td>
+     <td bgcolor="#edf0f5" height="500" valign="top" width="169">
+<script src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/ad-jswz_7.js"></script><p><a href="http://www.51kaifa.com/shop/read.php?ID=3117"></a><table id="table2" bgcolor="#99ccff" border="0" width="173"><tbody><tr><td bgcolor="#c0c0c0"><hr color="#0000ff"></td></tr><tr><td bgcolor="#c0c0c0" height="47"><p align="center"><font color="#ff0000"><b>51单片机系列</b></font></p></td></tr><tr><td bgcolor="#c0c0c0"><p align="center">国内最超值的 <br>单片机学习开发系统</p></td></tr><tr><td bgcolor="#c0c0c0" height="73"><p align="center"><a href="http://www.51kaifa.com/shop/read.php?ID=3153"><strong>ELITE-III<br>单片机学习开发系统<br></strong><img alt="" src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/20090528025629526.jpg" border="0" height="98" hspace="0" width="150"></a></p></td></tr><tr><td bgcolor="#c0c0c0"><a href="http://www.51kaifa.com/shop/read.php?ID=3153">-支持ATMEL、STC、WINBOND、SST四种芯片编程<br>-支持USB接口编程<br>-功能强大<br>-精美包装</a></td></tr><tr><td bgcolor="#c0c0c0" height="65"><p align="left"><a href="http://www.51kaifa.com/shop/read.php?ID=4730">ELITE-IV单片机开发系统</a>248元</p></td></tr><tr><td bgcolor="#c0c0c0" height="31"><p align="left"><a href="http://www.51kaifa.com/shop/read.php?ID=3137">单片机读写U盘方案<br>-SL811HST开发套件</a> </p><hr color="#0000ff"></td></tr></tbody></table></p><p><table id="table3" bgcolor="#99ccff" border="0" width="173"><tbody><tr><td bgcolor="#ddecfe" height="31"><hr color="#0000ff"><p align="center"><font color="#ff0000"><b>ARM开发板系列</b></font></p></td></tr><tr><td bgcolor="#ddecfe" height="21"></td></tr><tr><td bgcolor="#ddecfe"><a href="http://www.51kaifa.com/shop/read.php?ID=4769">Basic</a><a href="http://www.51kaifa.com/shop/read.php?ID=4769" target="_blank">2410+3.5寸套装</a></td></tr><tr><td bgcolor="#ddecfe"><ul><li><p align="left"><font color="#ff0000">VGA 1024*768 S-video接口</font></p></li><li><p align="left"><font color="#ff0000">linux2.6.28</font></p></li><li><p align="left"><font color="#ff0000">Qtextended4.4.3 </font></p></li><li><p align="left"><font color="#ff0000">wince BSP6.0</font></p></li></ul><p align="center"><a href="http://www.51kaifa.com/shop/read.php?ID=4769"><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/2009052802571273.bmp"></a></p></td></tr><tr><td bgcolor="#ddecfe" height="30"><a href="http://www.51kaifa.com/shop/read.php?ID=3185">OK-2440-III+3.5寸套装<br>&nbsp;&nbsp; （送配套教材书）</a></td></tr><tr><td bgcolor="#ddecfe" height="30"><p align="center"><a href="http://www.51kaifa.com/shop/read.php?ID=3185"><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/20090528025717572.jpg"></a></p></td></tr><tr><td bgcolor="#ddecfe"><p align="center"><a href="http://www.51kaifa.com/shop/read.php?ID=4847" target="_blank">Micro2440开发板+3.5NEC套装</a> </p></td></tr><tr><td bgcolor="#ddecfe" height="96"><p align="center"><a href="http://www.51kaifa.com/shop/read.php?ID=4847"><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/20090528025722284.jpg" border="0"></a></p></td></tr><tr><td bgcolor="#ddecfe"><p align="center"><a href="http://www.51kaifa.com/shop/read.php?ID=4846" target="_blank">mini2440 开发板 + NEC3.5</a><br>&nbsp;</p></td></tr><tr><td bgcolor="#ddecfe"><p align="center"><a href="http://www.51kaifa.com/shop/read.php?ID=4846"><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/20090528025727975.jpg"></a></p></td></tr><tr><td bgcolor="#ddecfe"><a href="http://www.51kaifa.com/shop/read.php?ID=4815">TE</a><a href="http://www.51kaifa.com/shop/read.php?ID=4815" target="_blank">-2440-II 开发板 </a><ul><li>双网口 </li><li>CAN总线 </li><li>VGA接口 </li><li>工业设计</li></ul></td></tr><tr><td bgcolor="#ddecfe"><p align="center"><a href="http://www.51kaifa.com/shop/read.php?ID=4815"><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/20090528025732666.jpg" height="98" width="134"></a></p></td></tr></tbody></table></p><p><table id="table4" bgcolor="#99ccff" border="0" width="173"><tbody><tr><td bgcolor="#b5d8ff"><hr color="#0000ff"></td></tr><tr><td bgcolor="#b5d8ff"><p align="left"><font color="#ff0000"><b>FPGA/CPLD开发板系列</b></font></p></td></tr><tr><td bgcolor="#b5d8ff"><p align="center"></p></td></tr><tr><td bgcolor="#b5d8ff"><a href="http://www.51kaifa.com/shop/read.php?ID=4838" target="_blank">红色飓风II代-Altera版</a><br><a href="http://www.51kaifa.com/shop/read.php?ID=4838" target="_blank">(EP1C6Q240 FPGA开发板</a>）</td></tr><tr><td bgcolor="#b5d8ff"><p align="center"><a href="http://www.51kaifa.com/shop/read.php?ID=4838" target="_blank"><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/20090528030149886.jpg" border="0" height="80" width="110"></a></p></td></tr><tr><td bgcolor="#b5d8ff"><a href="http://www.51kaifa.com/shop/read.php?ID=4839" target="_blank">红色飓风II代-Xilinx版</a><br><a href="http://www.51kaifa.com/shop/read.php?ID=4839" target="_blank">（XC3S400 FPGA开发板）</a> </td></tr><tr><td bgcolor="#b5d8ff"><p align="center"><a href="http://www.51kaifa.com/shop/read.php?ID=4839" target="_blank"><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/20090528030154549.jpg" border="0" height="80" width="110"></a></p></td></tr><tr><td bgcolor="#b5d8ff"><font color="#ff0000"><a href="http://www.51kaifa.com/shop/read.php?ID=4827" target="_blank">NIOS II 2.1</a><br><a href="http://www.51kaifa.com/shop/read.php?ID=4827" target="_blank">——EP1C6 FPGA开发板</a></font></td></tr><tr><td bgcolor="#b5d8ff"><p align="center"><a href="http://www.51kaifa.com/shop/read.php?ID=4827"><img alt="" src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/20090528030159589.jpg" border="0" height="113" hspace="0" width="150"></a></p></td></tr><tr><td bgcolor="#b5d8ff"><p align="left"><a href="http://www.51kaifa.com/shop/read.php?ID=3118" target="_blank">FPGA EP1C6开发板</a></p><p align="center"><a href="http://www.51kaifa.com/shop/read.php?ID=4807"><img alt="" src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/20090528030204976.gif" border="0" height="101" hspace="0" width="120"></a></p></td></tr><tr><td bgcolor="#b5d8ff">&nbsp;</td></tr><tr><td bgcolor="#b5d8ff"><a href="http://www.51kaifa.com/shop/read.php?ID=4828" target="_blank">NIOS II 2.1——EP1C12开发板</a></td></tr><tr><td bgcolor="#b5d8ff"><a href="http://www.51kaifa.com/shop/read.php?ID=4831">Cyclone&nbsp;II&nbsp;EP2C8&nbsp;音频开发板</a></td></tr><tr><td bgcolor="#b5d8ff"><p align="center"><a href="http://www.51kaifa.com/shop/read.php?ID=4831"><img alt="" src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/2009052803020949.jpg" border="0" height="110" hspace="0" width="150"></a></p></td></tr><tr><td bgcolor="#b5d8ff"><a href="http://www.51kaifa.com/shop/read.php?ID=3117" target="_blank">EPM7128 CPLD开发板</a></td></tr><tr><td bgcolor="#b5d8ff"><p align="center"><a href="http://www.51kaifa.com/shop/read.php?ID=4831"></a><a href="http://www.51kaifa.com/shop/read.php?ID=3117"><img alt="" src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/20090528031243517.gif" border="0" height="74" hspace="0" width="120"></a><a href="http://www.51kaifa.com/shop/read.php?ID=3117"></a></p></td></tr><tr><td bgcolor="#b5d8ff"><a href="http://www.51kaifa.com/shop/read.php?ID=4766" target="_blank">EPM1270T144C CPLD开发板</a></td></tr><tr><td bgcolor="#b5d8ff"><p align="center"><a href="http://www.51kaifa.com/shop/read.php?ID=4766"><img alt="" src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/20090528030310193.jpg" border="0" height="69" hspace="0" width="120"></a><a href="http://www.51kaifa.com/shop/read.php?ID=4766"></a></p></td></tr><tr><td bgcolor="#b5d8ff"><a href="http://www.51kaifa.com/shop/read.php?ID=4848" target="_blank">USB Blaster下载器</a> </td></tr><tr><td bgcolor="#b5d8ff"><p align="center"><a href="http://www.51kaifa.com/shop/read.php?ID=4848" target="_blank"><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/2009052803031549.jpg" border="0" height="80" width="110"></a><a href="http://www.51kaifa.com/shop/read.php?ID=4848" target="_blank"></a></p></td></tr><tr><td bgcolor="#c4d9f9"><hr color="#0000ff"></td></tr></tbody></table></p><p><table id="table5" bgcolor="#99ccff" border="0" width="173"><tbody><tr><td bgcolor="#c4d9f9"><hr color="#0000ff"><p align="center"><b>DSP开发板系列</b></p></td></tr><tr><td bgcolor="#c4d9f9"></td></tr><tr><td bgcolor="#c4d9f9"><a href="http://www.51kaifa.com/shop/read.php?ID=4732" target="_blank">DSP2812S-STUDY-KIT开发板</a></td></tr><tr><td bgcolor="#c4d9f9"><p align="center">&nbsp;</p></td></tr><tr><td bgcolor="#c4d9f9"><a href="http://www.51kaifa.com/shop/read.php?ID=4731" target="_blank">DSP2812+USB2.0 CY7C68001学习开发平台</a></td></tr><tr><td bgcolor="#c4d9f9">&nbsp;</td></tr><tr><td bgcolor="#c4d9f9"><a href="http://www.51kaifa.com/shop/read.php?ID=4856" target="_blank">DSP2812-Pro多功能开发板</a></td></tr><tr><td bgcolor="#c4d9f9">&nbsp;</td></tr><tr><td bgcolor="#c4d9f9"><a href="http://www.51kaifa.com/shop/read.php?ID=4843" target="_blank">DSP2407A+USB2.0+NET开发板</a></td></tr><tr><td bgcolor="#c4d9f9">&nbsp;</td></tr><tr><td bgcolor="#c4d9f9"><a href="http://www.51kaifa.com/shop/read.php?ID=4854" target="_blank">DSP28335 Lite 学习开发板</a></td></tr><tr><td bgcolor="#c4d9f9">&nbsp;</td></tr><tr><td bgcolor="#c4d9f9"><a href="http://www.51kaifa.com/shop/read.php?ID=4855" target="_blank">DSP28335S学习开发板</a></td></tr><tr><td bgcolor="#c4d9f9">&nbsp;</td></tr><tr><td bgcolor="#c4d9f9"><a href="http://www.51kaifa.com/shop/read.php?ID=3182" target="_blank">DSP5509S-STUDY-KIT学习开发板</a></td></tr><tr><td bgcolor="#c4d9f9">&nbsp;</td></tr><tr><td bgcolor="#c4d9f9"><a href="http://www.51kaifa.com/shop/read.php?ID=4820" target="_blank">DSP5416+FPGA 1C6＋USB2.0 CY7C68001开发板</a></td></tr><tr><td bgcolor="#c4d9f9"><p align="center">&nbsp;</p></td></tr><tr><td bgcolor="#c4d9f9"><a href="http://www.51kaifa.com/shop/read.php?ID=4817" target="_blank">DSP5402网络语音开发板</a></td></tr><tr><td bgcolor="#c4d9f9"><p align="center">&nbsp;</p></td></tr><tr><td bgcolor="#c4d9f9"><a href="http://www.51kaifa.com/shop/read.php?ID=4818" target="_blank">DSP+CPLD+单片机学习板</a></td></tr><tr><td bgcolor="#c4d9f9"><p align="center">&nbsp;</p></td></tr><tr><td bgcolor="#c4d9f9"><a href="http://www.51kaifa.com/shop/read.php?ID=66" target="_blank">XDS510-USB2.0仿真器 </a></td></tr><tr><td bgcolor="#c4d9f9"><p align="center">&nbsp;</p></td></tr><tr><td bgcolor="#c4d9f9" height="24"><hr color="#0000ff"></td></tr></tbody></table></p><p><table id="table6" style="width: 174px; height: 372px;" bgcolor="#99ccff" border="0" width="174"><tbody><tr><td bgcolor="#c0c0c0"><p align="center"><b><font color="#ff0000">USB2.0/CAN总线开发板系列</font></b></p></td></tr><tr><td bgcolor="#c0c0c0"><a href="http://www.51kaifa.com/shop/read.php?ID=4833" target="_blank"><font color="#0000ff">USB2.0-CY7C68013A-56开发板</font></a></td></tr><tr><td bgcolor="#c0c0c0"><p align="center"></p></td></tr><tr><td bgcolor="#c0c0c0"><a href="http://www.51kaifa.com/shop/read.php?ID=4808" target="_blank"><font color="#0000ff">USB2.0-CY7C68013-128S开发板</font></a>&nbsp;</td></tr><tr><td bgcolor="#c0c0c0"><p align="center">&nbsp;</p></td></tr><tr><td><hr color="#0000ff" size="3"></td></tr><tr><td><p align="center"><font color="#ff0000"><b>无线通信开发板系列</b></font></p></td></tr><tr><td><a href="http://www.51kaifa.com/shop/read.php?ID=3152" target="_blank"><font color="#0000ff">无忧无线nRF9e5 SOC开发平台</font></a> </td></tr><tr><td><a href="http://www.51kaifa.com/shop/read.php?ID=3152"><img style="width: 166px; height: 72px;" alt="" src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/20090528030531568.gif" border="0" height="87" hspace="0" width="200"></a></td></tr><tr><td><a href="http://www.51kaifa.com/shop/read.php?ID=4770" target="_blank"><font color="#0000ff">无忧无线nRF24Z1高保真数字<br>音频传输开发平台</font></a></td></tr><tr><td><a href="http://www.51kaifa.com/shop/read.php?ID=4770"><img style="width: 163px; height: 83px;" alt="" src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/20090528030536146.gif" border="0" height="88" hspace="0" width="180"></a></td></tr></tbody></table></p>
+		<!-- <script type="text/javascript" src="/ad/ad.php?ListName=jswz&Place=7&Way=X&Num=5"></script> -->
+
+
+
+    
+    </td>
+  </tr>
+</tbody></table>
+
+
+
+<!-- <script language=JavaScript>
+document.write("<img src='/HostAdmin/count/Count.php?Referer=&Ip=&Width="+escape(screen.width)+"&Height="+escape(screen.height)+"' border=0 width=0 height=0>");
+</script> -->
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="760">
+   <tbody><tr><td>
+
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	 <tbody><tr> 
+		<td background="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/sy_top1.gif" width="100%"><img src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/sy_top1.gif" height="16" width="4"></td>
+	  </tr>
+	  <tr>
+		<td align="center">
+		<a href="http://www.51kaifa.com/gywm.php?action=guanyu">关于我们</a>&nbsp;┋&nbsp;<a target="_blank" href="http://www.51kaifa.com/FriendSiteReg/F_read.php">友情链接</a>
+		</td>
+	  </tr>                                
+	</tbody></table>
+                   
+	<table background="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/xu2.gif" border="0" cellpadding="0" cellspacing="0" height="1" width="100%">
+	<tbody><tr>
+		<td width="100%"></td>
+	 </tr>
+	</tbody></table>  
+
+	<table border="0" cellpadding="0" cellspacing="0" height="60" width="100%">
+	  <tbody><tr>
+		 <td width="100%">
+			<p align="center">
+			<br>深圳市福田区海滨广场恒福花园恒华阁11F<br>
+	电话：0755-88305872 传真：0755-88305880  
+			<!-- <br>
+			 <a href="mailto:E-mail：webmaster@51kaifa.com">E-mail：webmaster@51kaifa.com</a> -->
+			 <br>
+			 Copyright&#169;2005-2007 无忧电子开发网版权所有  
+			 <!-- <script language="javascript" src="http://ww4.tongji123.com/g1.aspx?id=47375836"></script> -->
+	 
+			 <br>
+			 
+			 </p><center><a target="_blank" href="http://www.miibeian.gov.cn/">粤ICP备05064233号</a>
+<script language="javascript" type="text/javascript" src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/count.js"></script><script src="%E5%9F%BA%E4%BA%8ECAN%E6%80%BB%E7%BA%BF%E7%9A%84%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E5%88%86%E5%B8%83%E5%BC%8F%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F_files/count.htm"></script>
+			 
+			 </center>
+			
+			<br>
+			<br>
+		  </td>  
+	   </tr>
+	 </tbody></table>
+
+
+</td>
+</tr>
+</tbody></table>
+    </td>
+  </tr>
+</tbody></table>
+
+</td></tr></tbody></table></body></html>

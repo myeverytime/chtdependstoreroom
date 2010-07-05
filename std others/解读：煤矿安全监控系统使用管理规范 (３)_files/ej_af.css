@@ -1,0 +1,35 @@
+<!--start二级页面左侧的样式表-->
+.sss{}
+.ej_banner{width:960px;margin:5px auto;text-align:center;}
+.ej_banner_1{width:610px;margin:5px auto;}
+.ej_main{width:960px;margin:5px auto;}
+.ej_left{width:630px;float:left;border:1px solid #dbdbdb;}
+.ej_left_zt{font-size:10.5pt;line-height:25px;}
+a.ej_left_zt:link{font-family: "宋体"; font-size: 10.5pt;color: #000000; text-decoration: none; }
+a.ej_left_zt:visited{font-family: "宋体"; font-size: 10.5pt; color: #000000; text-decoration: none; }
+a.ej_left_zt:hover{font-family: "宋体"; font-size: 10.5pt; color: #0D5BF1; text-decoration: none; }
+.ej_left_zt_1{font-size:12px;line-height:20px;color:#D25C02;}
+.ej_left_1{width:630px;margin:5px 0 5px 0;}
+.ej_left_1_1{width:470px;float:left;text-align:left;padding:5px 0 0 10px;}
+.ej_left_1_2{width:150px;float:right;text-align:center;padding:6px 0 0 0;}
+.ej_left_1_2_1{width:110px;margin:10px auto;}
+.ej_left_2{width:630px;float:left}
+<!--end二级页面左侧的样式表-->
+
+<!--start二级页面右侧的样式表-->
+.ejright{width:320px;float:right;}
+.ej_right{width:320px;float:right;border:1px solid #dbdbdb;}
+.ej_right_1{width:316px;margin:3px auto;}
+.ej_right_1_1{width:316px;margin:5px auto;height:30px;background-image:url(/images/ejym/ej_002.gif);}
+.ej_right_1_1_01{width:180px;float:left;margin:5px auto;line-height:19px;}
+.ej_right_1_1_02{width:47px;height:24px;float:right;background-image:url(/images/ejym/ej_003.gif);font-size:12px;line-height:20px;padding:5px 0 0 0;}
+.ej_right_1_1_03{width:47px;height:24px;float:right;background-image:url(/images/ejym/ej_004.gif);font-size:12px;line-height:20px;padding:5px 0 0 0;}
+.ej_right_1_2{width:310px;margin:5px auto;font-size:12px;line-height:20px;text-align:left;}
+.ej_right_1_3{width:290px;margin:5px auto;font-size:12px;line-height:20px;padding:0 10px;}
+.ej_right_1_4{width:310px;margin:5px auto;font-size:12px;line-height:20px;text-align:left;}
+.ej_right_1_5{width:310px;margin:5px auto;font-size:12px;line-height:20px;text-align:left;}
+.ej_right_1_6{width:310px;margin:5px auto;font-size:12px;line-height:20px;text-align:left;}
+<!--end二级页面右侧的样式表-->
+
+
+

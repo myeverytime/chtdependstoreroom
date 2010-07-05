@@ -1,0 +1,140 @@
+
+A {
+TEXT-DECORATION: none
+}
+//BODY {background-image:url(mybg.gif);color:#000000;font-size:12px;line-height:130%;}  
+
+A:link {
+COLOR: #666666; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A:visited {
+COLOR: #666666; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A:active {
+FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A:hover {
+BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; COLOR: #ff6600; BORDER-BOTTOM: 1px dotted; BORDER-RIGHT-WIDTH: 1px; TEXT-DECORATION: none
+}
+
+TABLE {
+FONT-SIZE: 9pt; FONT-FAMILY: 宋体; BORDER-COLLAPSE: collapse
+}
+
+.button {
+BORDER-RIGHT: #5589aa 1px solid; BORDER-TOP: #5589aa 1px solid; FONT-SIZE: 9pt; BACKGROUND: url(images/ButtonBg.gif) #f6f6f9; BORDER-LEFT: #5589aa 1px solid; WIDTH: 50px; COLOR: #000000; BORDER-BOTTOM: #5589aa 1px solid; HEIGHT: 18px
+}
+.lanyu {
+BORDER-RIGHT: #5589aa 1px solid; BORDER-TOP: #5589aa 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #5589aa 1px solid; COLOR: #000000; BORDER-BOTTOM: #5589aa 1px solid
+}
+.font {
+FONT-SIZE: 9pt; FILTER: DropShadow(Color=#cccccc, OffX=2, OffY=1, Positive=2); TEXT-DECORATION: none
+}
+
+.input5			{BORDER-RIGHT: #006c91 0px solid; BORDER-TOP: #009ace 1px solid; FONT-SIZE: 12px; BACKGROUND: #ffffff; BORDER-LEFT: #009ace 0px solid; COLOR: #000000; BORDER-BOTTOM: #009ace 1px solid; HEIGHT: 16px}
+
+.top_list:link {text-decoration: none; color: #ffffff;}
+.top_list:visited {text-decoration: none; color: #ffffff;}
+.top_list:active {text-decoration: none;color:#ffffff;}
+.top_list:hover {text-decoration: none; color: #666666;}
+
+.top_list2:link {text-decoration: none; color: #CCFF33;}
+.top_list2:visited {text-decoration: none; color: #CCFF33;}
+.top_list2:active {text-decoration: none;color:#CCFF33;}
+.top_list2:hover {text-decoration: none; color: #666666;}
+
+.FileDomn:link {text-decoration: none; color: #3366FF;}
+.FileDomn:visited {text-decoration: none; color: #3366FF;}
+.FileDomn:active {text-decoration: none;color:#3366FF;}
+.FileDomn:hover {text-decoration: none; color: #666666;}
+
+.C_ZI
+{
+	font-family: simsun;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #FF6600;
+}
+.XG
+{
+	font-family: simsun;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #968043;
+}
+
+.icebutton { background-image:url(../images/bbk.gif);background-color:#ffffff;height=18;font-size:12px;border:#666666 1px solid}
+
+.INPUT2 {
+	BORDER-RIGHT: #0099ff 1px solid; BORDER-TOP: #0099ff 1px solid; BORDER-LEFT: #0099ff 1px solid; BORDER-BOTTOM: #0099ff 1px solid
+}
+
+
+.xyzx_top{
+font-family: 宋体;
+font-size:9.pt;
+color: #666666; 
+line-height: 150%;
+}
+
+A.xyzx_top2:link,A.xyzx_top2:visited {text-decoration:none;color:#ffffff;font-size:12px}
+A.xyzx_top2:active,A.xyzx_top2:hover {text-decoration:none;color:#F6F284;font-size:12px}
+
+A.shop_top:link,A.shop_top:visited {text-decoration:none;color:#ffffff;font-size:12px}
+A.shop_top:active,A.shop_top:hover {text-decoration:none;color:#FB3F8A;font-size:12px}
+
+A.buyTitle:link,A.buyTitle:visited {text-decoration:none;color:#634E19;font-size:12px}
+A.buyTitle:active,A.buyTitle:hover {text-decoration:none;color:#330000;font-size:12px}
+
+.xyzx_top_shadow{filter: DropShadow(Color=#385370, OffX=1, OffY=1, Positive=1);font-size:12px; color: #FFFFFF; text-decoration: none}
+.xyzx_top_shadow2{filter: DropShadow(Color=#CCCCCC, OffX=1, OffY=1, Positive=1);text-decoration: none}.input {
+
+.style1 {
+	border: 1px solid #000000;
+}
+
+.INPUT_button { 
+ BoRDER-ToP-WIDTH: 1px; PADDING-RIGHT: 1px; PADDING-LEFT: 1px;
+ BoRDER-LEFT-WIDTH: 1px; BoRDER-BoTToM-WIDTH: 1px; BoRDER-RIGHT-WIDTH: 1px;
+ PADDING-BoTToM: 1px; PADDING-ToP: 1px; HEIGHT: 18px;
+ BoRDER-LEFT-CoLoR: #c0c0c0; BoRDER-BoTToM-CoLoR: #c0c0c0;
+ BoRDER-ToP-CoLoR: #c0c0c0; BoRDER-RIGHT-CoLoR: #c0c0c0;
+ background-color: #FFFFFF; 
+ FoNT-SIZE: 9pt; font-family: Verdana, Arial, Helvetica, sans-serif, 宋体; CoLoR: #000000;
+}
+.INPUT_2 { 
+  border-left: 1 solid #FFFFFF; 
+  border-right: 1 solid #FFFFFF; 
+  border-top: 1 solid #FFFFFF; 
+  border-bottom: 1 solid #808080;
+  FoNT-SIZE: 9pt; font-family: Verdana, Arial, Helvetica, sans-serif, 宋体; CoLoR: #000000;
+}
+
+
+
+.box3 {
+	font-family: "宋体";
+	height: 20px;
+	background-color: #E5E5E5;
+	border: 1px #CFCFCF solid;
+	font-size: 10pt;
+	color: #686669;
+	padding-top: 3px;
+
+
+}
+.text3 {  font-family: "宋体"; font-size: 9pt; color: #5A5653; text-decoration: none}
+.text3:hover {  font-family: "宋体"; font-size: 9pt; color: #5A5653; text-decoration: underline}
+
+.text4 {  font-family: "宋体"; font-size: 9pt; color: #FF8040; text-decoration: none}
+.text4:hover {  font-family: "宋体"; font-size: 9pt; color: #FF8040; text-decoration: underline}
+
+.text5 {  font-family: "宋体"; font-size: 9pt; color: #009087; text-decoration: none; line-height: 140%}
+.text5:hover {  font-family: "宋体"; font-size: 9pt; color: #009087; text-decoration: underline; line-height: 140%}
+.buyBox1 {
+	border: 1px solid #999999;
+}
+
+
+
+

@@ -1,0 +1,126 @@
+@charset"utf-8";
+/* list body */
+.newlist_body{ width:970px;margin:0px auto; overflow:hidden;}
+.newlist_konghang{ width:100%; height:10px; overflow:hidden;}
+/* list body left */
+.newlist_left{ width:222px; float:left; margin:0 12px 0 0 !important;margin:0 10px 0 0;}
+.newlist_left_titel1  .newlist_left_more{ position:absolute; right:12px; top:6px;}
+/* list body left - 热点排行 */
+.newlist_left_rdph{ width:222px; border:1px #d8d8d8 solid; overflow:hidden;}
+.newlist_left_titel1{ position:relative; width:222px; background-image:url(../images/last_new_001.gif); height:31px;}
+.newlist_left_titel1 h3{ float:left; padding:12px 0 0 2px; font-size:14px; font-weight:bold; width:100px; text-align:center;}
+.newlist_left_phnovs{margin:14px 0 10px 7px;_margin:14px 0 10 7px; width:201px;}
+.newlist_left_phtitle{width:208px; height:24px; float:left;}
+.newlist_left_phtitlekong { float:left; width:8px; height:24px; background-image:url(../images/last_top012.gif);}
+.newlist_left_phtitel3{ float:left; width:3px; height:24px; background-image:url(../images/last_new_002.gif); overflow:hidden;}
+.newlist_left_phtitle1{ float:left; width:62px; height:21px; background-image:url(../images/last_top013.gif); padding-top:3px; text-align:center; color:#ffffff;}
+.newlist_left_phtitle2{ float:left; width:62px; height:21px; background-image:url(../images/last_top014.gif);padding-top:3px; text-align:center; color:#ffffff; font-weight:bold;}
+.newlist_left_phnovs ul{ width:208px; background-image:url(../images/last_top016.gif); height:261px; margin-top:0px; float:left;
+margin-bottom:12px;_margin-bottom:2px; overflow:hidden; }
+.newlist_left_phnovs ul li{ width:176px; margin:0 0 0 30px; padding-top:1px;text-align:left; height:25px; line-height:25px; overflow:hidden;}
+.newlist_left_phnovs ul li a:visited{ text-decoration:none;}
+.newlist_left_phnovs ul li a:link{text-decoration:none;}
+/* list body left - ggtp */
+.newlist_left_guanggao{ width:224px; overflow:hidden; margin-top:10px;}
+/* list body left - 人物专访 */
+.newlist_left_rwzf{ width:222px; margin:12px 0; overflow:hidden;}
+.newlist_left_rwzf dl{width:202px; margin:0 10px;}
+.newlist_left_rwzf dl dt{ width:202px; text-align:left; height:34px; line-height:34px; overflow:hidden;}
+.newlist_left_rwzf dl dd.rw_pic{ float:left; width:102px; height:80px;}
+.newlist_left_rwzf dl dd.rw_pic img{ border:1px #5E5E5E solid;}
+.newlist_left_rwzf dl dd.rw_nr{ float:right; width:85px; line-height:18px; text-align:left;text-indent:24px;color:#06549F; }
+.newlist_left_rwzf ul{padding:10px 0px 4px 15px;*padding:9px 10px 4px 15px;_padding:7px 10px 6px 15px; float:left;}
+.newlist_left_rwzf ul li{background: transparent url(../images/last_new_004.gif) no-repeat scroll 2px 8px; padding-left:12px; line-height:22px; height:22px;overflow:hidden;}
+/* list body left - 专题报道 */
+.newlist_left_ztbd{ width:222px; margin:12px 0; overflow:hidden;}
+.newlist_left_ztbdpic{ float:left; width:90px; margin-left:10px;_margin-left:5px;}
+.newlist_left_ztbdpic dl{ margin-top:8px;}
+.newlist_left_ztbdpic dl dt{ height:75px; width:88px;border:1px #5E5E5E solid; overflow:hidden;}
+.newlist_left_ztbdpic dl dt img{border:1px #ffffff solid;}
+.newlist_left_ztbdpic dl dd{ height:22px; overflow:hidden; text-align:center; line-height:22px; width:90px;}
+.newlist_left_ztbdnr{ width:100px; float:right; margin-right:10px;_margin-right:5px;}
+.newlist_left_ztbdnr ul{ padding:10px 0 0 0; }
+.newlist_left_ztbdnr ul li{background: transparent url(../images/last_new_004.gif) no-repeat scroll 2px 8px; padding-left:12px; line-height:22px; height:22px; overflow:hidden;}
+/* list body center - 列表 */
+.newlist_center{ width:464px; float:left; border:1px #d8d8d8 solid;}
+.newlist_center_title{ width:440px; margin:8px 12px; height:28px; border-bottom:1px #CED5E7 solid; border-top:1px #CED5E7 solid; background-color:#EBF4FB;}
+.newlist_center_title span{ margin-left:10px; line-height:28px; font-size:14px; font-weight:bold; color:#C50200;}
+.newlist_center ul{width:440px; margin:7px 9px 7px 15px;_margin:7px 5px 7px 8px; float:left; }
+.newlist_center ul li{background: transparent url(../images/last_new_004.gif) no-repeat scroll 2px 11px; padding-left:12px; font-size:14px; line-height:28px; height:28px; overflow:hidden; }
+.newlist_center ul li a{ display:block; float:left; width:320px; height:28px; overflow:hidden;}
+.newlist_center_line{ height:1px; width:450px; margin:4px 3px 4px 6px;_margin:4px 2px 4px 3px; background-image:url(../images/last_new_006.gif); overflow:hidden; float:left;}
+.newlist_center_fanye{ width:464px; text-align:center; height:24px; line-height:24px; margin-top:11px; padding-bottom:11px; *padding-bottom:9px;_padding-bottom:11px;font-size:14px; float:left;}
+.newlist_center_fanye a{ font-size:14px; text-decoration:none;}
+/* list body right */
+.newlist_right_title .newlist_right_more{position:absolute; right:12px; top:6px;}
+.newlist_right{ float:right;}
+.newlist_right_line{ float:left; width:270px; height:1px; overflow:hidden; background-color:#d8d8d8;}
+.newlist_right_shipin{ margin:10px 0 0 10px; width:260px;}
+.newlist_right_noic{margin:10px 0 0 10px; border:1px #d8d8d8 solid; width:258px;}
+.newlist_right_title{ position:relative; width:258px; height:37px; background-image:url(../images/last_new_008.gif);}
+.newlist_right_title_bt{ width:65px; padding:0 0 0 12px; line-height:29px; height:29px;}
+.newlist_right_list{ width:258px; background-color:#F6FBFF; overflow:hidden;}
+.newlist_right_list ul{ width:238px; float:left; overflow:hidden; padding:8px 10px 16px 10px;}
+.newlist_right_list ul li{background: transparent url(../images/last_new_004.gif) no-repeat scroll 2px 11px; padding-left:12px; line-height:22px; height:22px; overflow:hidden;}
+.newlist_right_list dl{ float:left; width:114px; padding:10px 0 2px 10px;}
+.newlist_right_list dl dt{ padding-left:10px; width:104px;}
+.newlist_right_list dl dt img{ padding:2px; border:1px #d8d8d8 solid;}
+.newlist_right_list dl dd{height:22px; overflow:hidden; text-align:center; line-height:22px; width:114px;}
+/* list body right - 合作媒体*/
+.newlist_right_hzmt{width:258px; background-color:#F6FBFF; padding:0 0 12px 0; overflow:hidden;}
+.newlist_right_hzmt dl{ width:122px; float:left; padding:0 7px;}
+.newlist_right_hzmt dl dt{ float:left; width:122px; margin-top:12px;}
+.newlist_right_hzmt dl dt img{ float:left; border:1px #d8d8d8 solid;}
+.newlist_right_hzmt dl dd{ float:left; width:122px;height:22px; overflow:hidden; text-align:center; line-height:22px;}
+.newlist_right_hzmt ul{ width:110px; float:right; padding:16px 10px 0 0;}
+.newlist_right_hzmt ul li{ float:left;background: transparent url(../images/last_new_004.gif) no-repeat scroll 2px 11px;padding-left:12px; line-height:22px; height:22px; overflow:hidden; width:104px;*width:104px;_width:96px;}
+
+/* list body show */
+.newshow_body{ width:698px; float:left; border:1px #d8d8d8 solid;}
+.newshow_nr{ padding:20px 25px; width:648px;}
+.newshow_title{ float:left;line-height:27px; width:648px; text-align:center;color:#06549F; font-size:20px; font-weight:bold; overflow:hidden;}
+.newshow_line{ overflow:hidden; float:left; height:1px; background-color:#d8d8d8; width:648px;}
+.newshow_time{ height:25px; line-height:25px; text-align:center; width:648px;}
+.newshow_fontshow{ width:628px; padding:25px 10px; line-height:22px; }
+.newshow_fontshow strong{ font-weight:bold;}
+.newshow_fontshow p{ margin-bottom:25px; font-size:14px; text-indent:28px;}
+/* list body show - 合作推广 */
+.newshow_kuang{ width:646px; border:1px #d8d8d8 solid; margin-top:15px; overflow:hidden;}
+.newshow_kuang_title{ width:646px; background-color:#E0EAF3; height:30px; border-bottom:1px #d8d8d8 solid;}
+.newshow_kuang_title .newshow_kuang_bt{float:left; margin-left:18px;_margin-left:9px; line-height:29px; font-size:14px;color:#06549F; font-weight:bold; width:100px; background:url(../images/last_new_011.gif) left no-repeat; padding:1px 0 0 14px;}
+.newshow_kuang_hztg{ float:left; width:636px; padding:12px 0;}
+.newshow_kuang_hztg ul{ width:147px; float:left; margin-left:12px;_margin-left:9px;}
+.newshow_kuang_hztg ul li{ height:22px; line-height:22px; overflow:hidden;}
+.newshow_kuang_hztg ul li a:link{ color:#686868;}
+.newshow_kuang_hztg ul li a:visited{color:#686868;}
+.newshow_kuang_hztg ul li a:hover{ color:#BF0804;}
+/* list body show - 相关新闻 */
+.newshow_kuang_xgxw{ background-color:#F6FBFF; width:646px; overflow:hidden;}
+.newshow_kuang_xgxw ul{ padding:10px 40px 12px 12px;}
+.newshow_kuang_xgxw ul li{background: transparent url(../images/last_new_004.gif) no-repeat scroll 2px 11px;padding-left:12px; line-height:25px; height:25px; overflow:hidden;}
+.newshow_kuang_xgxw ul li a:link,.newshow_kuang_xgxw ul li a:visited{color:#06549F; font-size:14px;}
+.newshow_kuang_xgxw ul li a:hover{}
+/* list body show - 评论 */
+.newshow_kuang_pltitle{ height:30px; line-height:30px; padding:4px 10px 2px 10px;}
+.newshow_kuang_pltitle a:link,.newshow_kuang_pltitle a:visited{color:#06549F; font-size:12px;}
+.newshow_kuang_pltitle a:hover{ color:#ff6600;}
+.newshow_kuang_plnr{padding:0 10px 0 10px; width:626px;}
+.newshow_kuang_plnr p{ float:left; width:626px; overflow:hidden; padding-bottom:4px;}
+.newshow_kuang_plnr p .xk{ float:left;}
+
+/* list body show - 视频资讯 */
+.newvideo_title{ width:440px; margin:8px 12px 0 12px; height:28px; border-bottom:1px #CED5E7 solid; border-top:1px #CED5E7 solid; background-color:#EBF4FB;}
+.newvideo_title span{ margin-left:10px; line-height:28px; font-size:14px; font-weight:bold; color:#C50200;}
+.newvideo_list{ padding:16px 6px 0 6px; width:452px; overflow:hidden;}
+.newvideo_list dl{ padding:0 15px 6px 15px; overflow:hidden;}
+.newvideo_list dl dt{ height:27px; line-height:27px;color:#06549F; font-size:14px; padding-left:15px; background:url(../images/last_new_023.gif) left no-repeat; width:412px; font-weight:bold; overflow:hidden;}
+.newvideo_list dl dd.video_riqi{ padding-left:12px; color:#666666; line-height:20px;}
+.newvideo_list dl dd.video_pic{ float:left; width:120px; padding-left:8px; margin-top:6px;}
+.newvideo_list dl dd.video_pic img{ border:1px #333333 solid;}
+.newvideo_list dl dd.video_nr{ margin-left:10px; margin-top:6px; float:left; width:284px; float:left; color:#666666; line-height:20px; text-indent:24px;} 
+.newvideo_list dl dd.video_pl{ float:left; width:420px; margin:6px 0 6px 8px; height:22px; line-height:22px; background:url(../images/last_new_024.gif) left no-repeat; padding-left:20px; color:#666666;}
+.newvideo_list dl dd.video_pl a{ margin-left:15px;}
+.newvideo_line{ background-image:url(../images/last_new_006.gif); width:452px; height:1px; overflow:hidden;}
+
+
+
