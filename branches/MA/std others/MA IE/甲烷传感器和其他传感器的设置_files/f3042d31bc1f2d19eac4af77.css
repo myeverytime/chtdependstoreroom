@@ -1,0 +1,96 @@
+/*完美系模板第一款,希望朋友们多提意见,特别是在非IE浏览器下的效果如何*/
+/*此版本修正了在火狐浏览器下的显示错误*/
+/*空间背景*/
+body{background:url(http://imgsrc.baidu.com/css/pic/item/c685a5c710fa10c1d0006054.jpg);}
+/*空间文字*/
+a{font-size:12px; color:#000000; text-decoration:none}
+a:link{font-size:12px; color:#000000; text-decoration:none}
+a:visited{font-size:12px; color:#000000; text-decoration:none}
+a:hover{position:relative; left:1px; top:1px; clip:rect()}
+
+/*主体头部*/
+#header{top:15px;height:185px;background:url(http://imgsrc.baidu.com/css/pic/item/fdb165ed69a3eb5279f05554.jpg) no-repeat center top;}
+
+/*主体中部*/
+.stage{background:url(http://imgsrc.baidu.com/css/pic/item/297766dc40c752bccc116654.jpg) repeat-y center;text-align:center;margin-bottom:0px;margin:0 auto}
+
+/*版式*/
+.stagepad{width:950px;margin:0 auto}
+#layout{width:950px;margin:0 auto}
+/*一版类*/
+#layout td.c1t1{}
+/*双版类*/
+#layout td.c2t1{padding-left:10px;}
+#layout td.c2t2{width:20px;}
+#layout td.c2t3{padding-right:10px;}
+/*三版类*/
+#layout td.c3t1{}
+#layout td.c3t2{}
+#layout td.c3t3{}
+#layout td.c3t4{}
+#layout td.c3t5{}
+
+/*空间名称*/
+#header div.tit{top:40px; left:140px; line-height:25px;}
+#header div.tit a.titlink{font-size:20px; color:#FFFFFF; font-family:黑体;}
+/*空间简介*/
+#header div.desc{top:70px; left:140px; font-size:12px; font-family:宋体; color:#770018;}
+
+/*TAB1菜单位置*/
+#tab{top:128px; left:10px; color:#770018;}
+/*TAB1文字*/
+#tab a.on,#tab a.on:link,#tab a.on:visited{color:#770018; font-weight:bold;}
+#tab a:link{color:#770018;}
+#tab a:visited{color:#770018;}
+
+/*TAB2菜单主体*/
+#tab2{background:url(http://imgsrc.baidu.com/css/pic/item/297766dc40c752bccc116654.jpg) repeat-y center;}
+/*TAB2分割线*/
+#tab2 span{color:#000000;}
+
+/*模块*/
+/*上下间距*/
+.mod {margin-bottom:0px;color:#770018;}
+/*文字*/
+.mod a{color:#CC3352;}
+.mod a:link{color:#CC3352;}
+.mod a:visited{color:#CC3352;}
+.mod a:hover{color:#770018;}
+/*分界线*/
+.mod.line{margin-top:5px; margin-bottom:5px; line-height:0px; border-top:1px solid #F8E4E8;}
+/*标题栏主体*/
+.modth{height:26px;background:url(http://imgsrc.baidu.com/css/pic/item/5d8e29458f6e6a3bcefca355.jpg) no-repeat 
+
+left;}
+/*标题栏文字*/
+.modhead{padding:0px 0px 0px 2px}
+.modtit{color:#BB0025; font-size:12px; letter-spacing:1.5px; font-weight:bold}
+/*内容区*/
+.modbox{padding:10px 10px 0px 10px;}
+
+/*文章*/
+/*文章列表底图*/
+#mod_bloglist .modth{background:#FFFFFF;}
+/*文章标题*/
+#m_blog div.tit{height:27px; background:url(http://imgsrc.baidu.com/css/pic/item/3cc8270198571e1e728da555.jpg) no-repeat left;}
+#m_blog div.tit{padding:5px 0px 0px 25px;}
+#m_blog div.tit{color:#A91330; font-size:14px; font-weight:bold; letter-spacing:1.5px;}
+#m_blog div.tit a:link{color:#A91330; font-size:14px;}
+#m_blog div.tit a:visited{color:#A91330; font-size:14px;}
+/*发表日期*/
+#m_blog div.date{margin:0px 0px 0px 0px;color:#D34E69;font-size:11px}
+/*文章正文*/
+#m_blog div.cnt *{line-height:25px!important;}
+#m_blog div.cnt{color:#333333;line-height:25px;font-size:12px;font-family:宋体;letter-spacing:0px;}
+/*阅读全文链接*/
+#m_blog div.more{text-indent:15px;background:url(http://imgsrc.baidu.com/css/pic/item/645190f4b8124573dcc47454.jpg) no-repeat left;}
+#m_blog div.more{margin:5px 0px 0px 0px}
+#m_blog div.more a:link{color:#D34E69;}
+#m_blog div.more a:visited{color:#D34E69;}
+/*操作区*/
+#m_blog div.opt{margin:5px 0px 0px 0px}
+#m_blog div.opt{color:#D34E69;}
+#m_blog div.opt a:link{color:#D34E69;}
+#m_blog div.opt a:visited{color:#D34E69;}
+/*分界线*/
+#m_blog div.line{margin-top:10px; margin-bottom:20px; line-height:0px; border-top:1px solid #FFFFFF;}

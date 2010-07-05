@@ -1,0 +1,277 @@
+/*朋友:如果您对代码很感兴趣,那么,娴情很欢迎您拿它来做研究使用,但请您不要以类同或相近的模板用自己的名义分享出去,相信您能研究并设计出自己的风格来,谢谢!*/
+
+/*模板设计:娴情e志*/
+/*空间地址:http://hi.baidu.com/5飘过你的网*/
+BODY { BACKGROUND:       #208E0E repeat-x 0px 25px;FONT-FAMILY: "宋体", Tahoma, Arial;cursor:url('http://webme.bokee.com/inc/mouse017.ani')} 
+a{CURSOR: url('http://webme.bokee.com/inc/mouse017.ani')}
+
+#main {BACKGROUND: url(http://imgsrc.baidu.com/css/pic/item/5ce638f0e2e19ba4a50f5280.jpg) no-repeat 50% bottom; LEFT: 30px; WIDTH: 960px! important}
+
+BODY {
+SCROLLBAR-FACE-COLOR: #008800;
+SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;
+SCROLLBAR-SHADOW-COLOR: #FFFFFF;
+SCROLLBAR-3DLIGHT-COLOR: #FFFFFF;
+SCROLLBAR-ARROW-COLOR: #FFFFFF;
+SCROLLBAR-TRACK-COLOR: #008800;
+SCROLLBAR-DARKSHADOW-COLOR: #FFFFFF;
+SCROLLBAR-BASE-COLOR: #FFFFFF}
+
+#header {OVERFLOW: hidden; HEIGHT: 343px}
+#header DIV.lc {BACKGROUND: url(http://imgsrc.baidu.com/css/pic/item/c4a14223ceb7974593580780.jpg) no-repeat center top}
+#header DIV.rc {BACKGROUND:      ;left:50px;botto;top;150px; width:800px;repeat-y: ; repeat-x: ; height: 200px}
+
+#header div.tit{filter:glow(color=white,direction=1)DropShadow(Color=#008800, OffX=3, OffY=3, Positive=true);top:63px;left:333px;line-height:60px;font-size:50px;font-family:华文行楷}
+#header div.tit a.titlink{color:#008800;text-decoration:none}
+#header div.tit a.titlink:visited{color:#008800;text-decoration:none}
+#header div.desc{top:203px;left:290px;color:#008800;line-height:20px;font-size:12px}
+
+#tab {top:286px;left:30px;width:300px}
+
+#tab span{color:#008800;font-size:14px}
+#tab a:link{color:#008800;text-decoration:none;font-size:14px}
+#tab a:visited{color:#008800;text-decoration:none;font-size:14px}
+
+#tab2 {BACKGROUND: url(http://imgsrc.baidu.com/css/pic/item/50a11d4e87bb1002b2de0580.jpg) repeat-y center 50%; HEIGHT: 20px}
+#tab2 SPAN {DISPLAY: none}
+#tab2 A {FONT-SIZE: 12px}
+#tab2 A:link {COLOR: #008800; TEXT-DECORATION: none}
+#tab2 A:visited {FONT-SIZE: 12px; COLOR: #008800; FONT-FAMILY: Georgia; TEXT-DECORATION: none}
+#tab2 A:hover {BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #008800; TEXT-DECORATION: underline}
+
+#phx{FILTER: Alpha(Opacity=80)Glow(); WIDTH: 196px; HEIGHT: 196px}
+
+.stage {BACKGROUND: url(http://imgsrc.baidu.com/css/pic/item/50a11d4e87bb1002b2de0580.jpg) repeat-y center 50%; MARGIN: -5px 0px 80px; TEXT-ALIGN: center}
+.stagepad {BACKGROUND: url(http://imgsrc.baidu.com/css/pic/item/50a11d4e87bb1002b2de0580.jpg) repeat-y center 50%; WIDTH: 860px}
+
+#layout {TABLE-LAYOUT: fixed; MARGIN: 0px; WIDTH: 860px}
+#layout {}
+#layout TD.c1t1 {PADDING-TOP: 10px}
+#layout TD.c2t1 {PADDING-TOP: 10px}
+#layout TD.c2t3 {PADDING-TOP: 10px}
+#layout TD.c3t1 {PADDING-TOP: 10px}
+#layout TD.c3t3 {PADDING-TOP: 10px}
+#layout TD.c3t5 {PADDING-TOP: 10px}
+#layout TD.c2t3 {}
+#layout TD.c2t1 {}
+#layout TD.c2t3 {}
+#layout TD.c2t2 {}
+
+#comm_info {COLOR: #008800; FONT-FAMILY: Georgia; TEXT-ALIGN: left}
+#comm_info DIV.line {margin-top:1px;line-height:1px;border-top:1px solid #;background:url(http://imgsrc.baidu.com/css/pic/item/1fad9a09a43d5d89d0581b80.jpg) no-repeat bottom; padding-bottom: 139px; margin-bottom: 1px}}
+#comm_info A {COLOR: #008800}
+#m_comm_info DIV A {VISIBILITY: hidden}
+
+#page {FONT-SIZE: 14px; FONT-FAMILY: Georgia; HEIGHT: 30px; TEXT-ALIGN: center}
+#page SPAN {PADDING-RIGHT: 3px; PADDING-LEFT: 3px; FONT-WEIGHT: bold; FONT-SIZE: 14px; PADDING-BOTTOM: 3px; COLOR: #008800; PADDING-TOP: 3px}
+#page A.pc {FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #008800; TEXT-DECORATION: none}
+#page A.pc:visited {COLOR: #008800; TEXT-DECORATION: none}
+#page A.pc:hover {COLOR: #008800; TEXT-DECORATION: underline}
+#page A.pi {PADDING-RIGHT: 3px; PADDING-LEFT: 3px; FONT-SIZE: 14px; PADDING-BOTTOM: 3px; COLOR: #008800; PADDING-TOP: 3px; TEXT-DECORATION: none}
+#page A.pi:visited {COLOR: #008800; TEXT-DECORATION: none}
+#page A.pi:hover {COLOR: #008800; TEXT-DECORATION: underline}
+
+.modth {height:25px}
+
+.modtit {color:#008800;font-size:12px;font-weight:bold;padding:4px 4px 0 0;text-align:bottom}
+a.modtit{color:#008800;}a.modtit:visited{color:#008800}
+
+.modtitlink{color:#008800;font-size:12px;font-weight:bold}
+a.modtitlink{color:#008800;text-decoration:none}
+a.modtitlink:visited{color:#008800;text-decoration:none}a.modtitlink:hover{color:#008800;text-decoration:none}
+
+.modact {color:#008800;font-size:12px}
+a.modact:link{color:#008800}
+a.modact:visited{color:#008800}
+
+.modopt {padding:4px 4px 0 0}
+
+.modbox{padding:10px 10px 0 10px;background-color:#;border-left:0px ridge #008800;border-right:0px ridge #008800;border-top:0px ridge #008800} 
+
+.modtl {background:transparent;border-left:0px ridge #008800;border-top:0px ridge #008800;line-height:0px ridge #008800;height:20px} 
+
+.modtc {background:transparent;border-top:0px ridge #008800;line-height:1px}
+
+.modtr {background:transparent;border-right:0px ridge #008800;border-top:0px ridge #008800;line-height:1px} 
+
+.modbl{background:transparent;border-left:0px dotted #008800;border-bottom:0px dotted #008800;line-height:1px} 
+.modbc{background:transparent;border-bottom:0px dotted #008800;line-height:1px} 
+.modbr{background:transparent;border-right:0px dotted #008800;border-bottom:0px dotted #008800;line-height:1px}
+
+#m_blog div.tit{font-size:14px;font-weight:bold;background:url(http://imgsrc.baidu.com/css/pic/item/93e2c182cde28b9bf703a681.jpg) no-repeat top left;text-indent: 55px;height:55px;line-height:55px}
+
+#m_blog DIV.tit A {FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #008800; FONT-FAMILY: Georgia; TEXT-DECORATION: none}
+#m_blog DIV.tit A:visited {COLOR: #008800; FONT-FAMILY: Georgia; TEXT-DECORATION: none}
+#m_blog DIV.tit A:hover {COLOR: #008800}
+#m_blog DIV.date {PADDING-LEFT: 10px; FONT-SIZE: 10px; BACKGROUND: #; MARGIN: 10px 0px 10px 10px; WIDTH: 210px; COLOR: #000000; FONT-FAMILY: Georgia}
+#m_blog DIV.cnt {FONT-SIZE: 12px; MARGIN: 0px 0px 0px 5px; COLOR: #000000; LINE-HEIGHT: 20px; FONT-FAMILY: Georgia}
+#m_blog DIV.cnt A {FONT-SIZE: 12px; COLOR: #008800; TEXT-DECORATION: none}
+#m_blog DIV.cnt A:visited {FONT-SIZE: 12px; COLOR: #008800; TEXT-DECORATION: none}
+#m_blog DIV.cnt A:hover {COLOR: #008800; TEXT-DECORATION: underline}
+#m_blog DIV.cnt PRE {PADDING-RIGHT: 8px; PADDING-LEFT: 8px; FONT-SIZE: 12px; BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-BOTTOM: 8px; MARGIN-LEFT: 10px; BORDER-LEFT: #008800 8px solid; COLOR: #008800; MARGIN-RIGHT: 10px; PADDING-TOP: 8px; FONT-FAMILY: sans serif}
+#m_blog DIV.more {MARGIN: 15px 0px 20px}
+#m_blog DIV.more A {FONT-SIZE: 12px; COLOR: #008800; FONT-FAMILY: Georgia; TEXT-DECORATION: none}
+#m_blog DIV.more A:visited {COLOR: #008800; TEXT-DECORATION: none}
+#m_blog DIV.more A:hover {COLOR: #008800; TEXT-DECORATION: underline}
+#m_blog DIV.opt {FONT-SIZE: 12px; COLOR: #008800; FONT-FAMILY: Georgia; TEXT-DECORATION: none}
+#m_blog DIV.opt A {FONT-SIZE: 12px; COLOR: #008800; FONT-FAMILY: Georgia; TEXT-DECORATION: none}
+#m_blog DIV.opt A:visited {COLOR: #008800}
+#m_blog DIV.opt A:hover {COLOR: #008800; TEXT-DECORATION: underline}
+#m_blog DIV.none {PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 14px; PADDING-BOTTOM: 100px; COLOR: #008800; PADDING-TOP: 100px}
+#m_blog div.line{margin-top:10px;line-height:10px;background:url(http://imgsrc.baidu.com/css/pic/item/7bf6388dd194f819b21bba81.jpg);line-height:9px}
+
+#m_pro div.act{color:#008800;margin-top:10px;text-align:center;margin-top:10px;background:url(http://imgsrc.baidu.com/css/pic/item/24827212c9f8715af919b881.jpg) no-repeat bottom;padding-bottom:136px;margin-bottom:5px;}
+#m_pro A {COLOR: #008800; FONT-FAMILY: Georgia; TEXT-DECORATION: none}
+#m_pro A:visited {COLOR: #008800; TEXT-DECORATION: none}
+#m_pro A:hover {COLOR: #008800; TEXT-DECORATION: underline}
+#m_pro DIV.image {TEXT-ALIGN: center}
+#m_pro DIV.act {MARGIN-TOP: 10px}
+#m_pro DIV.user {MARGIN-TOP: 10px; FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #008800; FONT-FAMILY: Georgia}
+#m_pro DIV.desc {FONT-SIZE: 12px; COLOR: #008800; FONT-FAMILY: Georgia}
+#m_pro DIV.line {BORDER-TOP: #008800 1px dotted; MARGIN-TOP: 17px; LINE-HEIGHT: 17px}
+#m_pro TD {FONT-SIZE: 14px; COLOR: #008800; LINE-HEIGHT: 24px; FONT-FAMILY: Georgia}
+
+#m_album DIV.image {TEXT-ALIGN: center}
+#m_album DIV.page {FONT-SIZE: 12px; COLOR: #008800; TEXT-ALIGN: center}
+#m_album DIV.page A {FONT-SIZE: 12px; COLOR: #008800}
+#m_album DIV.page A:visited {COLOR: #008800}
+
+#m_links div.item{margin-LEFT:0PX;   text-decoration:none;background: url(http://imgsrc.baidu.com/css/pic/item/e174cb0a043b7d35b0351d80.jpg) no-repeat 0px 2px;   padding: 0px 0px 0px 5px;}
+#m_links DIV.item A {color:#009966;font-size:12px;text-decoration:none;background:url(http://imgsrc.baidu.com/css/pic/item/942df73eaed6f2f1838b1380.jpg) repeat-x bottom;line-height:20px}
+#m_links DIV.item A:visited {COLOR: #008800; TEXT-DECORATION: none}
+#m_links DIV.item A:hover {COLOR: #008800; TEXT-DECORATION: underline}
+#m_links DIV.line {background:     ;line-height:26px}
+
+#m_mylink1 DIV.item {margin-LEFT:0PX;   text-decoration:none;background: url(http://imgsrc.baidu.com/css/pic/item/3cc078faa3686715a9d31180.jpg) no-repeat 0px 1px;   padding: 0px 0px 0px 20px;}
+#m_mylink1 DIV.item A {color:#009966;font-size:12px;text-decoration:none;background:url(http://imgsrc.baidu.com/css/pic/item/942df73eaed6f2f1838b1380.jpg) repeat-x bottom;line-height:20px}
+#m_mylink1 DIV.item A:visited {COLOR: #008800; TEXT-DECORATION: none}
+#m_mylink1 DIV.item A:hover {COLOR: #008800; TEXT-DECORATION: underline}
+#m_mylink1 DIV.line {background:     ;line-height:26px}
+
+#m_mylink2 DIV.item {margin-LEFT:0PX;   text-decoration:none;background: url(http://imgsrc.baidu.com/css/pic/item/bb8f91b4ca0eef788ad4b281.jpg) no-repeat 0px 1px;   padding: 0px 0px 0px 20px;}
+#m_mylink2 DIV.item A {color:#009966;font-size:12px;text-decoration:none;background:url(http://imgsrc.baidu.com/css/pic/item/942df73eaed6f2f1838b1380.jpg) repeat-x bottom;line-height:20px}
+#m_mylink2 DIV.item A:visited {COLOR: #008800; TEXT-DECORATION: none}
+#m_mylink2 DIV.item A:hover {COLOR: #008800; TEXT-DECORATION: underline}
+#m_mylink2 DIV.line {background:     ;line-height:26px}
+
+#m_mylink3 DIV.item {margin-LEFT:0PX;   text-decoration:none;background: url(http://imgsrc.baidu.com/css/pic/item/bb8f91b4ca0eef788ad4b281.jpg) no-repeat 0px 1px;   padding: 0px 0px 0px 20px;}
+#m_mylink3 DIV.item A {color:#009966;font-size:12px;text-decoration:none;background:url(http://imgsrc.baidu.com/css/pic/item/942df73eaed6f2f1838b1380.jpg) repeat-x bottom;line-height:20px}
+#m_mylink3 DIV.item A:visited {COLOR: #008800; TEXT-DECORATION: none}
+#m_mylink3 DIV.item A:hover {COLOR: #008800; TEXT-DECORATION: underline}
+#m_mylink3 DIV.line {background:     ;line-height:26px}
+
+#m_mylink4 DIV.item {margin-LEFT:0PX;   text-decoration:none;background: url(http://imgsrc.baidu.com/css/pic/item/bb8f91b4ca0eef788ad4b281.jpg) no-repeat 0px 1px;   padding: 0px 0px 0px 20px;}
+#m_mylink4 DIV.item A {color:#009966;font-size:12px;text-decoration:none;background:url(http://imgsrc.baidu.com/css/pic/item/942df73eaed6f2f1838b1380.jpg) repeat-x bottom;line-height:20px}
+#m_mylink4 DIV.item A:visited {COLOR: #008800; TEXT-DECORATION: none}
+#m_mylink4 DIV.item A:hover {COLOR: #008800; TEXT-DECORATION: underline}
+#m_mylink4 DIV.line {background:     ;line-height:26px}
+
+#m_artclg div.item{text-decoration:none;background: url(http://imgsrc.baidu.com/css/pic/item/2526b61f64d75601314e1580.jpg) no-repeat 0px 2px;   padding: 0px 0px 0px 25px;}
+#m_artclg div.item a{color:#009966;font-size:12px;text-decoration:none;background:url(http://imgsrc.baidu.com/css/pic/item/942df73eaed6f2f1838b1380.jpg) repeat-x bottom;line-height:20px}
+#m_artclg DIV.item A:visited {COLOR: #008800; TEXT-DECORATION: none}
+#m_artclg DIV.item A:hover {COLOR: #008800; TEXT-DECORATION: underline}
+#m_artclg DIV.line {background:     ;line-height:26px}
+
+#m_filed DIV.item {FONT-SIZE: 12px; COLOR: #008800; FONT-FAMILY: Georgia}
+#m_filed DIV.item A {color:#009966;font-size:12px;text-decoration:none;background:url(http://imgsrc.baidu.com/css/pic/item/942df73eaed6f2f1838b1380.jpg) repeat-x bottom;line-height:20px}#m_filed DIV.item A:visited {COLOR: #008800; TEXT-DECORATION: none}
+#m_filed DIV.item A:hover {COLOR: #008800; TEXT-DECORATION: underline}
+#m_filed DIV.line {background:     ;line-height:26px}
+
+#m_comment div.item{color:#000;font-size:12px;font-family:Georgia; text-indent:20px;background:url(http://imgsrc.baidu.com/css/pic/item/e174cb0a043b7d35b0351d80.jpg) no-repeat}
+#m_comment DIV.item {FONT-SIZE: 12px; COLOR: #008800; FONT-FAMILY: Georgia}
+#m_comment DIV.item A {color:#009966;font-size:12px;text-decoration:none;background:url(http://imgsrc.baidu.com/css/pic/item/942df73eaed6f2f1838b1380.jpg) repeat-x bottom;line-height:20px}
+#m_comment DIV.item A:visited {COLOR: #008800; TEXT-DECORATION: none}
+#m_comment DIV.item A:hover {COLOR: #008800; TEXT-DECORATION: underline}
+#m_comment DIV.item A.cnt {FONT-WEIGHT: lighter; FONT-SIZE: 12px; COLOR: #5A5A5A; FONT-FAMILY: Georgia; TEXT-DECORATION: none}
+#m_comment DIV.item A.cnt:visited {COLOR: #008800; TEXT-DECORATION: none}
+#m_comment DIV.item A.cnt:hover {COLOR: #5A5A5A; TEXT-DECORATION: underline}
+#m_comment div.line{background:     ;line-height:26px}
+
+#m_albumlist DIV.note {FONT-SIZE: 14px; COLOR: #008800; FONT-FAMILY: Georgia}
+#m_albumlist DIV.desc {PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 14px; MARGIN-BOTTOM: 12px; PADDING-BOTTOM: 3px; LINE-HEIGHT: 22px; PADDING-TOP: 3px; FONT-FAMILY: Georgia}
+#m_albumlist DIV.none {PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 14px; PADDING-BOTTOM: 100px; COLOR: #008800; PADDING-TOP: 100px; FONT-FAMILY: Georgia}
+#m_albumlist DIV.line {BORDER-TOP: #008800 1px dotted; MARGIN-TOP: 10px; LINE-HEIGHT: 16px}
+#m_albumlist DIV.tit {FONT-SIZE: 14px; MARGIN: 6px 0px 7px; COLOR: #008800; FONT-FAMILY: Georgia}
+#m_albumlist DIV.tit A {FONT-SIZE: 14px; COLOR: #008800; FONT-FAMILY: Georgia; TEXT-DECORATION: none}
+#m_albumlist DIV.tit A:visited {COLOR: #008800; TEXT-DECORATION: none}
+#m_albumlist DIV.tit A:hover {COLOR: #008800; TEXT-DECORATION: underline}
+#m_albumlist SPAN.count {FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #008800; FONT-FAMILY: Georgia}
+#m_albumlist SPAN.size {FONT-SIZE: 12px; COLOR: #008800; FONT-FAMILY: Georgia}
+#m_albumlist A.act {FONT-SIZE: 12px; COLOR: #008800; FONT-FAMILY: Georgia}
+#m_albumlist A.act:visited {COLOR: #008800}
+#m_albumlist A.page {FONT-SIZE: 14px; COLOR: #008800; FONT-FAMILY: Georgia}
+#m_albumlist A.page:visited {COLOR: #008800}
+#m_albumlist TD.image {BORDER-RIGHT: #008800 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #008800 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; BORDER-LEFT: #008800 1px solid; PADDING-TOP: 5px; BORDER-BOTTOM: #008800 1px solid}
+
+#m_friend DIV.filter {PADDING-LEFT: 10px; MARGIN-BOTTOM: 10px; LINE-HEIGHT: 27px; PADDING-TOP: 10px; HEIGHT: 27px}
+#m_friend DIV.catalog {PADDING-LEFT: 10px; FONT-SIZE: 14px; MARGIN-BOTTOM: 10px; LINE-HEIGHT: 27px; FONT-FAMILY: Georgia; HEIGHT: 27px}
+#m_friend DIV.user {MARGIN-TOP: 4px; FONT-SIZE: 12px; COLOR: #008800; FONT-FAMILY: Georgia}
+#m_friend DIV.user A {FONT-SIZE: 12px; COLOR: #008800; FONT-FAMILY: Georgia}
+#m_friend DIV.user A:visited {COLOR: #008800}
+#m_friend DIV.line {color:#009966;font-size:12px;text-decoration:none;background:url(http://imgsrc.baidu.com/css/pic/item/942df73eaed6f2f1838b1380.jpg) repeat-x bottom;line-height:20px}
+
+#m_setting A {COLOR: #008800; TEXT-DECORATION: none}
+#m_setting A:visited {COLOR: #008800; TEXT-DECORATION: none}
+#m_setting A:hover {COLOR: #008800; TEXT-DECORATION: underline}
+#m_setting {FONT-SIZE: 14px; COLOR: #008800; LINE-HEIGHT: 22px; FONT-FAMILY: Georgia}
+#m_setting IMG.sel {BORDER-RIGHT: #008800 4px solid; BORDER-TOP: #008800 4px solid; BORDER-LEFT: #008800 4px solid; BORDER-BOTTOM: #008800 4px solid}
+#m_setting IMG.unsel {BORDER-RIGHT: #008800 1px solid; BORDER-TOP: #008800 1px solid; BORDER-LEFT: #008800 1px solid; BORDER-BOTTOM: #008800 1px solid}
+#m_setting SPAN.tit {FONT-SIZE: 14px; FONT-FAMILY: Georgia}
+#m_setting SPAN.usr {COLOR: #008800}
+#m_setting DIV.sel {FONT-WEIGHT: bold; FONT-SIZE: 14px; PADDING-TOP: 6px; FONT-FAMILY: Georgia}
+#m_setting DIV.line {BORDER-TOP: #008800 1px solid; MARGIN-TOP: 20px; LINE-HEIGHT: 16px}
+
+#m_sysinfo A {COLOR: #008800; TEXT-DECORATION: none}
+#m_sysinfo A:visited {COLOR: #008800; TEXT-DECORATION: none}
+#m_sysinfo A:hover {COLOR: #008800; TEXT-DECORATION: underline}
+#m_sysinfo {FONT-SIZE: 14px; COLOR: #008800; LINE-HEIGHT: 22px; FONT-FAMILY: Georgia}
+#m_sysinfo SPAN.new {FONT-SIZE: 10px; COLOR: #008800; FONT-FAMILY: Georgia}
+#m_sysinfo SPAN.date {FONT-SIZE: 14px; COLOR: #008800; FONT-FAMILY: Georgia}
+#m_setbase {FONT-SIZE: 14px; COLOR: #008800; FONT-FAMILY: Georgia}
+#m_setbase TD {FONT-SIZE: 14px; COLOR: #008800; FONT-FAMILY: Georgia}
+#m_setbase DIV.line {BORDER-TOP: #008800 1px dotted; MARGIN-TOP: 5px; LINE-HEIGHT: 8px}
+
+#in_comment {WIDTH: 710px}
+#in_comment DIV.tit {FONT-WEIGHT: bold; FONT-SIZE: 14px; MARGIN-BOTTOM: 12px; COLOR: #008800; FONT-FAMILY: Georgia; TEXT-DECORATION: none}
+#in_comment DIV.user {FONT-SIZE: 12px; MARGIN-BOTTOM: 6px; COLOR: #008800; FONT-FAMILY: Georgia; TEXT-DECORATION: none}
+#in_comment DIV.user A {FONT-SIZE: 12px; COLOR: #008800; FONT-FAMILY: Georgia; TEXT-DECORATION: none}
+#in_comment DIV.user A:visited {COLOR: #008800; TEXT-DECORATION: none}
+#in_comment DIV.user A:hover {COLOR: #008800; TEXT-DECORATION: underline}
+#in_comment DIV.user SPAN.date {FONT-SIZE: 12px; COLOR: #008800; FONT-FAMILY: Georgia}
+#in_comment DIV.desc {FONT-SIZE: 12px; COLOR: #008800; FONT-FAMILY: Georgia}
+#in_comment DIV.line {BORDER-TOP: #008800 1px dotted; MARGIN-TOP: 17px; LINE-HEIGHT: 17px}
+
+#in_send DIV.tit {FONT-WEIGHT: bold; FONT-SIZE: 14px; MARGIN: 10px 0px; COLOR: #008800; FONT-FAMILY: Georgia}
+#in_send INPUT {BORDER-RIGHT: #008800 1px solid; BORDER-TOP: #008800 1px solid; BORDER-LEFT: #008800 1px solid; BORDER-BOTTOM: #008800 1px solid}
+#in_send TEXTAREA {BORDER-RIGHT: #008800 1px solid; BORDER-TOP: #008800 1px solid; BORDER-LEFT: #008800 1px solid; BORDER-BOTTOM: #008800 1px solid}
+
+#spBlogCmtText {filter:alpha(opacity=100);color:#008800;font-size:16px;font-family:黑体;border:1px solid red ; background:url(http://imgsrc.baidu.com/css/pic/item/183f9ac88c65081c7e3e6f80.jpg) no-repeat top center; background-attachment: fixed;} 
+
+textarea{filter:alpha(opacity=100);color:#008800;font-size:16px;font-family:黑体;border:1px solid red ;background:url(http://imgsrc.baidu.com/css/pic/item/b632d43dcb3f100bbba16780.jpg);background-position:center;background-repeat:no-repeat}
+
+#in_msg{width:710px} 
+#in_msg div.tit{margin-bottom:12px;color:#008800;font-size:14px;font-weight:bold} 
+#in_msg .item td.index{width:40px;font-weight:bold} 
+#in_msg .item div.user{width:150px;color:#008800;} 
+#in_msg .item div.user a{color:#008800;font-size:12px} 
+#in_msg .item div.user a:visited{color:#008800} 
+#in_msg .item div.user img{margin-bottom:5px} 
+#in_msg .item td.cnt a{color:#008800;font-size:12px} 
+#in_msg .item td.cnt a:visited{color:#008800} 
+#in_msg span.date{color:#008800;font-size:12px} 
+#in_msg div.desc{margin-top:5px;color:#008800;font-size:12px} 
+#in_msg div.line{margin-top:17px;line-height:17px;border-top:1px solid #008800} 
+
+#in_send{color:#008800} 
+#in_send input{color:#008800} 
+#in_send div.tit{color:#008800} 
+#in_send table{color:#008800} 
+#in_send td.f14{color:#008800} 
+input.#spBlogCmtor{color:#008800C} 
+input.#spBlogCmtURL{color:#008800} 
+#spBlogCmtText{color:#008800}
+
+#mod_cals .modbox{background:      ;padding-top:1px;   padding-bottom:1px;    padding-left:1px;padding-right:1px }
+#cals{background:url(http://imgsrc.baidu.com/css/pic/item/34e783fcf82d02f6fd037f80.jpg);}
+#mod_cals .modbox td {font-size:13px;color:#003300}
+ 

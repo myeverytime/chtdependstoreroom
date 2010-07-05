@@ -1,0 +1,318 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+  
+    <meta http-equiv="Content-Type" content="text/html; charset=GB2312">
+<title>CAN总线技术在煤矿安全监控系统中的应用_自动化资料_技术中心_工控网(明通)</title>
+<link href="CAN%E6%80%BB%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%9C%A8%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8_files/last_public.css" rel="stylesheet" type="text/css">
+<link href="CAN%E6%80%BB%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%9C%A8%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8_files/new_list.css" rel="stylesheet" type="text/css">
+</head><body>
+  <div class="last_top">
+    
+	 <div class="last_top_menu">
+	    <div class="last_top_logo"><a href="http://www.gkzhan.com/" title="工控网(明通)"><img src="CAN%E6%80%BB%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%9C%A8%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8_files/18logo.gif"></a><a></a></div>
+<a>	    </a><div class="last_top_line"><a><img src="CAN%E6%80%BB%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%9C%A8%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8_files/last_top004.gif"></a></div>
+<a>		</a><div class="last_top_leimu">
+<a>		   </a><ul>
+<a>		      </a><li><a href="http://www.gkzhan.com/" class="atop01" target="_blank">首页</a></li>
+			  <li><a href="http://www.gkzhan.com/channel/t1700/index.html" class="atop02" target="_blank">电机传动</a></li>
+			  <li><a href="http://www.gkzhan.com/Product/" class="atop01" target="_blank">产品库</a></li>
+			  <li><a href="http://www.gkzhan.com/channel/t1704/index.html" class="atop02" target="_blank"> 仪器仪表</a></li>
+			  <li><a href="http://www.gkzhan.com/Exhibition/" class="atop01" target="_blank">展会</a></li>
+			  <li><a href="http://www.gkzhan.com/channel/t1718/index.html" class="atop02" target="_blank">工控机</a></li>
+			  <li><a href="http://www.gkzhan.com/news_People/T29/list.html" class="atop01" target="_blank">访谈</a></li>
+			  <li><a href="http://www.gkzhan.com/channel/t1709/index.html" class="atop02" target="_blank">传感器</a></li>
+			  <li><a href="http://www.gkzhan.com/channel/t1715/index.html" class="atop02" target="_blank">变频器</a></li>
+			  <li><a href="http://www.gkzhan.com/channel/t1712/index.html" class="atop02" target="_blank">人机界面</a></li>
+			  <li><a href="http://www.gkzhan.com/channel/t1710/index.html" class="atop02" target="_blank">测试通信</a></li>
+			   <li><a href="http://www.gkzhan.com/Offer/" class="atop01" target="_blank">商机</a></li>
+			  <li><a href="http://www.gkzhan.com/channel/t1716/index.html" class="atop02" target="_blank">伺服系统</a></li>
+			  <li><a href="http://www.gkzhan.com/Company/" class="atop01" target="_blank">公司库</a></li>
+			  <li><a href="http://www.gkzhan.com/channel/t1708/index.html" class="atop02" target="_blank">工业电器</a></li>
+			  <li><a href="http://www.gkzhan.com/Technology/" class="atop01" target="_blank">技术</a></li>
+			  <li><a href="http://www.gkzhan.com/channel/t1717/index.html" class="atop02" target="_blank">ＰＬＣ</a></li>
+			  <li><a href="http://www.gkzhan.com/job/" class="atop01" target="_blank">人才</a></li>
+			  <li><a href="http://www.gkzhan.com/channel/t1714/index.html" class="atop02" target="_blank">以太网</a></li>
+			  <li><a href="http://www.gkzhan.com/channel/t1707/index.html" class="atop02" target="_blank">嵌入式</a></li>
+			  <li><a href="http://www.gkzhan.com/channel/t1705/index.html" class="atop02" target="_blank">机器视觉</a></li>
+			  <li><a href="http://www.gkzhan.com/channel/t1703/index.html" class="atop02" target="_blank">流体控制</a></li>
+			   <li><a href="http://www.gkzhan.com/news/" class="atop01" target="_blank">资讯</a></li>
+			  <li><a href="http://www.gkzhan.com/channel/t1702/index.html" class="atop02" target="_blank">工业电源</a></li>
+			  <li><a href="http://www.gkzhan.com/train/T156/list.html" class="atop01" target="_blank">讲&nbsp;&nbsp;&nbsp;&nbsp;座</a></li>
+			  <li><a href="http://www.gkzhan.com/channel/t1713/index.html" class="atop02" target="_blank">控制系统</a></li>
+			  <li><a href="http://www.gkzhan.com/train/" class="atop01" target="_blank">培训</a></li>
+			  <li><a href="http://www.gkzhan.com/channel/t1701/index.html" class="atop02" target="_blank">可控硅</a></li>
+			  <li><a href="http://www.gkzhan.com/Product/T0/list_New.html" class="atop01" target="_blank">新品</a></li>
+			  <li><a href="http://www.gkzhan.com/channel/t1704/index.html" class="atop02" target="_blank">流量计</a></li>
+			  <li><a href="http://www.gkzhan.com/channel/t1699/index.html" class="atop02" target="_blank">编码器</a></li>
+			  <li><a href="http://www.gkzhan.com/channel/t1706/index.html" class="atop02" target="_blank">现场总线</a></li>
+			  <li><a href="http://www.gkzhan.com/pruducts/index.html" class="atop02" target="_blank">更多频道</a></li>
+		   </ul>
+		</div>
+	</div>
+  </div><div class="head_li">
+     <div class="head_pic"><img src="CAN%E6%80%BB%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%9C%A8%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8_files/last_top005.gif"></div>
+	 <div class="head_lanmu">
+	     <div class="head_lanmu_top">
+		   <a href="http://www.gkzhan.com/Technology/index.html" class="ali01">技术中心</a>
+		   <a href="http://www.gkzhan.com/Tech_news/T141/list.html" class="ali02">操作维修</a>
+		   <a href="http://www.gkzhan.com/Tech_news/T1352/list.html" class="ali02">分析标准</a>
+		   <a href="http://www.gkzhan.com/Tech_news/T1354/list.html" class="ali02">工控规程</a>
+		   <a href="http://www.gkzhan.com/Tech_news/T1353/list.html" class="ali02">重点推荐</a>
+		   <a href="http://www.gkzhan.com/Technology/T229/list.html" class="ali02">资料下载</a>
+		   <a href="http://www.gkzhan.com/Tech_news/T143/list.html" class="ali02">本期话题</a>
+		   <a href="http://www.gkzhan.com/Tech_news/T142/list.html" class="ali02">应用案例</a>
+		   <a href="http://www.gkzhan.com/Technology/T144/list.html" class="ali02">技术文献</a>
+		   <a href="http://www.gkzhan.com/Product_newsColumn/T169/list.html" class="ali02">性能检测</a>
+		</div>
+		<div class="head_lanmu_down">
+		<span class="head_lanmu_mts"><img src="CAN%E6%80%BB%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%9C%A8%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8_files/last_top009.gif"></span>
+		    <form id="searchForm" method="post" action="/Technology/t0/list_P1.html" target="_blank" onsubmit="search()" class="header-search-form">
+    <span class="head_lanmu_form">
+        <input name="K" id="keys" size="50" type="text">
+        <select style="width: 55px;" id="class" onchange="sClass(this.value)">
+            <option value="1">资料</option>
+            <option value="2">文章</option>
+        </select>
+    </span><span class="head_lanmu_form">
+       <input class="sousuo2" src="CAN%E6%80%BB%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%9C%A8%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8_files/last_top010.gif" style="width: 46px; height: 22px;" type="image"></span>
+</form>
+
+<script language="javascript" type="text/javascript">
+function search(){
+	var keys = document.getElementById("keys").value;
+	keys = keys.replace(/(^[^\S]+)|([^\S]+$)/g,"");
+	if(keys!=""){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+function sClass(p){
+    var f = document.getElementById("searchForm");
+    switch(p){
+        case "1":
+            f.action = "/Technology/t0/list_p1.html";
+            break;
+        case "2":
+            f.action = "/Tech_news/t0/list_p1.html";
+            break;
+        default:
+            f.action = "/Technology/t0/list_p1.html";
+            break;
+    }
+}
+</script>		   <span class="head_lanmu_form">
+		      <a href="http://www.gkzhan.com/Book/T0/list.html" target="_blank">好书推荐</a>
+			  <a href="http://www.gkzhan.com/Feature/zazhi/008/" target="_blank">工控视窗</a>
+			  <a href="http://www.gkzhan.com/news_People/T29/list.html" target="_blank">高端访谈</a>
+			  <a href="http://www.gkzhan.com/Company_People/T7/list.html" target="_blank">精英人物 </a>
+		   </span>		</div>
+	 </div>
+	 <div class="head_pic"><img src="CAN%E6%80%BB%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%9C%A8%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8_files/last_top007.gif"></div>
+  </div>    
+
+  <div class="head_weizhi">
+     您现在的位置：<a href="http://www.gkzhan.com/" target="_blank" title="工控网(明通)">工控网(明通)</a> &gt;<a href="http://www.gkzhan.com/Technology/index.html" target="_blank"> 技术中心</a>&gt; <a href="http://www.gkzhan.com/Tech_news/T1351/list.html" target="_blank">自动化资料</a> &gt; CAN总线技术在煤矿安全监控系统中的应用  </div>
+  <div class="newlist_body">
+    <div class="newshow_body">
+	   <div class="newshow_nr">
+	      <div class="newshow_title">CAN总线技术在煤矿安全监控系统中的应用</div>
+	      <div class="newshow_line"></div>
+	      <div class="newshow_time">2008-7-9&nbsp;&nbsp;来源：</div>
+		  <div class="newshow_fontshow">
+		    1.1&nbsp;目前煤矿安全<a title="监控系统" target="_blank" href="http://jzxitong.gkzhan.com/">监控系统</a>的传输系统存在的问题&nbsp; <br>　
+　煤矿生产场所的分布大都在几公里到几十公里的范围，对煤矿生产过程的安全监控遍布各个生产场所。对传输距离和传输速率的改进，将提供一个从根本上保障煤
+矿生产安全监控的时效性的技术措施，实现真正意义的能够满足措施及时落实到位的实时监控。从而极大地提高煤矿安全生产的监控力度和监控效力，保障人民的生
+命财产不受损失。 <br>　　煤矿安全<a title="监控系统" target="_blank" href="http://jzxitong.gkzhan.com/">监控系统</a>在我国已经有多年的研究及应用，但其传输技术一直是系统研究中的薄弱环节，随着网络技术的发展，安全<a title="监控系统" target="_blank" href="http://jzxitong.gkzhan.com/">监控系统</a>的数据传输的重要性日益突出。目前国内外煤矿安全<a title="监控系统" target="_blank" href="http://jzxitong.gkzhan.com/">监控系统</a>中所采用的传输技术，存在着以下几个方面的问题需要进一步解决： <br>　　(1)、传输速率慢 <br>　　(2)、非标准化 <br>　　(3)、高速传输时的传输距离短 <br>　　(4)、无中继连接的节点数少 <br>　　(5)、传输系统结构灵活性差 <br>　　1.2&nbsp;基于<a title="CAN" target="_blank" href="http://can.gkzhan.com/">CAN</a>总线技术的问题解决方案 <br>　　煤矿安全<a title="监控系统" target="_blank" href="http://jzxitong.gkzhan.com/">监控系统</a>，是一种典型的工业监测<a title="监控系统" target="_blank" href="http://jzxitong.gkzhan.com/">监控系统</a>。与一般工控系统相比，它具有这样的特点：系统监测监控设备分散距离远，节点设备动态变化频繁，环境要求防爆。 <br>　　<a title="CAN" target="_blank" href="http://can.gkzhan.com/">CAN</a>的多主结构、理论无限的节点容量(不存在物理站点编号问题)、位仲裁的总线分配和介质访问技术和额定最大速率1Mbit/s的传输速率(实际传输速率在<a title="器件" target="_blank" href="http://qijian.gkzhan.com/">器件</a>和线缆性能允许的情况下可以超过这个速率)以及在5Kbit/s传输速率下可无中继传输10公里的传输距离等特点，都非常适用于煤矿安全<a title="监控系统" target="_blank" href="http://jzxitong.gkzhan.com/">监控系统</a>的组成特点和传输要求。 <br>　　基于<a title="CAN" target="_blank" href="http://can.gkzhan.com/">CAN</a>总线的煤矿安全监控传输系统的设计，包括系统网络结构设计、监控分站节点内传输电路设计、分支中继电路设计和传输程序设计。 <br>　　1.2.1&nbsp;基于<a title="CAN" target="_blank" href="http://can.gkzhan.com/">CAN</a>总线的井下安全<a title="监控系统" target="_blank" href="http://jzxitong.gkzhan.com/">监控系统</a>网络结构设计 <br>　　整个煤矿安全<a title="监控系统" target="_blank" href="http://jzxitong.gkzhan.com/">监控系统</a>设计由地面中心站、<a title="网关" target="_blank" href="http://wangg.gkzhan.com/">网关</a>节点站、分支<a title="中继器" target="_blank" href="http://zjqi.gkzhan.com/">中继器</a>、
+井下监控分站和各种传感器以及通信介质，共六个部分组成。其中中心站负责接收、存储和显示从井下监控分站传来的各种井下生产环境安全监控数据，并通过各个
+井下分站发送各种配置命令和对现场设备的控制命令;井下分站负责从传感器收集数据、和地面中心站通信、输出各种控制信号和在需要的地方同时充当分支<a title="中继器" target="_blank" href="http://zjqi.gkzhan.com/">中继器</a>;<a title="网关" target="_blank" href="http://wangg.gkzhan.com/">网关</a>节点站实现<a title="现场总线" target="_blank" href="http://xczongxian.gkzhan.com/">现场总线</a>协议和中心站计算机标准接口协议的相互转换;分支<a title="中继器" target="_blank" href="http://zjqi.gkzhan.com/">中继器</a>在需要的地方完成通信线路的分支、中继和介质信号的转换;传感器负责收集各种现场环境安全监控数据和设备运行状态数据;通信介质负责安全<a title="监控系统" target="_blank" href="http://jzxitong.gkzhan.com/">监控系统</a>各设备的连接和信息的传递。整个系统的传输系统采用<a title="CAN" target="_blank" href="http://can.gkzhan.com/">CAN</a>总线拓扑结构，整个<a title="监控系统" target="_blank" href="http://jzxitong.gkzhan.com/">监控系统</a>分三级结构：中心站——井下分站——传感器。<br><br>　　图1&nbsp;是带有<a title="中继器" target="_blank" href="http://zjqi.gkzhan.com/">中继器</a>的煤矿安全<a title="监控系统" target="_blank" href="http://jzxitong.gkzhan.com/">监控系统</a>的组成原理图。图中的传输系统采用<a title="CAN" target="_blank" href="http://can.gkzhan.com/">CAN</a><a title="现场总线" target="_blank" href="http://xczongxian.gkzhan.com/">现场总线</a>技术。通信光纤/电缆上传输基带信号，节点间数据传输采用<a title="CAN" target="_blank" href="http://can.gkzhan.com/">CAN</a>协议。 <br><img alt="" src="CAN%E6%80%BB%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%9C%A8%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8_files/2008-07-09-09-45-46211.jpg" border="0"><br>图1带有<a title="中继器" target="_blank" href="http://zjqi.gkzhan.com/">中继器</a>的煤矿安全<a title="监控系统" target="_blank" href="http://jzxitong.gkzhan.com/">监控系统</a>的组成原理图 <br>　　1.2.2&nbsp;安全监控分站中<a title="CAN" target="_blank" href="http://can.gkzhan.com/">CAN</a>总线传输电路的设计 <br>　　井下安全监控分站是整个安全<a title="监控系统" target="_blank" href="http://jzxitong.gkzhan.com/">监控系统</a>的核心，它负责收集和处理现场生产环境和设备状态等方面的安全监控数据，并能实现就地控制设备。它更是传输系统的关键设施，各种数据的收发都要通过它的传输电路进行。图4是整个监控分站的原理设计。 <br><img alt="" src="CAN%E6%80%BB%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%9C%A8%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8_files/2008-07-09-09-46-00301.jpg" border="0"><br>图2&nbsp;基于<a title="CAN" target="_blank" href="http://can.gkzhan.com/">CAN</a>总线技术的监控分站结构图 <br>　　1.2.3&nbsp;基于<a title="CAN" target="_blank" href="http://can.gkzhan.com/">CAN</a>总线的多功能分支中继电路的设计 <br>　　分支中继电路完全工作于<a title="CAN" target="_blank" href="http://can.gkzhan.com/">CAN</a>总线传输网络的物理层，就是负责<a title="CAN" target="_blank" href="http://can.gkzhan.com/">CAN</a>信号(NRZ码)的分接、中继和光电转换。 <br><img alt="" src="CAN%E6%80%BB%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%9C%A8%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8_files/2008-07-09-09-46-13780.jpg" border="0"><br>图3&nbsp;多功能光电分支<a title="中继器" target="_blank" href="http://zjqi.gkzhan.com/">中继器</a>的原理图 <br>　　由于要满足<a title="CAN" target="_blank" href="http://can.gkzhan.com/">CAN</a>总线的按位仲裁功能的实现，所以在分支中继电路中要包含能够实现差分输入输出并能实现信号“线与”的<a title="CAN" target="_blank" href="http://can.gkzhan.com/">CAN</a>驱动电路，本电路设计中选用最常用的<a title="CAN" target="_blank" href="http://can.gkzhan.com/">CAN</a>驱动电路PC82C250芯片。由于“线与”功能是靠电气连接实现的，所以在设计光/电分支中继的时候，必须将光信号转换为电信号，再通过两片<a title="CAN" target="_blank" href="http://can.gkzhan.com/">CAN</a>驱动电路PC82C250的连接实现“线与”。<br>    
+		  </div>
+		     <div class="newshow_kuang">
+		     <div class="newshow_kuang_title">
+		        <div class="newshow_kuang_bt">名企推荐</div>
+			 </div>
+  <div class="newshow_kuang_hztg">
+				   <ul>
+				    
+				      <li><a href="http://www.gkzhan.com/st734/" target="_blank">天津罗升企业有限公司</a></li>
+					  <li><a href="http://www.mjpv.cn/" target="_blank">上海明精防腐阀门制造有限公司</a></li>
+					  <li><a href="http://www.gkzhan.com/st3591/" target="_blank">上海华伦仪表电子有限公司</a></li>
+					  <li><a href="http://www.gkzhan.com/st12434/" target="_blank">承德市国诚电子有限公司</a></li>
+				   </ul>
+				   <ul>
+				      <li><a href="http://www.tonglink.net/" target="_blank">北京通联时代电子技术有限公司</a></li>
+					  <li><a href="http://www.gkzhan.com/st1285/" target="_blank">北京元大兴业科技有限公司</a></li>
+					  <li><a href="http://www.gkzhan.com/st667/" target="_blank">太仓东元微电机有限公司</a></li>
+					  <li><a href="http://www.05711718.com/" target="_blank">杭州烨立机电设备有限公司</a></li>
+				   </ul>
+				   <ul>
+				      <li><a href="http://www.gkzhan.com/st847/" target="_blank">厦门晟仁信息科技有限公司</a></li>
+					  <li><a href="http://www.gkzhan.com/st704/" target="_blank">杭州平望科技有限公司</a></li>
+					  <li><a href="http://www.gkzhan.com/st3083/" target="_blank">安徽世龙电子技术有限公司</a></li>
+					  <li><a href="http://www.gkzhan.com/st625/" target="_blank">广州森纳士仪器有限公司</a></li>
+				   </ul>
+				   <ul>
+				      <li><a href="http://www.gkzhan.com/st11515/" target="_blank">深圳市诺顺科技有限公司</a></li>
+					  <li><a href="http://www.3hipc.com/" target="_blank">北京三奇科技有限公司</a></li>
+					  <li><a href="http://www.gk-njpg.cn/" target="_blank">帕罗肯科技有限公司</a></li>
+					  <li><a href="http://www.jzdzn.com/" target="_blank">北京集智达智能科技有限公司</a></li>
+				   </ul>
+			 </div>
+
+					  </div>		  <div class="newshow_kuang">
+		     <div class="newshow_kuang_title">
+		        <div class="newshow_kuang_bt">更多相关信息</div>
+			 </div>
+			 <div class="newshow_kuang_xgxw">
+			    <ul>
+								</ul>
+			 </div> 
+		  </div>
+		  <!--<div class="newshow_kuang">
+		     <div class="newshow_kuang_pltitle">
+			 现在有<span class="zi_cengs12b">130</span>人对本文发表评论&nbsp;&nbsp;
+			 <a href="#">查看所有评论</a>
+			 </div>
+			 <div class="newshow_kuang_plnr">
+			    <p><input name="" type="text"  size="80"/></p>
+			    <p><textarea name="" cols="100" rows="6"></textarea></p>
+			    <p>
+			       <span class="xk">
+				      <input name="" type="checkbox" value="" />&nbsp;匿名发表&nbsp;&nbsp;
+				      <input name="" type="checkbox" value="" />&nbsp;申请加精&nbsp;&nbsp;
+				   </span>
+				   <a href="#" class="aanniou1">提交评论</a>
+			    </p>
+			 </div>
+		  </div>-->
+	   </div>
+	</div>
+    <div class="newlist_right">
+	    <div class="newlist_right_line"></div>
+		<div class="newlist_right_shipin">
+		<!--应用案例和技术文献要求显示的广告不同-->
+					</div>
+		<div class="newlist_right_noic">
+		   <div class="newlist_right_title">
+		      <div class="newlist_right_title_bt">
+			     <span class="zi_heise14b">人物专访</span>			  
+			  </div>
+			  <div class="newlist_right_more">
+			     |&nbsp;<a href="http://www.gkzhan.com/news_People/T29/list.html" class="ali04" target="_blank">更多</a>			  
+			   </div>
+		   </div>
+		    <div class="newlist_right_hzmt">
+			     <dl>
+				     				    <dt>					
+					<img src="CAN%E6%80%BB%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%9C%A8%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8_files/633797047073125000.jpg" height="96" width="106">					</dt>
+					<dd><a href="http://www.gkzhan.com/news_People/Detail/61.html" target="_blank">蒋书锦：我的青春我做主</a></dd>
+				   				    <dt>					
+					<img src="CAN%E6%80%BB%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%9C%A8%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8_files/633779774559362075.jpg" height="96" width="106">					</dt>
+					<dd><a href="http://www.gkzhan.com/news_People/Detail/60.html" target="_blank">研祥：铁打的营盘铁打的兵</a></dd>
+				                      				  </dl>
+				 <ul>
+				    				   				   				    <li><a href="http://www.gkzhan.com/news_People/Detail/59.html" target="_blank">雷赛：引领步进驱动数字化潮流</a></li>
+				 				   				    <li><a href="http://www.gkzhan.com/news_People/Detail/58.html" target="_blank">把握机遇 超越自我</a></li>
+				 				   				    <li><a href="http://www.gkzhan.com/news_People/Detail/57.html" target="_blank">中行天下  控制未来</a></li>
+				 				   				    <li><a href="http://www.gkzhan.com/news_People/Detail/56.html" target="_blank">研扬蓄势“东方红”</a></li>
+				 				   				    <li><a href="http://www.gkzhan.com/news_People/Detail/55.html" target="_blank">虹润不怕远征难</a></li>
+				 				 				 </ul><ul>
+				   				    <li><a href="http://www.gkzhan.com/news_People/Detail/54.html" target="_blank">先机在握  超越自我</a></li>
+				 				   				    <li><a href="http://www.gkzhan.com/news_People/Detail/53.html" target="_blank">丰炜的PLC情结</a></li>
+				 				   				    <li><a href="http://www.gkzhan.com/news_People/Detail/52.html" target="_blank">弘扬“三菱”智慧 开创机电新纪元</a></li>
+				 				   				    <li><a href="http://www.gkzhan.com/news_People/Detail/18.html" target="_blank">丹纳赫传动，舞动真精彩</a></li>
+				 				   				    <li><a href="http://www.gkzhan.com/news_People/Detail/17.html" target="_blank">携手并进，互利共赢－李振宇</a></li>
+				 				  				 </ul>
+		  </div>
+		</div>		<div class="newlist_right_noic">
+		   <div class="newlist_right_title">
+		      <div class="newlist_right_title_bt">
+			     <span class="zi_heise14b">专题新闻</span>			  
+			  </div>
+			  <div class="newlist_right_more">
+			     |&nbsp;<a href="http://www.gkzhan.com/news/T10/list.html" class="ali04" target="_blank">更多</a>			  
+			  </div>
+		   </div>
+		   <div class="newlist_right_list">
+		      <ul>
+			    			     <li><a href="http://www.gkzhan.com/News/Detail/13731.html" target="_blank">苏州成立长三角首个机器人产业化平台</a></li>
+							     <li><a href="http://www.gkzhan.com/News/Detail/13396.html" target="_blank">大陆安全地毯市场处于导入期，未来几年增长稳定</a></li>
+							     <li><a href="http://www.gkzhan.com/News/Detail/13137.html" target="_blank">高层会话：运动控制市场 机遇与挑战并存</a></li>
+							     <li><a href="http://www.gkzhan.com/News/Detail/13063.html" target="_blank">世界最大的机器视觉市场</a></li>
+							     <li><a href="http://www.gkzhan.com/News/Detail/13045.html" target="_blank">国内仪器仪表行业将发生新的变化</a></li>
+							     <li><a href="http://www.gkzhan.com/News/Detail/12736.html" target="_blank">我国启动煤炭开采远程控制技术研发</a></li>
+							     <li><a href="http://www.gkzhan.com/News/Detail/12735.html" target="_blank">我国煤气化技术跻身世界先进行列</a></li>
+							     <li><a href="http://www.gkzhan.com/News/Detail/12734.html" target="_blank">空气源热泵热水器市场前景广阔</a></li>
+							     <li><a href="http://www.gkzhan.com/News/Detail/12733.html" target="_blank">装备产业升级 三一泵送产品前景光明</a></li>
+							     <li><a href="http://www.gkzhan.com/News/Detail/12732.html" target="_blank">金融危机给自动化行业带来的影响</a></li>
+							  </ul>
+		   </div>
+</div>		<!--<div class="newlist_right_noic">
+		   <div class="newlist_right_title">
+		      <div class="newlist_right_title_bt">
+			     <span class="zi_heise14b">论&nbsp;&nbsp;坛</span>
+			  </div>
+			  <div class="newlist_right_more">
+			     |&nbsp;<a href="#" class="ali04" target="_blank">更多</a>
+			  </div>
+		   </div>
+		   <div class="newlist_right_list">
+		      <dl>
+			     <dt><img src="/images/last_new_010.gif" /></dt>
+				 <dd><a href="#" target="_blank">班交火后受损紧急降落京华时报</a></dd>
+			  </dl>
+			  <dl>
+			     <dt><img src="/images/last_new_010.gif" /></dt>
+				 <dd><a href="#" target="_blank">班交火后受损紧急降落京华时报</a></dd>
+			  </dl>
+			  <ul>
+			     <li><a href="#" target="_blank">北京警方调查自考法律专业泄题事士大夫士件</a></li>
+				 <li><a href="#" target="_blank">北京警方调查自考业泄题事件</a></li>
+				 <li><a href="#" target="_blank">北京警方调查自考专业泄题事件</a></li>
+				 <li><a href="#" target="_blank">北京警方调查自考法律专业题事件</a></li>
+				 <li><a href="#" target="_blank">北京警方调查自题事件</a></li>
+			  </ul>
+		   </div>
+		</div>-->
+		<div class="newlist_right_noic">
+		   <div class="newlist_right_title">
+		      <div class="newlist_right_title_bt">
+			     <span class="zi_heise14b">展&nbsp;&nbsp;会</span>			  </div>
+			  <div class="newlist_right_more">
+			     |&nbsp;<a href="http://www.gkzhan.com/Exhibition/T0/list.html" class="ali04" target="_blank">更多</a>			  </div>
+		   </div>
+		   <div class="newlist_right_list">
+		       	 		      <dl>
+			     <dt> <img src="CAN%E6%80%BB%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%9C%A8%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8_files/noimg.gif" height="74" width="94"></dt>
+				 <dd><a href="http://www.gkzhan.com/Exhibition/Detail/57.html" target="_blank">第十届中国(广州)国际工业控制自动化及仪器仪表展览会</a></dd>
+			  </dl>
+			   		      <dl>
+			     <dt> <img src="CAN%E6%80%BB%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%9C%A8%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8_files/noimg.gif" height="74" width="94"></dt>
+				 <dd><a href="http://www.gkzhan.com/Exhibition/Detail/58.html" target="_blank">2006年第十届天津国际工业自动化、仪器仪表展览会</a></dd>
+			  </dl>
+			            			  <ul>
+			       			     <li><a href="http://www.gkzhan.com/Exhibition/Detail/59.html" target="_blank">第 9 届武汉国际工业控制自动化及仪器仪表展览会</a></li>
+			    			     <li><a href="http://www.gkzhan.com/Exhibition/Detail/60.html" target="_blank">第三届河北制造业自动化及仪器仪表展览会</a></li>
+			    			     <li><a href="http://www.gkzhan.com/Exhibition/Detail/61.html" target="_blank">2006中国重庆(第十届)仪器仪表及工业控制自动化国际展览会</a></li>
+			    			     <li><a href="http://www.gkzhan.com/Exhibition/Detail/62.html" target="_blank">2006年中日韩产业交流会(青岛)</a></li>
+			    			     <li><a href="http://www.gkzhan.com/Exhibition/Detail/63.html" target="_blank">2006第二届中国(上海)国际节能(电)技术及设备展览会暨技术研讨会</a></li>
+			   			  </ul>
+		   </div>
+		</div>    </div>
+  </div>
+  <div class="last_down">
+     <div class="last_nav">
+	 <a href="http://www.gkzhan.com/service/aboutus.html" target="_blank">关于我们</a>|<a href="http://www.gkzhan.com/service/navigation.html" target="_blank">网站导航</a>|<a href="http://www.gkzhan.com/service/service.html" target="_blank">本站服务</a>|<a href="http://www.gkzhan.com/service/service2.html" target="_blank">榜上有名会员</a>|<a href="http://www.gkzhan.com/cuxiao2/" target="_blank">至尊会员</a>|<a href="http://www.gkzhan.com/service/service3.html">商站通服务</a>|<a href="http://www.gkzhan.com/service/website.html" target="_blank">旗下网站</a>|<a href="http://www.gkzhan.com/link/" target="_blank">友情链接</a>|<a href="http://www.gkzhan.com/service/mtjob.html" target="_blank">诚聘英才</a>
+	 </div>
+	 <div class="last_botoom">
+	 工控网（明通） Copyright 2003-2009 gkzhan.com,all rights reserved<br>广告咨询:0571-87756395,87756759;客户服务:0571-87756394,展会合作:0571-87756395;采购咨询:0571-87759929,87759901;<br>传真:0571-87756374,87169507,87756393;邮箱:email%gkzhan.com(请将%改成@)
+	 </div>
+  </div>
+<div style="display: none;"><script language="javascript" type="text/javascript" src="CAN%E6%80%BB%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%9C%A8%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8_files/2619455.js"></script><a href="http://www.51.la/?002619455" target="_blank"><img alt="51.la 专业、免费、强健的访问统计" src="CAN%E6%80%BB%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%9C%A8%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8_files/icon_0.gif" style="border: medium none ;"></a>
+<img style="width: 0px; height: 0px;" src="CAN%E6%80%BB%E7%BA%BF%E6%8A%80%E6%9C%AF%E5%9C%A8%E7%85%A4%E7%9F%BF%E5%AE%89%E5%85%A8%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8_files/go.htm">
+<noscript><a href="http://www.51.la/?2619455" target="_blank"><img
+alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;"
+src="http://img.users.51.la/2619455.asp" style="border:none" /></a></noscript></div>
+</body></html>
